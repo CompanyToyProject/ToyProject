@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Google Map View Controller-->
+        <scene sceneID="uLX-5R-2Ec">
+            <objects>
+                <viewController storyboardIdentifier="GoogleMapView" id="Xme-d7-gf5" customClass="GoogleMapViewController" customModule="TestMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Gc-mD-NLA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bis-zM-MTN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cPu-41-sY3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bis-zM-MTN" firstAttribute="top" secondItem="cPu-41-sY3" secondAttribute="top" id="YaQ-CW-vO7"/>
+                            <constraint firstAttribute="trailing" secondItem="Bis-zM-MTN" secondAttribute="trailing" id="aVs-3Q-1J9"/>
+                            <constraint firstItem="Bis-zM-MTN" firstAttribute="leading" secondItem="cPu-41-sY3" secondAttribute="leading" id="bId-El-QaC"/>
+                            <constraint firstItem="cPu-41-sY3" firstAttribute="bottom" secondItem="Bis-zM-MTN" secondAttribute="bottom" id="lQE-Rg-uIf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapViewContainer" destination="Bis-zM-MTN" id="9Ph-ai-ycT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0AS-pu-pcm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150" y="78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

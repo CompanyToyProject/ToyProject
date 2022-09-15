@@ -11,9 +11,42 @@
 		F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA92D28D30B7600B77E4A /* AppDelegate.swift */; };
 		F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA92F28D30B7600B77E4A /* SceneDelegate.swift */; };
 		F05AA93228D30B7600B77E4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA93128D30B7600B77E4A /* ViewController.swift */; };
-		F05AA93528D30B7600B77E4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05AA93328D30B7600B77E4A /* Main.storyboard */; };
 		F05AA93728D30B7700B77E4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05AA93628D30B7700B77E4A /* Assets.xcassets */; };
 		F05AA93A28D30B7700B77E4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05AA93828D30B7700B77E4A /* LaunchScreen.storyboard */; };
+		F05AA95128D3100A00B77E4A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA94628D3100900B77E4A /* Logger.swift */; };
+		F05AA95228D3100A00B77E4A /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA94828D3100900B77E4A /* PersistenceManager.swift */; };
+		F05AA95328D3100A00B77E4A /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA94A28D3100900B77E4A /* HTTPManager.swift */; };
+		F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA94C28D3100900B77E4A /* CALayer+.swift */; };
+		F05AA95528D3100A00B77E4A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA94D28D3100900B77E4A /* String+.swift */; };
+		F05AA95628D3100A00B77E4A /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA94E28D3100900B77E4A /* GlobalFunctions.swift */; };
+		F05AA95728D3100A00B77E4A /* OpenXlsx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA95028D3100A00B77E4A /* OpenXlsx.swift */; };
+		F05AA95C28D3102D00B77E4A /* meteorological_service.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = F05AA95B28D3102D00B77E4A /* meteorological_service.xlsx */; };
+		F05AA97528D3104D00B77E4A /* GoogleMapViewModel+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96028D3104D00B77E4A /* GoogleMapViewModel+Data.swift */; };
+		F05AA97628D3104D00B77E4A /* GoogleMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96128D3104D00B77E4A /* GoogleMapViewModel.swift */; };
+		F05AA97728D3104D00B77E4A /* GoogleMapView+LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96328D3104D00B77E4A /* GoogleMapView+LocationManager.swift */; };
+		F05AA97828D3104D00B77E4A /* GoogleMapView+DataFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96428D3104D00B77E4A /* GoogleMapView+DataFunc.swift */; };
+		F05AA97928D3104D00B77E4A /* GoogleMapView+MapFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96528D3104D00B77E4A /* GoogleMapView+MapFunc.swift */; };
+		F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96628D3104D00B77E4A /* GoogleMapView+Bind.swift */; };
+		F05AA97B28D3104D00B77E4A /* GoogleMapView+MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96728D3104D00B77E4A /* GoogleMapView+MapDelegate.swift */; };
+		F05AA97C28D3104D00B77E4A /* MeteorologicalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96928D3104D00B77E4A /* MeteorologicalItem.swift */; };
+		F05AA97D28D3104D00B77E4A /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96A28D3104D00B77E4A /* WeatherInfo.swift */; };
+		F05AA97E28D3104D00B77E4A /* GoogleMapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05AA96C28D3104D00B77E4A /* GoogleMapView.storyboard */; };
+		F05AA97F28D3104D00B77E4A /* WeatherMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96E28D3104D00B77E4A /* WeatherMarkerView.swift */; };
+		F05AA98028D3104D00B77E4A /* WeatherMarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA96F28D3104D00B77E4A /* WeatherMarkerInfoView.swift */; };
+		F05AA98128D3104D00B77E4A /* SearchBarView+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA97128D3104D00B77E4A /* SearchBarView+TextView.swift */; };
+		F05AA98228D3104D00B77E4A /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA97228D3104D00B77E4A /* SearchBarView.swift */; };
+		F05AA98328D3104D00B77E4A /* RegionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA97328D3104D00B77E4A /* RegionTableViewController.swift */; };
+		F05AA98428D3104D00B77E4A /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA97428D3104D00B77E4A /* GoogleMapViewController.swift */; };
+		F05AA98C28D3105600B77E4A /* SearchLocal+SearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA98728D3105600B77E4A /* SearchLocal+SearchResultsUpdating.swift */; };
+		F05AA98D28D3105600B77E4A /* SearchLocal+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA98828D3105600B77E4A /* SearchLocal+TableView.swift */; };
+		F05AA98E28D3105600B77E4A /* SearchLocal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05AA98A28D3105600B77E4A /* SearchLocal.storyboard */; };
+		F05AA98F28D3105600B77E4A /* SearchLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA98B28D3105600B77E4A /* SearchLocalViewController.swift */; };
+		F05AA99328D3107000B77E4A /* LocalCoordinate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA99128D3107000B77E4A /* LocalCoordinate+CoreDataProperties.swift */; };
+		F05AA99428D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA99228D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift */; };
+		F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F05AA99528D3108300B77E4A /* Model.xcdatamodeld */; };
+		F05AA99928D310D900B77E4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05AA99828D310D900B77E4A /* Main.storyboard */; };
+		F05AA99C28D3117F00B77E4A /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = F05AA99B28D3117F00B77E4A /* CoreXLSX */; };
+		F05AA9A028D3120E00B77E4A /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA99F28D3120E00B77E4A /* ViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +57,42 @@
 		F05AA92D28D30B7600B77E4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F05AA92F28D30B7600B77E4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F05AA93128D30B7600B77E4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F05AA93428D30B7600B77E4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F05AA93628D30B7700B77E4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F05AA93928D30B7700B77E4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F05AA93B28D30B7700B77E4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F05AA94628D3100900B77E4A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F05AA94828D3100900B77E4A /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		F05AA94A28D3100900B77E4A /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
+		F05AA94C28D3100900B77E4A /* CALayer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
+		F05AA94D28D3100900B77E4A /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		F05AA94E28D3100900B77E4A /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		F05AA95028D3100A00B77E4A /* OpenXlsx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenXlsx.swift; sourceTree = "<group>"; };
+		F05AA95B28D3102D00B77E4A /* meteorological_service.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = meteorological_service.xlsx; sourceTree = "<group>"; };
+		F05AA96028D3104D00B77E4A /* GoogleMapViewModel+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleMapViewModel+Data.swift"; sourceTree = "<group>"; };
+		F05AA96128D3104D00B77E4A /* GoogleMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapViewModel.swift; sourceTree = "<group>"; };
+		F05AA96328D3104D00B77E4A /* GoogleMapView+LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+LocationManager.swift"; sourceTree = "<group>"; };
+		F05AA96428D3104D00B77E4A /* GoogleMapView+DataFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+DataFunc.swift"; sourceTree = "<group>"; };
+		F05AA96528D3104D00B77E4A /* GoogleMapView+MapFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+MapFunc.swift"; sourceTree = "<group>"; };
+		F05AA96628D3104D00B77E4A /* GoogleMapView+Bind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+Bind.swift"; sourceTree = "<group>"; };
+		F05AA96728D3104D00B77E4A /* GoogleMapView+MapDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+MapDelegate.swift"; sourceTree = "<group>"; };
+		F05AA96928D3104D00B77E4A /* MeteorologicalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorologicalItem.swift; sourceTree = "<group>"; };
+		F05AA96A28D3104D00B77E4A /* WeatherInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		F05AA96C28D3104D00B77E4A /* GoogleMapView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoogleMapView.storyboard; sourceTree = "<group>"; };
+		F05AA96E28D3104D00B77E4A /* WeatherMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMarkerView.swift; sourceTree = "<group>"; };
+		F05AA96F28D3104D00B77E4A /* WeatherMarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMarkerInfoView.swift; sourceTree = "<group>"; };
+		F05AA97128D3104D00B77E4A /* SearchBarView+TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchBarView+TextView.swift"; sourceTree = "<group>"; };
+		F05AA97228D3104D00B77E4A /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		F05AA97328D3104D00B77E4A /* RegionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionTableViewController.swift; sourceTree = "<group>"; };
+		F05AA97428D3104D00B77E4A /* GoogleMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
+		F05AA98728D3105600B77E4A /* SearchLocal+SearchResultsUpdating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchLocal+SearchResultsUpdating.swift"; sourceTree = "<group>"; };
+		F05AA98828D3105600B77E4A /* SearchLocal+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchLocal+TableView.swift"; sourceTree = "<group>"; };
+		F05AA98A28D3105600B77E4A /* SearchLocal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchLocal.storyboard; sourceTree = "<group>"; };
+		F05AA98B28D3105600B77E4A /* SearchLocalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocalViewController.swift; sourceTree = "<group>"; };
+		F05AA99128D3107000B77E4A /* LocalCoordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalCoordinate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F05AA99228D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalCoordinate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F05AA99628D3108300B77E4A /* WeatherModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherModel.xcdatamodel; sourceTree = "<group>"; };
+		F05AA99828D310D900B77E4A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F05AA99F28D3120E00B77E4A /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05AA99C28D3117F00B77E4A /* CoreXLSX in Frameworks */,
 				ABCF6EBC90A8E0E37B9E3D7A /* Pods_ToyProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,7 +114,6 @@
 				B9D851FD8AED024BB375828A /* Pods-ToyProject.debug.xcconfig */,
 				2289244BC57957B0E03CA89D /* Pods-ToyProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +138,239 @@
 		F05AA92C28D30B7600B77E4A /* ToyProject */ = {
 			isa = PBXGroup;
 			children = (
-				F05AA92D28D30B7600B77E4A /* AppDelegate.swift */,
-				F05AA92F28D30B7600B77E4A /* SceneDelegate.swift */,
+				F05AA99028D3106700B77E4A /* CoreData */,
+				F05AA94128D30FC800B77E4A /* Base */,
 				F05AA93128D30B7600B77E4A /* ViewController.swift */,
-				F05AA93328D30B7600B77E4A /* Main.storyboard */,
-				F05AA93628D30B7700B77E4A /* Assets.xcassets */,
-				F05AA93828D30B7700B77E4A /* LaunchScreen.storyboard */,
+				F05AA99F28D3120E00B77E4A /* ViewModelProtocol.swift */,
+				F05AA94428D30FFB00B77E4A /* Module */,
+				F05AA95D28D3103B00B77E4A /* Scene */,
+				F05AA95828D3101B00B77E4A /* Resource */,
 				F05AA93B28D30B7700B77E4A /* Info.plist */,
+				F05AA99528D3108300B77E4A /* Model.xcdatamodeld */,
 			);
 			path = ToyProject;
+			sourceTree = "<group>";
+		};
+		F05AA94128D30FC800B77E4A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA94328D30FD800B77E4A /* View */,
+				F05AA94228D30FCF00B77E4A /* Delegate */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F05AA94228D30FCF00B77E4A /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA92D28D30B7600B77E4A /* AppDelegate.swift */,
+				F05AA92F28D30B7600B77E4A /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		F05AA94328D30FD800B77E4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA99828D310D900B77E4A /* Main.storyboard */,
+				F05AA93828D30B7700B77E4A /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F05AA94428D30FFB00B77E4A /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA94728D3100900B77E4A /* CoreData */,
+				F05AA94928D3100900B77E4A /* HTTP */,
+				F05AA94528D3100900B77E4A /* Logger */,
+				F05AA94B28D3100900B77E4A /* Utils */,
+				F05AA94F28D3100A00B77E4A /* Xlsx */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		F05AA94528D3100900B77E4A /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA94628D3100900B77E4A /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		F05AA94728D3100900B77E4A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA94828D3100900B77E4A /* PersistenceManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F05AA94928D3100900B77E4A /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA94A28D3100900B77E4A /* HTTPManager.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		F05AA94B28D3100900B77E4A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA94C28D3100900B77E4A /* CALayer+.swift */,
+				F05AA94D28D3100900B77E4A /* String+.swift */,
+				F05AA94E28D3100900B77E4A /* GlobalFunctions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F05AA94F28D3100A00B77E4A /* Xlsx */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA95028D3100A00B77E4A /* OpenXlsx.swift */,
+			);
+			path = Xlsx;
+			sourceTree = "<group>";
+		};
+		F05AA95828D3101B00B77E4A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA95A28D3102D00B77E4A /* File */,
+				F05AA95928D3102300B77E4A /* Assets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F05AA95928D3102300B77E4A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA93628D30B7700B77E4A /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F05AA95A28D3102D00B77E4A /* File */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA95B28D3102D00B77E4A /* meteorological_service.xlsx */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		F05AA95D28D3103B00B77E4A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA98528D3105600B77E4A /* SearchLocal */,
+				F05AA95E28D3104D00B77E4A /* GoogleMap */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		F05AA95E28D3104D00B77E4A /* GoogleMap */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA95F28D3104D00B77E4A /* ViewModel */,
+				F05AA96828D3104D00B77E4A /* Model */,
+				F05AA96B28D3104D00B77E4A /* View */,
+				F05AA96228D3104D00B77E4A /* Extension */,
+			);
+			path = GoogleMap;
+			sourceTree = "<group>";
+		};
+		F05AA95F28D3104D00B77E4A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA96028D3104D00B77E4A /* GoogleMapViewModel+Data.swift */,
+				F05AA96128D3104D00B77E4A /* GoogleMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F05AA96228D3104D00B77E4A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA96328D3104D00B77E4A /* GoogleMapView+LocationManager.swift */,
+				F05AA96428D3104D00B77E4A /* GoogleMapView+DataFunc.swift */,
+				F05AA96528D3104D00B77E4A /* GoogleMapView+MapFunc.swift */,
+				F05AA96628D3104D00B77E4A /* GoogleMapView+Bind.swift */,
+				F05AA96728D3104D00B77E4A /* GoogleMapView+MapDelegate.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F05AA96828D3104D00B77E4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA96928D3104D00B77E4A /* MeteorologicalItem.swift */,
+				F05AA96A28D3104D00B77E4A /* WeatherInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F05AA96B28D3104D00B77E4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA97428D3104D00B77E4A /* GoogleMapViewController.swift */,
+				F05AA96C28D3104D00B77E4A /* GoogleMapView.storyboard */,
+				F05AA96D28D3104D00B77E4A /* CustomView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F05AA96D28D3104D00B77E4A /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA96E28D3104D00B77E4A /* WeatherMarkerView.swift */,
+				F05AA96F28D3104D00B77E4A /* WeatherMarkerInfoView.swift */,
+				F05AA97028D3104D00B77E4A /* SearchBarView */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		F05AA97028D3104D00B77E4A /* SearchBarView */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA97128D3104D00B77E4A /* SearchBarView+TextView.swift */,
+				F05AA97228D3104D00B77E4A /* SearchBarView.swift */,
+				F05AA97328D3104D00B77E4A /* RegionTableViewController.swift */,
+			);
+			path = SearchBarView;
+			sourceTree = "<group>";
+		};
+		F05AA98528D3105600B77E4A /* SearchLocal */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA98628D3105600B77E4A /* Extension */,
+				F05AA98928D3105600B77E4A /* View */,
+			);
+			path = SearchLocal;
+			sourceTree = "<group>";
+		};
+		F05AA98628D3105600B77E4A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA98728D3105600B77E4A /* SearchLocal+SearchResultsUpdating.swift */,
+				F05AA98828D3105600B77E4A /* SearchLocal+TableView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F05AA98928D3105600B77E4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA98A28D3105600B77E4A /* SearchLocal.storyboard */,
+				F05AA98B28D3105600B77E4A /* SearchLocalViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F05AA99028D3106700B77E4A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA99228D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift */,
+				F05AA99128D3107000B77E4A /* LocalCoordinate+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		F5F72CA49790E9CBD706064E /* Frameworks */ = {
@@ -111,6 +400,9 @@
 			dependencies = (
 			);
 			name = ToyProject;
+			packageProductDependencies = (
+				F05AA99B28D3117F00B77E4A /* CoreXLSX */,
+			);
 			productName = ToyProject;
 			productReference = F05AA92A28D30B7600B77E4A /* ToyProject.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +431,9 @@
 				Base,
 			);
 			mainGroup = F05AA92128D30B7600B77E4A;
+			packageReferences = (
+				F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */,
+			);
 			productRefGroup = F05AA92B28D30B7600B77E4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -153,9 +448,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05AA98E28D3105600B77E4A /* SearchLocal.storyboard in Resources */,
 				F05AA93A28D30B7700B77E4A /* LaunchScreen.storyboard in Resources */,
+				F05AA97E28D3104D00B77E4A /* GoogleMapView.storyboard in Resources */,
+				F05AA99928D310D900B77E4A /* Main.storyboard in Resources */,
 				F05AA93728D30B7700B77E4A /* Assets.xcassets in Resources */,
-				F05AA93528D30B7600B77E4A /* Main.storyboard in Resources */,
+				F05AA95C28D3102D00B77E4A /* meteorological_service.xlsx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,23 +523,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */,
+				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,
+				F05AA97C28D3104D00B77E4A /* MeteorologicalItem.swift in Sources */,
+				F05AA97928D3104D00B77E4A /* GoogleMapView+MapFunc.swift in Sources */,
+				F05AA98028D3104D00B77E4A /* WeatherMarkerInfoView.swift in Sources */,
 				F05AA93228D30B7600B77E4A /* ViewController.swift in Sources */,
+				F05AA98228D3104D00B77E4A /* SearchBarView.swift in Sources */,
+				F05AA97B28D3104D00B77E4A /* GoogleMapView+MapDelegate.swift in Sources */,
+				F05AA97628D3104D00B77E4A /* GoogleMapViewModel.swift in Sources */,
+				F05AA95528D3100A00B77E4A /* String+.swift in Sources */,
+				F05AA98F28D3105600B77E4A /* SearchLocalViewController.swift in Sources */,
+				F05AA99428D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift in Sources */,
+				F05AA98428D3104D00B77E4A /* GoogleMapViewController.swift in Sources */,
+				F05AA95328D3100A00B77E4A /* HTTPManager.swift in Sources */,
+				F05AA98C28D3105600B77E4A /* SearchLocal+SearchResultsUpdating.swift in Sources */,
+				F05AA97528D3104D00B77E4A /* GoogleMapViewModel+Data.swift in Sources */,
+				F05AA9A028D3120E00B77E4A /* ViewModelProtocol.swift in Sources */,
+				F05AA95228D3100A00B77E4A /* PersistenceManager.swift in Sources */,
+				F05AA99328D3107000B77E4A /* LocalCoordinate+CoreDataProperties.swift in Sources */,
+				F05AA97F28D3104D00B77E4A /* WeatherMarkerView.swift in Sources */,
 				F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */,
+				F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */,
+				F05AA98128D3104D00B77E4A /* SearchBarView+TextView.swift in Sources */,
 				F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */,
+				F05AA95128D3100A00B77E4A /* Logger.swift in Sources */,
+				F05AA95728D3100A00B77E4A /* OpenXlsx.swift in Sources */,
+				F05AA97728D3104D00B77E4A /* GoogleMapView+LocationManager.swift in Sources */,
+				F05AA97D28D3104D00B77E4A /* WeatherInfo.swift in Sources */,
+				F05AA98328D3104D00B77E4A /* RegionTableViewController.swift in Sources */,
+				F05AA97828D3104D00B77E4A /* GoogleMapView+DataFunc.swift in Sources */,
+				F05AA95628D3100A00B77E4A /* GlobalFunctions.swift in Sources */,
+				F05AA98D28D3105600B77E4A /* SearchLocal+TableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F05AA93328D30B7600B77E4A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F05AA93428D30B7600B77E4A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F05AA93828D30B7700B77E4A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,6 +766,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CoreOffice/CoreXLSX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F05AA99B28D3117F00B77E4A /* CoreXLSX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */;
+			productName = CoreXLSX;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F05AA99528D3108300B77E4A /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F05AA99628D3108300B77E4A /* WeatherModel.xcdatamodel */,
+			);
+			currentVersion = F05AA99628D3108300B77E4A /* WeatherModel.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F05AA92228D30B7600B77E4A /* Project object */;
 }

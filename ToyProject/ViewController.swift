@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func clickGooglePlaces(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "GoogleMapView", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "GoogleMapView") as? GoogleMapViewController else {
+            return
+        }
+        getNavigationController().pushViewController(vc, animated: true)    }
 }
+
 
