@@ -18,6 +18,7 @@ import RxGesture
 class GoogleMapViewController: UIViewController {
     @IBOutlet weak var mapViewContainer: UIView!
     var rightBarButton: UIBarButtonItem!
+    var leftBarButton: UIBarButtonItem!
     var searchBarView: SearchBarView!
     
     var locationManager: CLLocationManager!
@@ -25,6 +26,8 @@ class GoogleMapViewController: UIViewController {
     var mapView: GMSMapView!
     var preciseLocationZoomLevel: Float = 15.0
     var approximateLocationZoomLevel: Float = 10.0
+    
+    var keyboardIsHide = true
     
     var weatherMarkers = [GMSMarker]()
     let disposeBag = DisposeBag()
@@ -47,8 +50,9 @@ class GoogleMapViewController: UIViewController {
         locationManager.startUpdatingHeading()
         locationManager.delegate = self
         
-        setMapView()
+        setKeyboard()
         setNavigationBar()
+        setMapView()
         
         self.container = PersistenceManager.shared.persistentContainer
         getLocalCoordinateDataFromXlsx()
@@ -62,31 +66,18 @@ class GoogleMapViewController: UIViewController {
         }
         
         setSearchBarView()
-        setTapGesture()
     }
     
-    func setSearchBarView() {
-        searchBarView = SearchBarView()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        let request: NSFetchRequest<LocalCoordinate> = LocalCoordinate.fetchRequest()
-        let fetchResult = PersistenceManager.shared.fetch(request: request)
-        searchBarView.configUI(arr: fetchResult)
-        
-        self.view.addSubview(searchBarView)
-        
-        searchBarView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
-        }
-    }
-    
-    func setTapGesture() {
-        self.view.rx.tapGesture()
-            .when(.recognized)
-            .bind { [weak self] _ in
-                self?.searchBarView.endEditing()
+        if let selectedLocal = selectedLocal {
+            log.d(selectedLocal.toString())
+            self.viewModel.getWeatherInfoFromServer(selectedLocal) { [weak self] info in
+                guard let self = self else { return }
+                self.weatherInfo.onNext((info, true))
             }
-            .disposed(by: disposeBag)
+        }
     }
     
     func setInput() {
@@ -115,23 +106,24 @@ class GoogleMapViewController: UIViewController {
         mapViewContainer.addSubview(mapView)
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if let selectedLocal = selectedLocal {
-            log.d(selectedLocal.toString())
-            self.viewModel.getWeatherInfoFromServer(selectedLocal) { [weak self] info in
-                guard let self = self else { return }
-                self.weatherInfo.onNext((info, true))
-            }
-        }
-    }
-    
     func setNavigationBar() {
         navigationItem.title = "GoogleMap"
-        rightBarButton = UIBarButtonItem(title: "Get Local", style: .plain, target: nil, action: nil)
-        self.navigationItem.rightBarButtonItem = rightBarButton
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
+        rightBarButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: nil, action: nil)
+        
+        leftBarButton = UIBarButtonItem(title: "BACK", style: .plain, target: nil, action: nil)
+        self.navigationItem.leftBarButtonItem = leftBarButton
+    }
+    
+    func didOut() {
+        mapView.clear()
+        mapView.removeFromSuperview()
+    }
+    
+    deinit {
+        searchBarView.disposeBag = DisposeBag()
+        print("GoogleMapViewController deinit...")
     }
 }
 

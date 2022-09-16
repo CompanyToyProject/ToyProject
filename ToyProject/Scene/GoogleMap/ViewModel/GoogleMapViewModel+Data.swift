@@ -19,7 +19,8 @@ extension GoogleMapViewModel {
         let fetchResult = PersistenceManager.shared.fetch(request: request)
         
         func getData() {
-            getWeatherInfoFromServer(fetchResult[index]) { info in
+            getWeatherInfoFromServer(fetchResult[index]) { [weak self] info in
+                guard let self = self else { return }
                 items.append(info)
                 index += 1
                 if index >= fetchResult.count {

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 import Then
+import RxSwift
 
 class SearchBarView: UIView {
     
@@ -50,6 +51,9 @@ class SearchBarView: UIView {
         $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
     }
     
+    var selectItem = PublishSubject<LocalCoordinate>()
+    var disposeBag = DisposeBag()
+    
     required init() {
         super.init(frame: .zero)
         initView()
@@ -66,6 +70,7 @@ class SearchBarView: UIView {
         textView.delegate = self
         
         setTableViewController()
+        bind()
     }
     
     func configUI(arr: [LocalCoordinate]) {
@@ -101,13 +106,14 @@ class SearchBarView: UIView {
     private func setConstraints() {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(bgView.snp.bottom)
-            make.leading.trailing.equalTo(stackView)
-            make.height.equalTo(400)
+            make.leading.trailing.equalTo(bgView).inset(18)
+            make.height.equalTo(0)
+            make.bottom.equalToSuperview().inset(10)
         }
         
         bgView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(15)
-            make.top.bottom.equalToSuperview().inset(10)
+            make.top.equalToSuperview().inset(10)
         }
         
         stackView.snp.makeConstraints { make in
@@ -132,5 +138,16 @@ class SearchBarView: UIView {
             make.leading.trailing.equalToSuperview()
             make.top.bottom.equalToSuperview().inset(8)
         }
+    }
+    
+    func tableViewZeroHeight() {
+        tableView.snp.updateConstraints { make in
+            make.height.equalTo(0)
+        }
+    }
+    
+    deinit {
+        tableViewController?.disposeBag = DisposeBag()
+        print("SearchBarView Deinit...")
     }
 }

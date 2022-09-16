@@ -19,6 +19,11 @@ class RegionTableViewController: NSObject {
     var filterArr = BehaviorSubject<[LocalCoordinate]>.init(value: [])
     
     var updateText = PublishSubject<(String, Bool)>()
+    var tableViewHeight = PublishSubject<CGFloat>()
+    var selectItem = PublishSubject<LocalCoordinate>()
+    
+    let rowMaxCount = 4
+    let defaultTableRowHeight = 45.0
     
     init(tableView: UITableView) {
         super.init()
@@ -33,33 +38,65 @@ class RegionTableViewController: NSObject {
         updateText.bind { [weak self] text, isFilltering in
             guard let self = self else { return }
             if isFilltering {
-                self.filterArr.onNext(self.arr.filter { $0.localFullString.contains(text)})
+                var list = self.arr.filter { $0.localFullString.contains(text)}
+                if list.count == 0 {
+                    let emptyItem = LocalCoordinate(context: PersistenceManager.shared.context)
+                    emptyItem.level1 = "검색된 지역이 없습니다."
+                    emptyItem.level2 = ""
+                    emptyItem.level3 = ""
+                    list.append(emptyItem)
+                }
+                self.filterArr.onNext(list)
+                
+                if list.count >= self.rowMaxCount {
+                    self.tableViewHeight.onNext(Double(self.rowMaxCount) * self.defaultTableRowHeight)
+                }
+                else {
+                    self.tableViewHeight.onNext(Double(list.count) * self.defaultTableRowHeight)
+                }
             } else {
                 self.filterArr.onNext(self.arr)
+                
+                if self.arr.count >= 7 {
+                    self.tableViewHeight.onNext(Double(self.rowMaxCount) * self.defaultTableRowHeight)
+                } else {
+                    self.tableViewHeight.onNext(Double(self.arr.count) * self.defaultTableRowHeight)
+                }
             }
         }
+        .disposed(by: disposeBag)
+    }
+    
+    deinit {
+        print("RegionTableViewController deinit...")
     }
 
 }
 
 extension RegionTableViewController: UITableViewDelegate {
+    
     func setTableView() {
         self.tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
+        log.d("tableViewDelegate: \(tableView.delegate)")
+        
         self.tableView.rx.itemSelected
-            .bind { [weak self] indexPath in
-                guard let self = self else { return }
+            .map({ indexPath -> LocalCoordinate? in
                 if let list = try? self.filterArr.value() {
                     let selectedLocal = list[indexPath.row]
-                    
-                    getNavigationController().popViewController(animated: true)
-                    guard let vc = getVisibleViewController() as? GoogleMapViewController else {
-                         return
-                    }
-                    vc.selectedLocal = selectedLocal
+                    return selectedLocal
+                } else {
+                    return nil
                 }
-            }
+            })
+            .compactMap({ $0  })
+            .bind(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.selectItem.onNext($0)
+                self.tableViewHeight.onNext(0)
+            })
             .disposed(by: disposeBag)
+        
         
         filterArr
             .bind(to: self.tableView.rx.items) { (tableView: UITableView, index:Int, element: LocalCoordinate) -> UITableViewCell in

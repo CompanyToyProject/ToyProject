@@ -17,18 +17,17 @@ extension GoogleMapViewController {
         
         rightBarButton.rx.tap
             .throttle(.seconds(2), latest: false, scheduler: MainScheduler.instance)
-            .bind {
-                let request: NSFetchRequest<LocalCoordinate> = LocalCoordinate.fetchRequest()
-                let fetchResult = PersistenceManager.shared.fetch(request: request)
-                
-                let storyBoard = UIStoryboard(name: "SearchLocal", bundle: nil)
-                guard let vc = storyBoard.instantiateViewController(withIdentifier: "SearchLocal") as? SearchLocalViewControllr else {
-                    return
-                }
-                
-                vc.arr = fetchResult
-                getNavigationController().pushViewController(vc, animated: true)
+            .bind { [weak self] _ in
+                self?.hideSearchBar(false)
             }
+            .disposed(by: disposeBag)
+        
+        leftBarButton.rx.tap
+            .throttle(.seconds(2), latest: false, scheduler: MainScheduler.instance)
+            .bind(onNext: { [weak self] _ in
+                getNavigationController().popViewController(animated: true)
+                self?.didOut()
+            })
             .disposed(by: disposeBag)
         
         output.weatherInfoDatas

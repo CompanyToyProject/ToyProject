@@ -11,6 +11,7 @@ import UIKit
 extension SearchBarView: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         placeHolderLabel.isHidden = true
+        tableViewController?.updateText.onNext((textView.text, textView.hasText))
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -20,14 +21,13 @@ extension SearchBarView: UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        let isActive = textView.isFocused
-        let hasText = textView.text.isEmpty == false
-        let isFilltering = isActive && hasText
-        
-        tableViewController?.updateText.onNext((textView.text, isFilltering))
+        if textView.text.isEmpty {
+            tableViewController?.updateText.onNext((textView.text, false))
+        }
     }
     
     func endEditing() {
         textView.endEditing(true)
+        textViewDidEndEditing(textView)
     }
 }

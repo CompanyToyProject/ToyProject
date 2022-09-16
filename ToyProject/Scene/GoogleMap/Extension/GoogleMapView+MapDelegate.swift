@@ -13,6 +13,8 @@ extension GoogleMapViewController: GMSMapViewDelegate {
     // 지도 터치 시
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         log.d("You tapped at: \(coordinate.latitude), \(coordinate.longitude)")
+        
+        self.touchEmptyMap()
     }
     
     // 마커 터치
@@ -50,5 +52,6 @@ extension GoogleMapViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String, name: String, location: CLLocationCoordinate2D) {
         print("You tapped: name - \(name)\nplaceID - \(placeID)\n(lat:lng) - (\(location.latitude):\(location.longitude))")
         
+        self.touchEmptyMap()
     }
 }
