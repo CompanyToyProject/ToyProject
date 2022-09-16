@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		ABCF6EBC90A8E0E37B9E3D7A /* Pods_ToyProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A439308B305145759E12955 /* Pods_ToyProject.framework */; };
+		EF6C8DCC28D3F8C0000FB249 /* GoogleAPIClientForRESTCore in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCB28D3F8C0000FB249 /* GoogleAPIClientForRESTCore */; };
+		EF6C8DCE28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCD28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 */; };
+		EF6C8DD028D3F8C0000FB249 /* GoogleAPIClientForREST_Speech in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCF28D3F8C0000FB249 /* GoogleAPIClientForREST_Speech */; };
+		EF6C8DD228D3F8C0000FB249 /* GoogleAPIClientForREST_Translate in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DD128D3F8C0000FB249 /* GoogleAPIClientForREST_Translate */; };
+		EF6C8DDB28D3FA25000FB249 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C8DDA28D3FA25000FB249 /* AudioController.swift */; };
 		F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA92D28D30B7600B77E4A /* AppDelegate.swift */; };
 		F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA92F28D30B7600B77E4A /* SceneDelegate.swift */; };
 		F05AA93228D30B7600B77E4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA93128D30B7600B77E4A /* ViewController.swift */; };
@@ -53,6 +58,7 @@
 		2289244BC57957B0E03CA89D /* Pods-ToyProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToyProject.release.xcconfig"; path = "Target Support Files/Pods-ToyProject/Pods-ToyProject.release.xcconfig"; sourceTree = "<group>"; };
 		3A439308B305145759E12955 /* Pods_ToyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D851FD8AED024BB375828A /* Pods-ToyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToyProject.debug.xcconfig"; path = "Target Support Files/Pods-ToyProject/Pods-ToyProject.debug.xcconfig"; sourceTree = "<group>"; };
+		EF6C8DDA28D3FA25000FB249 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		F05AA92A28D30B7600B77E4A /* ToyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05AA92D28D30B7600B77E4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F05AA92F28D30B7600B77E4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +106,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF6C8DD228D3F8C0000FB249 /* GoogleAPIClientForREST_Translate in Frameworks */,
 				F05AA99C28D3117F00B77E4A /* CoreXLSX in Frameworks */,
+				EF6C8DCC28D3F8C0000FB249 /* GoogleAPIClientForRESTCore in Frameworks */,
+				EF6C8DD028D3F8C0000FB249 /* GoogleAPIClientForREST_Speech in Frameworks */,
+				EF6C8DCE28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 in Frameworks */,
 				ABCF6EBC90A8E0E37B9E3D7A /* Pods_ToyProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +125,38 @@
 				2289244BC57957B0E03CA89D /* Pods-ToyProject.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EF6C8DD328D3F97A000FB249 /* GoogleCloud */ = {
+			isa = PBXGroup;
+			children = (
+				EF6C8DD928D3FA1E000FB249 /* Utils */,
+				EF6C8DD828D3F9AD000FB249 /* STT */,
+				EF6C8DD728D3F9AA000FB249 /* Translate */,
+			);
+			path = GoogleCloud;
+			sourceTree = "<group>";
+		};
+		EF6C8DD728D3F9AA000FB249 /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
+		EF6C8DD828D3F9AD000FB249 /* STT */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = STT;
+			sourceTree = "<group>";
+		};
+		EF6C8DD928D3FA1E000FB249 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EF6C8DDA28D3FA25000FB249 /* AudioController.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F05AA92128D30B7600B77E4A = {
@@ -143,6 +185,7 @@
 				F05AA94428D30FFB00B77E4A /* Module */,
 				F05AA95D28D3103B00B77E4A /* Scene */,
 				F05AA95828D3101B00B77E4A /* Resource */,
+				EF6C8DD328D3F97A000FB249 /* GoogleCloud */,
 				F05AA93B28D30B7700B77E4A /* Info.plist */,
 				F05AA99528D3108300B77E4A /* Model.xcdatamodeld */,
 			);
@@ -378,6 +421,10 @@
 			name = ToyProject;
 			packageProductDependencies = (
 				F05AA99B28D3117F00B77E4A /* CoreXLSX */,
+				EF6C8DCB28D3F8C0000FB249 /* GoogleAPIClientForRESTCore */,
+				EF6C8DCD28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 */,
+				EF6C8DCF28D3F8C0000FB249 /* GoogleAPIClientForREST_Speech */,
+				EF6C8DD128D3F8C0000FB249 /* GoogleAPIClientForREST_Translate */,
 			);
 			productName = ToyProject;
 			productReference = F05AA92A28D30B7600B77E4A /* ToyProject.app */;
@@ -409,6 +456,7 @@
 			mainGroup = F05AA92128D30B7600B77E4A;
 			packageReferences = (
 				F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */,
+				EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */,
 			);
 			productRefGroup = F05AA92B28D30B7600B77E4A /* Products */;
 			projectDirPath = "";
@@ -521,6 +569,7 @@
 				F05AA97F28D3104D00B77E4A /* WeatherMarkerView.swift in Sources */,
 				F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */,
 				F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */,
+				EF6C8DDB28D3FA25000FB249 /* AudioController.swift in Sources */,
 				F05AA98128D3104D00B77E4A /* SearchBarView+TextView.swift in Sources */,
 				F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */,
 				F05AA95128D3100A00B77E4A /* Logger.swift in Sources */,
@@ -744,6 +793,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/google-api-objectivec-client-for-rest.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
 		F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CoreOffice/CoreXLSX.git";
@@ -755,6 +812,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EF6C8DCB28D3F8C0000FB249 /* GoogleAPIClientForRESTCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
+			productName = GoogleAPIClientForRESTCore;
+		};
+		EF6C8DCD28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
+			productName = GoogleAPIClientForREST_Oauth2;
+		};
+		EF6C8DCF28D3F8C0000FB249 /* GoogleAPIClientForREST_Speech */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
+			productName = GoogleAPIClientForREST_Speech;
+		};
+		EF6C8DD128D3F8C0000FB249 /* GoogleAPIClientForREST_Translate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
+			productName = GoogleAPIClientForREST_Translate;
+		};
 		F05AA99B28D3117F00B77E4A /* CoreXLSX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */;
