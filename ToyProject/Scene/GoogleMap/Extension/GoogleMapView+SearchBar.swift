@@ -28,9 +28,19 @@ extension GoogleMapViewController {
             .bind { [weak self] selectedLocal in
                 guard let self = self else { return }
                 log.d(selectedLocal.localFullString)
-                self.viewModel.getWeatherInfoFromServer(selectedLocal) { [weak self] info in
-                    guard let self = self else { return }
-                    self.weatherInfo.onNext((info, true))
+                
+                let loading = LoadingViewController.shared
+                loading.loadingViewSetting(view: self.view, delay: .seconds(1))
+                loading.startLoading {
+                    self.viewModel.getWeatherInfoFromServer(selectedLocal) { [weak self] info in
+                        guard let self = self else { return }
+                        guard let info = info else {
+                            Toast.show("날씨정보를 불러올 수 없습니다")
+                            return
+                        }
+                        self.weatherInfo.onNext((info, true))
+                        loading.endLoading()
+                    }
                 }
             }
             .disposed(by: disposeBag)

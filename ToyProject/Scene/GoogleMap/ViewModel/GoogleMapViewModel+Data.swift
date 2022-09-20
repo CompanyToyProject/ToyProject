@@ -21,7 +21,10 @@ extension GoogleMapViewModel {
         func getData() {
             getWeatherInfoFromServer(fetchResult[index]) { [weak self] info in
                 guard let self = self else { return }
-                items.append(info)
+                if let info = info  {
+                    items.append(info)
+                }
+                
                 index += 1
                 if index >= fetchResult.count {
                     completion(items)
@@ -29,6 +32,7 @@ extension GoogleMapViewModel {
                 } else {
                     getData()
                 }
+                
             }
         }
     
@@ -39,7 +43,7 @@ extension GoogleMapViewModel {
     func getWeatherInfoFromServer(_ localCoordinate: LocalCoordinate,
                                   _baseDate: String? = nil,
                                   _baseTime: String? = nil,
-                                  completion: @escaping ((WeatherInfo) -> Void)) {
+                                  completion: @escaping ((WeatherInfo?) -> Void)) {
         
         var baseHour = 0
         var baseDate = ""
@@ -81,6 +85,7 @@ extension GoogleMapViewModel {
         
         HttpManager.requestPlain(path, method: .get) { (_data) in
             guard let result = _data else {
+                completion(nil)
                 log.d("NO DATA")
                 return
             }
@@ -119,6 +124,7 @@ extension GoogleMapViewModel {
                 
             }
             else {
+                completion(nil)
                 log.d("[ERROR] resultCode: \(resultcode), msg: \(data["header"]["resultMsg"].stringValue)")
             }
         }

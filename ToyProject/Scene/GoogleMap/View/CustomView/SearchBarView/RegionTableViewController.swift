@@ -40,7 +40,7 @@ class RegionTableViewController: NSObject {
             if isFilltering {
                 let list = self.arr.filter { $0.localFullString.contains(text)}
                 if list.count == 0 {
-                    // Toast "검색된 지역이 없습니다."
+                    Toast.show("검색된 지역이 없습니다.")
                     log.d("검색된 지역이 없습니다.")
                 }
                 self.filterArr.onNext(list)
@@ -94,6 +94,9 @@ extension RegionTableViewController: UITableViewDelegate {
         
         
         filterArr
+            .do(onNext: { _ in
+                self.tableView.contentOffset.y = 0
+            })
             .bind(to: self.tableView.rx.items) { (tableView: UITableView, index:Int, element: LocalCoordinate) -> UITableViewCell in
                 let cell = UITableViewCell()
                 cell.textLabel?.text = element.localFullString
@@ -101,6 +104,7 @@ extension RegionTableViewController: UITableViewDelegate {
                 return cell
             }
             .disposed(by: disposeBag)
+        
         
     }
 }

@@ -24,7 +24,9 @@ extension SearchBarView: UITextViewDelegate {
         self.textView.rx.didBeginEditing
             .bind(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.tableViewController?.updateText.onNext((self.textView.text, self.textView.hasText))
+                if !self.textView.hasText {
+                    self.tableViewController?.updateText.onNext((self.textView.text, self.textView.hasText))
+                }
             })
             .disposed(by: disposeBag)
         

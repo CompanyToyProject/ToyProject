@@ -52,6 +52,10 @@
 		F069EC8728D434D300A89083 /* GoogleMapView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */; };
 		F069EC8928D4380D00A89083 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8828D4380D00A89083 /* Animation.swift */; };
 		F069EC8B28D43AF900A89083 /* GoogleMapView+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */; };
+		F0C4903828D94CF600D957EF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903728D94CF600D957EF /* LoadingView.swift */; };
+		F0C4903B28D9536B00D957EF /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903A28D9536B00D957EF /* LoadingViewController.swift */; };
+		F0C4903E28D9852E00D957EF /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903D28D9852E00D957EF /* Toast.swift */; };
+		F0C4904128D9858000D957EF /* NotifyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4904028D9858000D957EF /* NotifyDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +103,10 @@
 		F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+Keyboard.swift"; sourceTree = "<group>"; };
 		F069EC8828D4380D00A89083 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+SearchBar.swift"; sourceTree = "<group>"; };
+		F0C4903728D94CF600D957EF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F0C4903A28D9536B00D957EF /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		F0C4903D28D9852E00D957EF /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		F0C4904028D9858000D957EF /* NotifyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +232,7 @@
 		F05AA94428D30FFB00B77E4A /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				F0C4903F28D9856600D957EF /* Notify */,
 				F05AA94728D3100900B77E4A /* CoreData */,
 				F05AA94928D3100900B77E4A /* HTTP */,
 				F05AA94528D3100900B77E4A /* Logger */,
@@ -367,6 +376,7 @@
 			children = (
 				F05AA96E28D3104D00B77E4A /* WeatherMarkerView.swift */,
 				F05AA96F28D3104D00B77E4A /* WeatherMarkerInfoView.swift */,
+				F0C4903928D9535900D957EF /* LoadingView */,
 				F05AA97028D3104D00B77E4A /* SearchBarView */,
 			);
 			path = CustomView;
@@ -390,6 +400,32 @@
 				F05AA99128D3107000B77E4A /* LocalCoordinate+CoreDataProperties.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F0C4903928D9535900D957EF /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				F0C4903728D94CF600D957EF /* LoadingView.swift */,
+				F0C4903A28D9536B00D957EF /* LoadingViewController.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		F0C4903C28D9851E00D957EF /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				F0C4903D28D9852E00D957EF /* Toast.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		F0C4903F28D9856600D957EF /* Notify */ = {
+			isa = PBXGroup;
+			children = (
+				F0C4904028D9858000D957EF /* NotifyDelegate.swift */,
+				F0C4903C28D9851E00D957EF /* Toast */,
+			);
+			path = Notify;
 			sourceTree = "<group>";
 		};
 		F5F72CA49790E9CBD706064E /* Frameworks */ = {
@@ -547,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */,
+				F0C4904128D9858000D957EF /* NotifyDelegate.swift in Sources */,
 				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,
 				F05AA97C28D3104D00B77E4A /* MeteorologicalItem.swift in Sources */,
 				F05AA97928D3104D00B77E4A /* GoogleMapView+MapFunc.swift in Sources */,
@@ -557,6 +594,7 @@
 				F069EC8B28D43AF900A89083 /* GoogleMapView+SearchBar.swift in Sources */,
 				F05AA97628D3104D00B77E4A /* GoogleMapViewModel.swift in Sources */,
 				F069EC8728D434D300A89083 /* GoogleMapView+Keyboard.swift in Sources */,
+				F0C4903E28D9852E00D957EF /* Toast.swift in Sources */,
 				F05AA95528D3100A00B77E4A /* String+.swift in Sources */,
 				F05AA99428D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift in Sources */,
 				F05AA98428D3104D00B77E4A /* GoogleMapViewController.swift in Sources */,
@@ -569,6 +607,7 @@
 				F05AA97F28D3104D00B77E4A /* WeatherMarkerView.swift in Sources */,
 				F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */,
 				F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */,
+				F0C4903B28D9536B00D957EF /* LoadingViewController.swift in Sources */,
 				EF6C8DDB28D3FA25000FB249 /* AudioController.swift in Sources */,
 				F05AA98128D3104D00B77E4A /* SearchBarView+TextView.swift in Sources */,
 				F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */,
@@ -579,6 +618,7 @@
 				F05AA98328D3104D00B77E4A /* RegionTableViewController.swift in Sources */,
 				F069EC8328D3F12E00A89083 /* SearchBarView+Bind.swift in Sources */,
 				F05AA97828D3104D00B77E4A /* GoogleMapView+DataFunc.swift in Sources */,
+				F0C4903828D94CF600D957EF /* LoadingView.swift in Sources */,
 				F05AA95628D3100A00B77E4A /* GlobalFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

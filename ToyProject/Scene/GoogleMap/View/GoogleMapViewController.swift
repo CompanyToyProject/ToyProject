@@ -34,8 +34,6 @@ class GoogleMapViewController: UIViewController {
     
     var selectedLocal: LocalCoordinate?
     
-    var container: NSPersistentContainer!
-    
     var viewModel: GoogleMapViewModel!
     var weatherInfo: PublishSubject<(WeatherInfo, Bool)>!
     
@@ -54,31 +52,23 @@ class GoogleMapViewController: UIViewController {
         setNavigationBar()
         setMapView()
         
-        self.container = PersistenceManager.shared.persistentContainer
-        getLocalCoordinateDataFromXlsx()
-        
         setInput()
         bind()
         
-//        let predicate = NSPredicate(format: "level1 != %@ && level2 == %@", "", "")
-        let predicate = NSPredicate(format: "level3 == %@", "운남동")
-        self.viewModel.getWeatherInfo(predicate: predicate) { info in
-            log.d("info.count: \(info.count)")
-        }
-        
         setSearchBarView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        if let selectedLocal = selectedLocal {
-            log.d(selectedLocal.toString())
-            self.viewModel.getWeatherInfoFromServer(selectedLocal) { [weak self] info in
-                guard let self = self else { return }
-                self.weatherInfo.onNext((info, true))
+        let loading = LoadingViewController.shared
+        loading.loadingViewSetting(view: self.view, delay: .seconds(2))
+        loading.startLoading {
+            let predicate = NSPredicate(format: "level1 == %@ && level2 != %@ && level3 == %@", "광주광역시", "", "")
+            self.viewModel.getWeatherInfo(predicate: predicate) { info in
+                loading.endLoading()
+                if info.count < 1 {
+                    Toast.show("날씨정보를 불러올 수 없습니다")
+                }
             }
         }
+        
     }
     
     func setInput() {
