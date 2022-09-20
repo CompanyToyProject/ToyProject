@@ -23,6 +23,7 @@ extension UIView {
             self.alpha = 0
         }, completion: { _ in
             self.isHidden = true
+            completion?(true)
         })
     }
     
@@ -32,6 +33,7 @@ extension UIView {
             self.transform = transform
         }, completion: { _ in
             self.isHidden = false
+            completion?(true)
         })
     }
 }

@@ -9,25 +9,69 @@ import Foundation
 import UIKit
 
 extension SearchBarView: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        placeHolderLabel.isHidden = true
-        tableViewController?.updateText.onNext((textView.text, textView.hasText))
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            placeHolderLabel.isHidden = false
-        }
-    }
-    
-    func textViewDidChange(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            tableViewController?.updateText.onNext((textView.text, false))
-        }
-    }
     
     func endEditing() {
         textView.endEditing(true)
-        textViewDidEndEditing(textView)
+    }
+    
+    func setTextView() {
+        
+        self.textView.returnKeyType = .done
+        
+        self.textView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        self.textView.rx.didBeginEditing
+            .bind(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.tableViewController?.updateText.onNext((self.textView.text, self.textView.hasText))
+            })
+            .disposed(by: disposeBag)
+        
+        self.textView.rx.didEndEditing
+            .bind(onNext: { [weak self] in
+                guard let self = self else { return }
+                if self.textView.text.isEmpty {
+                    self.placeHolderLabel.isHidden = false
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        self.textView.rx.didChange
+            .bind(onNext: { [weak self] in
+                guard let self = self else { return }
+                if self.textView.text.isEmpty {
+                    self.tableViewController?.updateText.onNext((self.textView.text, false))
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        self.textView.rx.text.orEmpty
+            .scan("", accumulator: { [weak self] previous, new -> String in
+                guard let self = self else { return "" }
+                if new.contains("\n") {
+                    if !previous.isEmpty {
+                        self.tableViewController?.updateText.onNext((previous, true))
+                    }
+                    return previous
+                }
+                return new
+            })
+            .bind(to: textView.rx.text)
+            .disposed(by: disposeBag)
+        
+        self.textView.rx.text.orEmpty
+            .distinctUntilChanged()
+            .bind(onNext: { [weak self] text in
+                guard let self = self else { return }
+                if text.isEmpty {
+                    self.tableViewController?.updateText.onNext((text, false))
+                    self.placeHolderLabel.isHidden = false
+                } else {
+                    self.placeHolderLabel.isHidden = true
+                }
+            })
+            .disposed(by: disposeBag)
+        
     }
 }

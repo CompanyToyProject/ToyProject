@@ -39,11 +39,13 @@ extension GoogleMapViewController {
     func hideSearchBar(_ isHidden: Bool = true) {
         if isHidden {
             let transform = CGAffineTransform(translationX: 0, y: -50)
-            self.searchBarView.animHide(transform: transform)
-            self.navigationItem.rightBarButtonItem = rightBarButton
-            self.searchBarView.tableViewZeroHeight()
+            self.searchBarView.animHide(transform: transform) { _ in
+                self.searchBarView.textView.text = ""
+                self.navigationItem.rightBarButtonItem = self.rightBarButton
+            }
         }
         else {
+            self.searchBarView.tableViewZeroHeight()
             self.searchBarView.animShow()
             self.navigationItem.setRightBarButton(nil, animated: true)
         }

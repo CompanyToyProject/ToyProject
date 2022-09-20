@@ -10,8 +10,9 @@ import UIKit
 import SnapKit
 import Then
 import RxSwift
+import Speech
 
-class SearchBarView: UIView {
+class SearchBarView: UIView, SFSpeechRecognizerDelegate {
     
     var tableView = UITableView()
     var tableViewController: RegionTableViewController?
@@ -40,6 +41,8 @@ class SearchBarView: UIView {
         $0.textColor = .black
         $0.textAlignment = .left
         $0.font = .systemFont(ofSize: 15)
+        $0.isScrollEnabled = false
+        $0.textContainer.lineFragmentPadding = 0
         $0.textContainerInset = UIEdgeInsets(top: 1.5, left: 0, bottom: 1.5, right: 0)
     }
     
@@ -50,6 +53,12 @@ class SearchBarView: UIView {
     let searchBtn = UIButton().then {
         $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
     }
+    
+    let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko-KR")) // 인식할 언어 설정
+    var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?  // 음성인식 요청 처리
+    var recognitionTask: SFSpeechRecognitionTask?   // 인식 요청 결과 제공
+    let audioEngine = AVAudioEngine()   // 순수 소리만 인식하는 오디오 엔진
+    var STTText = PublishSubject<String>()
     
     var selectItem = PublishSubject<LocalCoordinate>()
     var disposeBag = DisposeBag()
@@ -67,7 +76,7 @@ class SearchBarView: UIView {
         setUI()
         setConstraints()
         
-        textView.delegate = self
+        setTextView()
         
         setTableViewController()
         bind()
@@ -79,6 +88,10 @@ class SearchBarView: UIView {
     
     func setTableViewController() {
         tableViewController = RegionTableViewController(tableView: self.tableView)
+    }
+    
+    private func setSTT() {
+        speechRecognizer?.delegate = self
     }
     
     private func setUI() {
@@ -141,9 +154,7 @@ class SearchBarView: UIView {
     }
     
     func tableViewZeroHeight() {
-        tableView.snp.updateConstraints { make in
-            make.height.equalTo(0)
-        }
+        self.tableViewController?.tableViewHeight.onNext(0)
     }
     
     deinit {

@@ -18,7 +18,7 @@ import RxGesture
 class GoogleMapViewController: UIViewController {
     @IBOutlet weak var mapViewContainer: UIView!
     var rightBarButton: UIBarButtonItem!
-    var leftBarButton: UIBarButtonItem!
+    var leftBarButton: UIButton!
     var searchBarView: SearchBarView!
     
     var locationManager: CLLocationManager!
@@ -60,7 +60,8 @@ class GoogleMapViewController: UIViewController {
         setInput()
         bind()
         
-        let predicate = NSPredicate(format: "level1 == %@ && level2 != %@ && level3 == %@", "광주광역시", "", "")
+//        let predicate = NSPredicate(format: "level1 != %@ && level2 == %@", "", "")
+        let predicate = NSPredicate(format: "level3 == %@", "운남동")
         self.viewModel.getWeatherInfo(predicate: predicate) { info in
             log.d("info.count: \(info.count)")
         }
@@ -112,8 +113,11 @@ class GoogleMapViewController: UIViewController {
         
         rightBarButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: nil, action: nil)
         
-        leftBarButton = UIBarButtonItem(title: "BACK", style: .plain, target: nil, action: nil)
-        self.navigationItem.leftBarButtonItem = leftBarButton
+        leftBarButton = UIButton(type: .system)
+        leftBarButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        leftBarButton.setTitle("BACK", for: .normal)
+        let leftButton = UIBarButtonItem(customView: leftBarButton)
+        self.navigationItem.leftBarButtonItem = leftButton
     }
     
     func didOut() {

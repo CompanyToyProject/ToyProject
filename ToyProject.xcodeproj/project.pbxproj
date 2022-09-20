@@ -323,8 +323,8 @@
 		F05AA95F28D3104D00B77E4A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F05AA96028D3104D00B77E4A /* GoogleMapViewModel+Data.swift */,
 				F05AA96128D3104D00B77E4A /* GoogleMapViewModel.swift */,
+				F05AA96028D3104D00B77E4A /* GoogleMapViewModel+Data.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -719,7 +719,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GP9D94CZ57;
+				DEVELOPMENT_TEAM = CBM8C92C3U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToyProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -748,7 +748,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GP9D94CZ57;
+				DEVELOPMENT_TEAM = CBM8C92C3U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToyProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

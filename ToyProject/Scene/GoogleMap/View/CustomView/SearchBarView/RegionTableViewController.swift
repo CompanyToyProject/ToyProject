@@ -38,13 +38,10 @@ class RegionTableViewController: NSObject {
         updateText.bind { [weak self] text, isFilltering in
             guard let self = self else { return }
             if isFilltering {
-                var list = self.arr.filter { $0.localFullString.contains(text)}
+                let list = self.arr.filter { $0.localFullString.contains(text)}
                 if list.count == 0 {
-                    let emptyItem = LocalCoordinate(context: PersistenceManager.shared.context)
-                    emptyItem.level1 = "검색된 지역이 없습니다."
-                    emptyItem.level2 = ""
-                    emptyItem.level3 = ""
-                    list.append(emptyItem)
+                    // Toast "검색된 지역이 없습니다."
+                    log.d("검색된 지역이 없습니다.")
                 }
                 self.filterArr.onNext(list)
                 
@@ -77,8 +74,6 @@ extension RegionTableViewController: UITableViewDelegate {
     
     func setTableView() {
         self.tableView.rx.setDelegate(self).disposed(by: disposeBag)
-        
-        log.d("tableViewDelegate: \(tableView.delegate)")
         
         self.tableView.rx.itemSelected
             .map({ indexPath -> LocalCoordinate? in

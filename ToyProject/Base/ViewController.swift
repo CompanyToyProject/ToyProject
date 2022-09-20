@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "GoogleMapView") as? GoogleMapViewController else {
             return
         }
-        getNavigationController().pushViewController(vc, animated: true)    }
+        getNavigationController().pushViewController(vc, animated: true)
+    }
 }
 
 
