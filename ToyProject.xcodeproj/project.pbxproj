@@ -13,6 +13,22 @@
 		EF6C8DD028D3F8C0000FB249 /* GoogleAPIClientForREST_Speech in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCF28D3F8C0000FB249 /* GoogleAPIClientForREST_Speech */; };
 		EF6C8DD228D3F8C0000FB249 /* GoogleAPIClientForREST_Translate in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DD128D3F8C0000FB249 /* GoogleAPIClientForREST_Translate */; };
 		EF6C8DDB28D3FA25000FB249 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C8DDA28D3FA25000FB249 /* AudioController.swift */; };
+		EFB51A9628D4558600A26C9B /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9528D4558600A26C9B /* CGRPCZlib */; };
+		EFB51A9828D4558600A26C9B /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9728D4558600A26C9B /* GRPC */; };
+		EFB51A9A28D4558600A26C9B /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */; };
+		EFB51A9C28D455BA00A26C9B /* GoogleCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB51A9B28D455B900A26C9B /* GoogleCloud.swift */; };
+		EFD595C628D7ECBE003BAA25 /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595C528D7ECBE003BAA25 /* TranslatorView.swift */; };
+		EFD595C828D7ECC6003BAA25 /* TranslatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595C728D7ECC6003BAA25 /* TranslatorViewModel.swift */; };
+		EFD595CA28D7ECCB003BAA25 /* TranslatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595C928D7ECCB003BAA25 /* TranslatorModel.swift */; };
+		EFD595CC28D7ED2A003BAA25 /* TranslatorModel+color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595CB28D7ED2A003BAA25 /* TranslatorModel+color.swift */; };
+		EFD595CE28D7FBF3003BAA25 /* TranslatorModel+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595CD28D7FBF3003BAA25 /* TranslatorModel+image.swift */; };
+		EFD595D428D831FE003BAA25 /* TranslatorView+keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595D328D831FE003BAA25 /* TranslatorView+keyboard.swift */; };
+		EFD595DA28D93A38003BAA25 /* TranslatorViewModel++.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595D928D93A38003BAA25 /* TranslatorViewModel++.swift */; };
+		EFD595DC28D93A65003BAA25 /* Papago.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595DB28D93A65003BAA25 /* Papago.swift */; };
+		EFD5962A28D97B56003BAA25 /* PapagoLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5962928D97B56003BAA25 /* PapagoLanguageView.swift */; };
+		EFD5962C28D97CED003BAA25 /* PapagoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5962B28D97CED003BAA25 /* PapagoModel.swift */; };
+		EFD5962F28D97D0C003BAA25 /* PapagoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5962E28D97D0C003BAA25 /* PapagoCell.swift */; };
+		EFD5963328D9A58C003BAA25 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5963228D9A58C003BAA25 /* extensions.swift */; };
 		F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA92D28D30B7600B77E4A /* AppDelegate.swift */; };
 		F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA92F28D30B7600B77E4A /* SceneDelegate.swift */; };
 		F05AA93228D30B7600B77E4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA93128D30B7600B77E4A /* ViewController.swift */; };
@@ -59,6 +75,19 @@
 		3A439308B305145759E12955 /* Pods_ToyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D851FD8AED024BB375828A /* Pods-ToyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToyProject.debug.xcconfig"; path = "Target Support Files/Pods-ToyProject/Pods-ToyProject.debug.xcconfig"; sourceTree = "<group>"; };
 		EF6C8DDA28D3FA25000FB249 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		EFB51A9B28D455B900A26C9B /* GoogleCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloud.swift; sourceTree = "<group>"; };
+		EFD595C528D7ECBE003BAA25 /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
+		EFD595C728D7ECC6003BAA25 /* TranslatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewModel.swift; sourceTree = "<group>"; };
+		EFD595C928D7ECCB003BAA25 /* TranslatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorModel.swift; sourceTree = "<group>"; };
+		EFD595CB28D7ED2A003BAA25 /* TranslatorModel+color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorModel+color.swift"; sourceTree = "<group>"; };
+		EFD595CD28D7FBF3003BAA25 /* TranslatorModel+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorModel+image.swift"; sourceTree = "<group>"; };
+		EFD595D328D831FE003BAA25 /* TranslatorView+keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorView+keyboard.swift"; sourceTree = "<group>"; };
+		EFD595D928D93A38003BAA25 /* TranslatorViewModel++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorViewModel++.swift"; sourceTree = "<group>"; };
+		EFD595DB28D93A65003BAA25 /* Papago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Papago.swift; sourceTree = "<group>"; };
+		EFD5962928D97B56003BAA25 /* PapagoLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoLanguageView.swift; sourceTree = "<group>"; };
+		EFD5962B28D97CED003BAA25 /* PapagoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoModel.swift; sourceTree = "<group>"; };
+		EFD5962E28D97D0C003BAA25 /* PapagoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoCell.swift; sourceTree = "<group>"; };
+		EFD5963228D9A58C003BAA25 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		F05AA92A28D30B7600B77E4A /* ToyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05AA92D28D30B7600B77E4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F05AA92F28D30B7600B77E4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,9 +135,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB51A9828D4558600A26C9B /* GRPC in Frameworks */,
 				EF6C8DD228D3F8C0000FB249 /* GoogleAPIClientForREST_Translate in Frameworks */,
 				F05AA99C28D3117F00B77E4A /* CoreXLSX in Frameworks */,
+				EFB51A9628D4558600A26C9B /* CGRPCZlib in Frameworks */,
 				EF6C8DCC28D3F8C0000FB249 /* GoogleAPIClientForRESTCore in Frameworks */,
+				EFB51A9A28D4558600A26C9B /* protoc-gen-grpc-swift in Frameworks */,
 				EF6C8DD028D3F8C0000FB249 /* GoogleAPIClientForREST_Speech in Frameworks */,
 				EF6C8DCE28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 in Frameworks */,
 				ABCF6EBC90A8E0E37B9E3D7A /* Pods_ToyProject.framework in Frameworks */,
@@ -127,36 +159,89 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		EF6C8DD328D3F97A000FB249 /* GoogleCloud */ = {
+		EF6C8DD328D3F97A000FB249 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
+				EFD5962828D97B47003BAA25 /* Papago */,
 				EF6C8DD928D3FA1E000FB249 /* Utils */,
-				EF6C8DD828D3F9AD000FB249 /* STT */,
-				EF6C8DD728D3F9AA000FB249 /* Translate */,
+				EF6C8DD828D3F9AD000FB249 /* SpeeachToText */,
+				EF6C8DD728D3F9AA000FB249 /* Translator */,
 			);
-			path = GoogleCloud;
+			path = Translator;
 			sourceTree = "<group>";
 		};
-		EF6C8DD728D3F9AA000FB249 /* Translate */ = {
+		EF6C8DD728D3F9AA000FB249 /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				EFD595C028D7EC21003BAA25 /* Model */,
+				EFD595BF28D7EC1F003BAA25 /* ViewModel */,
+				EFD595BE28D7EC1D003BAA25 /* View */,
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
+		EF6C8DD828D3F9AD000FB249 /* SpeeachToText */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Translate;
-			sourceTree = "<group>";
-		};
-		EF6C8DD828D3F9AD000FB249 /* STT */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = STT;
+			path = SpeeachToText;
 			sourceTree = "<group>";
 		};
 		EF6C8DD928D3FA1E000FB249 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				EF6C8DDA28D3FA25000FB249 /* AudioController.swift */,
+				EFB51A9B28D455B900A26C9B /* GoogleCloud.swift */,
+				EFD5963228D9A58C003BAA25 /* extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EFD595BE28D7EC1D003BAA25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFD595C528D7ECBE003BAA25 /* TranslatorView.swift */,
+				EFD595D328D831FE003BAA25 /* TranslatorView+keyboard.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFD595BF28D7EC1F003BAA25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFD595C728D7ECC6003BAA25 /* TranslatorViewModel.swift */,
+				EFD595D928D93A38003BAA25 /* TranslatorViewModel++.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EFD595C028D7EC21003BAA25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFD595C928D7ECCB003BAA25 /* TranslatorModel.swift */,
+				EFD595CB28D7ED2A003BAA25 /* TranslatorModel+color.swift */,
+				EFD595CD28D7FBF3003BAA25 /* TranslatorModel+image.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFD5962828D97B47003BAA25 /* Papago */ = {
+			isa = PBXGroup;
+			children = (
+				EFD595DB28D93A65003BAA25 /* Papago.swift */,
+				EFD5962B28D97CED003BAA25 /* PapagoModel.swift */,
+				EFD5962928D97B56003BAA25 /* PapagoLanguageView.swift */,
+				EFD5962D28D97CFE003BAA25 /* cell */,
+			);
+			path = Papago;
+			sourceTree = "<group>";
+		};
+		EFD5962D28D97CFE003BAA25 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				EFD5962E28D97D0C003BAA25 /* PapagoCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		F05AA92128D30B7600B77E4A = {
@@ -187,7 +272,7 @@
 				F05AA94428D30FFB00B77E4A /* Module */,
 				F05AA95D28D3103B00B77E4A /* Scene */,
 				F05AA95828D3101B00B77E4A /* Resource */,
-				EF6C8DD328D3F97A000FB249 /* GoogleCloud */,
+				EF6C8DD328D3F97A000FB249 /* Translator */,
 				F05AA93B28D30B7700B77E4A /* Info.plist */,
 				F05AA99528D3108300B77E4A /* Model.xcdatamodeld */,
 			);
@@ -449,6 +534,9 @@
 				EF6C8DCD28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 */,
 				EF6C8DCF28D3F8C0000FB249 /* GoogleAPIClientForREST_Speech */,
 				EF6C8DD128D3F8C0000FB249 /* GoogleAPIClientForREST_Translate */,
+				EFB51A9528D4558600A26C9B /* CGRPCZlib */,
+				EFB51A9728D4558600A26C9B /* GRPC */,
+				EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */,
 			);
 			productName = ToyProject;
 			productReference = F05AA92A28D30B7600B77E4A /* ToyProject.app */;
@@ -481,6 +569,7 @@
 			packageReferences = (
 				F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */,
 				EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */,
+				EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */,
 			);
 			productRefGroup = F05AA92B28D30B7600B77E4A /* Products */;
 			projectDirPath = "";
@@ -575,33 +664,46 @@
 				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,
 				F05AA97C28D3104D00B77E4A /* MeteorologicalItem.swift in Sources */,
 				F05AA97928D3104D00B77E4A /* GoogleMapView+MapFunc.swift in Sources */,
+				EFD595C628D7ECBE003BAA25 /* TranslatorView.swift in Sources */,
+				EFD5962F28D97D0C003BAA25 /* PapagoCell.swift in Sources */,
+				EFB51A9C28D455BA00A26C9B /* GoogleCloud.swift in Sources */,
 				F05AA98028D3104D00B77E4A /* WeatherMarkerInfoView.swift in Sources */,
 				F05AA93228D30B7600B77E4A /* ViewController.swift in Sources */,
 				F05AA98228D3104D00B77E4A /* SearchBarView.swift in Sources */,
 				F05AA97B28D3104D00B77E4A /* GoogleMapView+MapDelegate.swift in Sources */,
 				F05AA97628D3104D00B77E4A /* GoogleMapViewModel.swift in Sources */,
 				F05AA95528D3100A00B77E4A /* String+.swift in Sources */,
+				EFD595C828D7ECC6003BAA25 /* TranslatorViewModel.swift in Sources */,
 				F05AA98F28D3105600B77E4A /* SearchLocalViewController.swift in Sources */,
 				F05AA99428D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift in Sources */,
+				EFD595DA28D93A38003BAA25 /* TranslatorViewModel++.swift in Sources */,
+				EFD595CE28D7FBF3003BAA25 /* TranslatorModel+image.swift in Sources */,
+				EFD5962C28D97CED003BAA25 /* PapagoModel.swift in Sources */,
 				F05AA98428D3104D00B77E4A /* GoogleMapViewController.swift in Sources */,
 				F05AA95328D3100A00B77E4A /* HTTPManager.swift in Sources */,
 				F05AA98C28D3105600B77E4A /* SearchLocal+SearchResultsUpdating.swift in Sources */,
 				F05AA97528D3104D00B77E4A /* GoogleMapViewModel+Data.swift in Sources */,
+				EFD595D428D831FE003BAA25 /* TranslatorView+keyboard.swift in Sources */,
 				F05AA9A028D3120E00B77E4A /* ViewModelProtocol.swift in Sources */,
 				F05AA95228D3100A00B77E4A /* PersistenceManager.swift in Sources */,
+				EFD595CA28D7ECCB003BAA25 /* TranslatorModel.swift in Sources */,
 				F05AA99328D3107000B77E4A /* LocalCoordinate+CoreDataProperties.swift in Sources */,
 				F05AA97F28D3104D00B77E4A /* WeatherMarkerView.swift in Sources */,
+				EFD595DC28D93A65003BAA25 /* Papago.swift in Sources */,
 				F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */,
 				F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */,
 				EF6C8DDB28D3FA25000FB249 /* AudioController.swift in Sources */,
+				EFD595CC28D7ED2A003BAA25 /* TranslatorModel+color.swift in Sources */,
 				F05AA98128D3104D00B77E4A /* SearchBarView+TextView.swift in Sources */,
 				F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */,
+				EFD5962A28D97B56003BAA25 /* PapagoLanguageView.swift in Sources */,
 				F05AA95128D3100A00B77E4A /* Logger.swift in Sources */,
 				F05AA95728D3100A00B77E4A /* OpenXlsx.swift in Sources */,
 				F05AA97728D3104D00B77E4A /* GoogleMapView+LocationManager.swift in Sources */,
 				F05AA97D28D3104D00B77E4A /* WeatherInfo.swift in Sources */,
 				F05AA98328D3104D00B77E4A /* RegionTableViewController.swift in Sources */,
 				F05AA97828D3104D00B77E4A /* GoogleMapView+DataFunc.swift in Sources */,
+				EFD5963328D9A58C003BAA25 /* extensions.swift in Sources */,
 				F05AA95628D3100A00B77E4A /* GlobalFunctions.swift in Sources */,
 				F05AA98D28D3105600B77E4A /* SearchLocal+TableView.swift in Sources */,
 			);
@@ -825,6 +927,14 @@
 				minimumVersion = 2.0.1;
 			};
 		};
+		EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
 		F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CoreOffice/CoreXLSX.git";
@@ -855,6 +965,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
 			productName = GoogleAPIClientForREST_Translate;
+		};
+		EFB51A9528D4558600A26C9B /* CGRPCZlib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = CGRPCZlib;
+		};
+		EFB51A9728D4558600A26C9B /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+		EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = "protoc-gen-grpc-swift";
 		};
 		F05AA99B28D3117F00B77E4A /* CoreXLSX */ = {
 			isa = XCSwiftPackageProductDependency;
