@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="LocalCoordinate" representedClassName="LocalCoordinate" syncable="YES">
+    <entity name="LocalCoordinate" representedClassName=".LocalCoordinate" syncable="YES">
         <attribute name="coordX" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="coordY" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -8,8 +8,19 @@
         <attribute name="level2" optional="YES" attributeType="String"/>
         <attribute name="level3" optional="YES" attributeType="String"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="weatherInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weather" inverseName="localCoordinate" inverseEntity="Weather"/>
+    </entity>
+    <entity name="Weather" representedClassName=".WeatherData" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="pty" optional="YES" attributeType="String"/>
+        <attribute name="reh" optional="YES" attributeType="String"/>
+        <attribute name="rn1" optional="YES" attributeType="String"/>
+        <attribute name="sky" optional="YES" attributeType="String"/>
+        <attribute name="t1h" optional="YES" attributeType="String"/>
+        <relationship name="localCoordinate" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LocalCoordinate" inverseName="weatherInfo" inverseEntity="LocalCoordinate"/>
     </entity>
     <elements>
-        <element name="LocalCoordinate" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="LocalCoordinate" positionX="-77.1019287109375" positionY="-32.83355712890625" width="128" height="163"/>
+        <element name="Weather" positionX="133.2069091796875" positionY="-8.791717529296875" width="128" height="148"/>
     </elements>
 </model>
