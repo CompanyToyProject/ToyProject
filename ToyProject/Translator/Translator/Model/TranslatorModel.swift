@@ -27,4 +27,6 @@ class TranslatorModel {
     var sourceLanguageCode: BehaviorRelay<String> = BehaviorRelay(value: "언어 감지") // source languageCode ex) ko , en , jp ...
     var targetLanguageCode: BehaviorRelay<String> = BehaviorRelay(value: "en")
     
+    var voiceStatus: BehaviorRelay<Status> = BehaviorRelay(value: .off)     // 음성 status
+//    var voiceText: BehaviorRelay<String> = BehaviorRelay(value: "")         // 음성 Text
 }

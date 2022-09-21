@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyBIoYwtgXnsAAMG5CVzifJ6p4VKUfjh5bk")
         
         return true
-        return true
     }
 
     // MARK: UISceneSession Lifecycle

@@ -160,7 +160,15 @@ class TranslatorView: UIView {
     }
     
     var disposeBag = DisposeBag()
-    var viewModel: TranslatorViewModel?
+    var viewModel: TranslatorViewModel!
+    
+    var timer: Timer!
+    
+    let audioEngine: AVAudioEngine? = AVAudioEngine()   // audio stream - > 마이크가 오디오를 수신할 떄 업데이트를 제공하는 역할. 순수 소리만을 인식하는 오디오 엔진 객체다.
+    var speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()    // 음성 인식을 수행하는 역할. 음성 인식에 실패하면 nil을 반환할 수 있으므로 옵셔널로 만드는 것이 적절하다.
+    var request : SFSpeechAudioBufferRecognitionRequest?   // 사용자가 실시간으로 말할 때 음성을 할당하고 버퍼링을 제어하는 역할.
+    // 만약 오디오가 미리 녹음되어있는 경우일때는 SFSpeechURLRecognitionRequest를 사용
+    var recognitionTask: SFSpeechRecognitionTask?       // 음성 인식 작업을 관리, 취소, 중지등 결과를 제공하는 Task 객체
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -375,29 +383,30 @@ class TranslatorView: UIView {
     }
     
     private func input(){
-        let inputs = TranslatorViewModel.Input(textInput: sourceTextView.rx.text.orEmpty.distinctUntilChanged().map{ $0.trimmingCharacters(in: .whitespacesAndNewlines)}, executeTranslate: executeTranslatedBtn.rx.tap.asObservable())
+        let inputs = TranslatorViewModel.Input(textInput: sourceTextView.rx.text.orEmpty.distinctUntilChanged().map{ $0.trimmingCharacters(in: .whitespacesAndNewlines)}, executeTranslate: executeTranslatedBtn.rx.tap.asObservable(), sourceLanguageTap: sourceLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, targetLanguageTap: targetLanguageView.rx.tapGesture().when(.recognized).map{ _ in})
 
         self.viewModel = TranslatorViewModel(input: inputs)
     }
     
     private func output(){
         
-        self.viewModel?.output.originalText
+        self.viewModel.output.originalText
             .drive(sourceTextView.rx.text)
             .disposed(by: disposeBag)
         
-        self.viewModel?.output.sourceLanguage
+        self.viewModel.output.sourceLanguage
             .drive(sourceLanguageText.rx.text)
             .disposed(by: disposeBag)
         
-        self.viewModel?.output.targetLanguage
+        self.viewModel.output.targetLanguage
             .drive(targetLanguageText.rx.text)
             .disposed(by: disposeBag)
         
-        self.viewModel?.output.translatedText
+        self.viewModel.output.translatedText
             .drive{ [unowned self] (text) in
                 self.translatedTextLabel.text = text
                 self.sourceTextView.endEditing(true)
+                self.viewModel.model.voiceStatus.accept(.off)
             }
             .disposed(by: disposeBag)
         
@@ -406,6 +415,7 @@ class TranslatorView: UIView {
     private func binding(){
         closeBtn.rx.tap
             .bind{ [unowned self] in
+                SpeechController.sharedInstance.stop()
                 self.removeFromSuperview()
             }
             .disposed(by: disposeBag)
@@ -418,15 +428,17 @@ class TranslatorView: UIView {
             .disposed(by: disposeBag)
         
         self.speakVoiceBtn.rx.tap
+            .withLatestFrom(self.viewModel.model.voiceStatus)
+            .filter{ $0 == .off}
+            .map{ _ in }
             .bind{ [unowned self] in
-                let view = PapagoLanguageView(frame: .zero)
-                view.selectModel(.source)
-                self.addSubview(view)
+                log.d("음성입력 모드 on...")
+                self.viewModel.model.voiceStatus.accept(.on)
                 
-                view.snp.makeConstraints{
-                    $0.left.right.bottom.equalTo(self.safeAreaLayoutGuide)
-                    $0.height.equalTo(400)
-                }
+                SpeechController.sharedInstance.delegate = self
+                
+                self.viewModel.model.sourceLanguageCode.value == "언어 감지" ? SpeechController.sharedInstance.prepare() : SpeechController.sharedInstance.prepare(code: self.viewModel.model.sourceLanguageCode.value)
+
             }
             .disposed(by: disposeBag)
     }

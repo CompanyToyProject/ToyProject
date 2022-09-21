@@ -9,12 +9,16 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import SnapKit
 
 class TranslatorViewModel {
     
     struct Input {
         var textInput: Observable<String>
         var executeTranslate: Observable<Void>
+        var sourceLanguageTap: Observable<Void>
+        var targetLanguageTap: Observable<Void>
+        var voiceInputText: PublishSubject<String> = .init()
     }
     
     struct Output {
@@ -40,19 +44,21 @@ class TranslatorViewModel {
                     self.timer.invalidate()
                     self.timer = nil
                 }
-                
-                // 언어감지일경우,
-                if status == .off {
-                    self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
-                        self.detechToTransalte()
+
+                if text.count != 0 {
+                    self.timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { timer in
+                        log.d("detechStatus : \(status) ...")
+                        if status == .off {
+                            self.detechToTransalte()
+                        }
+                        else {
+                            self.translate()
+                        }
+
                         timer.invalidate()
                     })
                 }
-                // 언어감지 아닐경우
-                else {
-                    
-                }
-                
+//
                 return text
             })
             .map{ return $0}
@@ -86,6 +92,53 @@ class TranslatorViewModel {
         input.textInput
             .bind(to: self.model.originalText)
             .disposed(by: dispoesBag)
+        
+        input.sourceLanguageTap
+            .bind{
+                let view = PapagoLanguageView(frame: .zero)
+                view.selectModel(.source)
+                view.delegate = self
+                getTopViewController().view.addSubview(view)
+                view.snp.makeConstraints{
+                    $0.edges.equalToSuperview()
+                }
+            }
+            .disposed(by: dispoesBag)
+        
+        input.targetLanguageTap
+            .bind{
+                let view = PapagoLanguageView(frame: .zero)
+                view.selectModel(.target)
+                view.delegate = self
+                getTopViewController().view.addSubview(view)
+                view.snp.makeConstraints{
+                    $0.edges.equalToSuperview()
+                }
+            }
+            .disposed(by: dispoesBag)
+        
+        input.executeTranslate
+            .withLatestFrom(self.model.detectedStatus)
+            .bind{ [unowned self] (status) in
+                
+                if self.timer != nil {
+                    self.timer.invalidate()
+                    self.timer = nil
+                }
+                
+                if status == .off {
+                    self.detechToTransalte()
+                }
+                else{
+                    self.translate()
+                }
+            }
+            .disposed(by: dispoesBag)
+        
+        input.voiceInputText
+            .bind(to: self.model.originalText)
+            .disposed(by: dispoesBag)
+
 
     }
     

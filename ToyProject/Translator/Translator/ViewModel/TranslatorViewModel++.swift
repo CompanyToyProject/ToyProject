@@ -31,13 +31,14 @@ extension TranslatorViewModel {
 
     func detechToTransalte(){
         let papago = Papago()
-        papago.detechLanguage(text: self.model.originalText.value) { (languageCode) in
+        papago.detechLanguage(text: self.model.originalText.value) {  [unowned self] (languageCode) in
             if self.model.sourceLanguageCode.value == "언어 감지" {
                 self.model.sourceLanguageCode.accept(languageCode)
                 self.model.sourceLanguageText.accept(self.localizedString(code: languageCode))
+                self.model.detectedStatus.accept(.on)
             }
             
-            papago.translatedLanguage(text: self.model.originalText.value, sourceLanguage: self.model.sourceLanguageCode.value, targetLanguage: self.model.targetLanguageCode.value) { (translatedText) in
+            papago.translatedLanguage(text: self.model.originalText.value, sourceLanguage: self.model.sourceLanguageCode.value, targetLanguage: self.model.targetLanguageCode.value) { [unowned self] (translatedText) in
                 self.model.translatedText.accept(translatedText)
             }
         }
@@ -47,7 +48,7 @@ extension TranslatorViewModel {
     func translate(){
         let papago = Papago()
         
-        papago.translatedLanguage(text: self.model.originalText.value, sourceLanguage: self.model.sourceLanguageCode.value, targetLanguage: self.model.targetLanguageCode.value) { (translatedText) in
+        papago.translatedLanguage(text: self.model.originalText.value, sourceLanguage: self.model.sourceLanguageCode.value, targetLanguage: self.model.targetLanguageCode.value) { [unowned self] (translatedText) in
             self.model.translatedText.accept(translatedText)
         }
     }
