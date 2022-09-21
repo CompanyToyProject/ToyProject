@@ -69,8 +69,13 @@ extension GoogleMapViewController {
         guard let date = info.date?.toDate else { return }
         guard let localCoordinate = info.localCoordinate else { return }
         
-        let entity = NSEntityDescription.entity(forEntityName: "LocalCoordinate", in: self.container.viewContext)!
-        let row = NSManagedObject(entity: entity, insertInto: self.container.viewContext)
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LocalCoordinate")
+        
+        let predicate = localCoordinate.getPredicate()
+        fetchRequest.predicate = predicate
+        let fetchResult = PersistenceManager.shared.fetch(request: fetchRequest)
+        guard let row = fetchResult.first else { return }
+        
         row.setValue(localCoordinate.level1, forKey: "level1")
         row.setValue(localCoordinate.level2, forKey: "level2")
         row.setValue(localCoordinate.level3, forKey: "level3")

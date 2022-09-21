@@ -51,6 +51,7 @@
 		F069EC8728D434D300A89083 /* GoogleMapView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */; };
 		F069EC8928D4380D00A89083 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8828D4380D00A89083 /* Animation.swift */; };
 		F069EC8B28D43AF900A89083 /* GoogleMapView+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */; };
+		F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04C828DA993E00D0E7FE /* Date+.swift */; };
 		F0C4903828D94CF600D957EF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903728D94CF600D957EF /* LoadingView.swift */; };
 		F0C4903B28D9536B00D957EF /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903A28D9536B00D957EF /* LoadingViewController.swift */; };
 		F0C4903E28D9852E00D957EF /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903D28D9852E00D957EF /* Toast.swift */; };
@@ -102,6 +103,7 @@
 		F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+Keyboard.swift"; sourceTree = "<group>"; };
 		F069EC8828D4380D00A89083 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+SearchBar.swift"; sourceTree = "<group>"; };
+		F0AD04C828DA993E00D0E7FE /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		F0C4903728D94CF600D957EF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F0C4903A28D9536B00D957EF /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		F0C4903D28D9852E00D957EF /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				F05AA94D28D3100900B77E4A /* String+.swift */,
 				F05AA94E28D3100900B77E4A /* GlobalFunctions.swift */,
 				F069EC8828D4380D00A89083 /* Animation.swift */,
+				F0AD04C828DA993E00D0E7FE /* Date+.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */,
 				F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */,
 				F0C4904128D9858000D957EF /* NotifyDelegate.swift in Sources */,
 				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,

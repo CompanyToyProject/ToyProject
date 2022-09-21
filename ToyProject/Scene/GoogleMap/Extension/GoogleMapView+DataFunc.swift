@@ -53,12 +53,40 @@ extension GoogleMapViewController {
 //            log.d($0.toString())
 //        }
         
-        let request: NSFetchRequest<Weather> = Weather.fetchRequest()
+//        let request: NSFetchRequest<LocalCoordinate> = LocalCoordinate.fetchRequest()
+        let predicate = NSPredicate(format: "level3 == %@", "운남동")
+//        request.predicate = predicate
+//        let fetchResult = PersistenceManager.shared.fetch(request: request)
+//
+//        fetchResult.forEach { info in
+//            log.d(info.toString())
+//            log.d(info.weatherInfo)
+//        }
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LocalCoordinate")
+        fetchRequest.predicate = predicate
+        let fetchResult = PersistenceManager.shared.fetch(request: fetchRequest)
+        
+        fetchResult.forEach { item in
+            guard let item = item as? LocalCoordinate else { return }
+            guard let infos = item.weatherInfo?.array as? [Weather] else { return }
+            infos.forEach { info in
+                guard let date = info.date,
+                      let t1h = info.t1h,
+                      let sky = info.sky,
+                      let reh = info.reh,
+                      let pty = info.pty,
+                      let rn1 = info.rn1,
+                      let localCoordinate = info.localCoordinate else {
+                    log.d(info)
+                    return
+                }
 
-        let fetchResult = PersistenceManager.shared.fetch(request: request)
-
-        fetchResult.forEach { info in
-            log.d(info)
+                let str =   "\n[Date: \(date.toString)] =================== \n" +
+                            "온도: \(t1h), 하늘: \(sky), 습도: \(reh), 강수형태: \(pty), 1시간 강수량: \(rn1)\n" +
+                "localFullString: \(localCoordinate.toString())"
+                log.d(str)
+            }
         }
 
     }

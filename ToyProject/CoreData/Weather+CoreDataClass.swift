@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-public class Weather: NSManagedObject {
+public class Weather: NSManagedObject, Encodable {
 
 }
 

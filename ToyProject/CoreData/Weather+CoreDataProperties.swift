@@ -20,6 +20,6 @@ extension Weather {
     @NSManaged public var reh: String?
     @NSManaged public var pty: String?
     @NSManaged public var rn1: String?
-    @NSManaged public var localCoordinate: NSSet?
+    @NSManaged public var localCoordinate: LocalCoordinate?
 
 }
