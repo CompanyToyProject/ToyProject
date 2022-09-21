@@ -15,6 +15,7 @@ struct WeatherInfo: Codable {
     var REH: String
     var PTY: PTY_CODE
     var localCoordinate: LocalCoordinate?
+    var date: String?
     
     var image: UIImage? {
         if PTY == .none {
@@ -86,6 +87,7 @@ struct WeatherInfo: Codable {
         case REH
         case PTY
         case localCoordinate
+        case date
     }
     
     static func getDefault() -> Self {
@@ -99,6 +101,7 @@ struct WeatherInfo: Codable {
         REH = "0"
         PTY = .none
         localCoordinate = nil
+        date = nil
     }
     
     init(from decoder: Decoder) throws {
@@ -110,6 +113,7 @@ struct WeatherInfo: Codable {
             REH             = try values.decode(String.self, forKey: .REH)
             PTY             = try values.decode(PTY_CODE.self, forKey: .PTY)
             localCoordinate = nil
+            date            = nil
         }
         catch {
             print(error)

@@ -2,7 +2,7 @@
 //  LocalCoordinate+CoreDataProperties.swift
 //  
 //
-//  Created by yeoboya on 2022/09/20.
+//  Created by yeoboya on 2022/09/21.
 //
 //
 
@@ -23,8 +23,8 @@ extension LocalCoordinate {
     @NSManaged public var level2: String?
     @NSManaged public var level3: String?
     @NSManaged public var longitude: Double
-    @NSManaged public var weatherInfo: Weather?
-    
+    @NSManaged public var weatherInfo: NSSet?
+
     var localFullString: String {
         guard let level1 = level1,
               let level2 = level2,
@@ -34,7 +34,7 @@ extension LocalCoordinate {
 
         return "\(level1) \(level2) \(level3)"
     }
-
+    
     func toString() -> String {
         guard let level1 = level1,
               let level2 = level2,
@@ -45,5 +45,23 @@ extension LocalCoordinate {
                 "좌표: (\(coordX), \(coordY))\n" +
                 "위도, 경도: (\(latitude), \(longitude))\n"
     }
+
+
+}
+
+// MARK: Generated accessors for weatherInfo
+extension LocalCoordinate {
+
+    @objc(addWeatherInfoObject:)
+    @NSManaged public func addToWeatherInfo(_ value: Weather)
+
+    @objc(removeWeatherInfoObject:)
+    @NSManaged public func removeFromWeatherInfo(_ value: Weather)
+
+    @objc(addWeatherInfo:)
+    @NSManaged public func addToWeatherInfo(_ values: NSSet)
+
+    @objc(removeWeatherInfo:)
+    @NSManaged public func removeFromWeatherInfo(_ values: NSSet)
 
 }

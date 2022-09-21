@@ -27,6 +27,8 @@ class GoogleMapViewController: UIViewController {
     var preciseLocationZoomLevel: Float = 15.0
     var approximateLocationZoomLevel: Float = 10.0
     
+    var container: NSPersistentContainer!
+    
     var keyboardIsHide = true
     
     var weatherMarkers = [GMSMarker]()
@@ -40,6 +42,8 @@ class GoogleMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.container = PersistenceManager.shared.persistentContainer
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -56,6 +60,7 @@ class GoogleMapViewController: UIViewController {
         bind()
         
         setSearchBarView()
+        setCoreDataBtn()
         
         let loading = LoadingViewController.shared
         loading.loadingViewSetting(view: self.view, delay: .seconds(2))

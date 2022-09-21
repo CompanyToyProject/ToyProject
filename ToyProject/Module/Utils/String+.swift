@@ -18,4 +18,18 @@ extension String {
             }
         }
     }
+    
+    var toDate: Date? {
+        get {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyyMMdd HHmm"
+            dateFormatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)
+            if let date = dateFormatter.date(from: self) {
+                return date
+            } else {
+                return nil
+            }
+        }
+    }
+
 }

@@ -45,13 +45,22 @@ extension GoogleMapViewController {
     
     @objc func loadData(_ sender: UIButton) {
         
-        let request: NSFetchRequest<LocalCoordinate> = LocalCoordinate.fetchRequest()
-        request.predicate = NSPredicate(format: "latitude BEGINSWITH %@", "35.170")
+//        let request: NSFetchRequest<LocalCoordinate> = LocalCoordinate.fetchRequest()
+//        request.predicate = NSPredicate(format: "latitude BEGINSWITH %@", "35.170")
+//        let fetchResult = PersistenceManager.shared.fetch(request: request)
+//
+//        fetchResult.forEach {
+//            log.d($0.toString())
+//        }
+        
+        let request: NSFetchRequest<Weather> = Weather.fetchRequest()
+
         let fetchResult = PersistenceManager.shared.fetch(request: request)
 
-        fetchResult.forEach {
-            log.d($0.toString())
+        fetchResult.forEach { info in
+            log.d(info)
         }
+
     }
     
     @objc func deleteAllData(_ sender: UIButton) {        

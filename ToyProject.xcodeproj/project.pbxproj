@@ -56,8 +56,6 @@
 		F0C4903E28D9852E00D957EF /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903D28D9852E00D957EF /* Toast.swift */; };
 		F0C4904128D9858000D957EF /* NotifyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4904028D9858000D957EF /* NotifyDelegate.swift */; };
 		F0C4905328D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4904E28D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift */; };
-		F0C4905528D9AC9A00D957EF /* Weather+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4905428D9AC9A00D957EF /* Weather+CoreDataClass.swift */; };
-		F0C4905728D9ACCA00D957EF /* Weather+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4905628D9ACCA00D957EF /* Weather+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -612,12 +610,10 @@
 				F05AA97F28D3104D00B77E4A /* WeatherMarkerView.swift in Sources */,
 				F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */,
 				F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */,
-				F0C4905728D9ACCA00D957EF /* Weather+CoreDataProperties.swift in Sources */,
 				F0C4903B28D9536B00D957EF /* LoadingViewController.swift in Sources */,
 				EF6C8DDB28D3FA25000FB249 /* AudioController.swift in Sources */,
 				F05AA98128D3104D00B77E4A /* SearchBarView+TextView.swift in Sources */,
 				F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */,
-				F0C4905528D9AC9A00D957EF /* Weather+CoreDataClass.swift in Sources */,
 				F05AA95128D3100A00B77E4A /* Logger.swift in Sources */,
 				F05AA95728D3100A00B77E4A /* OpenXlsx.swift in Sources */,
 				F0C4905328D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift in Sources */,

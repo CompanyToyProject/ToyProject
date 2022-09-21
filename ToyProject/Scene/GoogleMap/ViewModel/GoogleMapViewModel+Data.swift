@@ -118,6 +118,7 @@ extension GoogleMapViewModel {
                     return
                 }
                 weatherInfo.localCoordinate = localCoordinate
+                weatherInfo.date = "\(baseDate) \(baseTime)"
                 print("weatherInfo: \(weatherInfo)")
                 
                 completion(weatherInfo)

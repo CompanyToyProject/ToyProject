@@ -35,10 +35,13 @@ extension GoogleMapViewController {
                     self.viewModel.getWeatherInfoFromServer(selectedLocal) { [weak self] info in
                         guard let self = self else { return }
                         guard let info = info else {
+                            loading.endLoading()
                             Toast.show("날씨정보를 불러올 수 없습니다")
                             return
                         }
                         self.weatherInfo.onNext((info, true))
+                        self.saveWeatherData(info)
+
                         loading.endLoading()
                     }
                 }
@@ -61,4 +64,37 @@ extension GoogleMapViewController {
         }
             
     }
+    
+    func saveWeatherData(_ info: WeatherInfo) {
+        guard let date = info.date?.toDate else { return }
+        guard let localCoordinate = info.localCoordinate else { return }
+        
+        let entity = NSEntityDescription.entity(forEntityName: "LocalCoordinate", in: self.container.viewContext)!
+        let row = NSManagedObject(entity: entity, insertInto: self.container.viewContext)
+        row.setValue(localCoordinate.level1, forKey: "level1")
+        row.setValue(localCoordinate.level2, forKey: "level2")
+        row.setValue(localCoordinate.level3, forKey: "level3")
+        row.setValue(localCoordinate.coordX, forKey: "coordX")
+        row.setValue(localCoordinate.coordY, forKey: "coordY")
+        row.setValue(localCoordinate.latitude, forKey: "latitude")
+        row.setValue(localCoordinate.longitude, forKey: "longitude")
+        
+        let weatherObj = NSEntityDescription.insertNewObject(forEntityName: "Weather", into: self.container.viewContext) as! Weather
+        weatherObj.date = date
+        weatherObj.t1h = info.T1H
+        weatherObj.sky = info.SKY.rawValue
+        weatherObj.reh = info.REH
+        weatherObj.pty = info.PTY.rawValue
+        weatherObj.rn1 = info.RN1
+        
+        (row as! LocalCoordinate).addToWeatherInfo(weatherObj)
+        
+        do {
+            try self.container.viewContext.save()
+        } catch {
+            Toast.show("저장 실패 가져오지 못했습니다")
+            log.d(error.localizedDescription)
+        }
+    }
+
 }
