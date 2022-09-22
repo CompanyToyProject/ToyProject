@@ -177,13 +177,13 @@ class TranslatorView: UIView {
     lazy var papagoBtn = UIButton().then{
         $0.setTitle("파파고", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .systemPink
+        $0.backgroundColor = .gray
     }
     
     lazy var googleBtn = UIButton().then{
         $0.setTitle("구글", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .systemPink
+        $0.backgroundColor = .gray
     }
     
     var disposeBag = DisposeBag()
@@ -196,6 +196,9 @@ class TranslatorView: UIView {
     var request : SFSpeechAudioBufferRecognitionRequest?   // 사용자가 실시간으로 말할 때 음성을 할당하고 버퍼링을 제어하는 역할.
     // 만약 오디오가 미리 녹음되어있는 경우일때는 SFSpeechURLRecognitionRequest를 사용
     var recognitionTask: SFSpeechRecognitionTask?       // 음성 인식 작업을 관리, 취소, 중지등 결과를 제공하는 Task 객체
+    
+    var audioData = Data()
+    let SAMPLE_RATE = 16000
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -465,6 +468,28 @@ class TranslatorView: UIView {
             .drive(speakVoiceBtn.rx.title())
             .disposed(by: disposeBag)
         
+        self.viewModel.output.isPapago
+            .drive{ [unowned self] (status) in
+                if status {
+                    self.papagoBtn.backgroundColor = .systemPink
+                }
+                else {
+                    self.papagoBtn.backgroundColor = .gray
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        self.viewModel.output.isGoogle
+            .drive{ [unowned self] (status) in
+                if status {
+                    self.googleBtn.backgroundColor = .systemPink
+                }
+                else {
+                    self.googleBtn.backgroundColor = .gray
+                }
+            }
+            .disposed(by: disposeBag)
+        
     }
     
     private func binding(){
@@ -500,23 +525,42 @@ class TranslatorView: UIView {
         
         self.speakVoiceBtn.rx.tap
             .withLatestFrom(self.viewModel.model.voiceStatus)
-            .bind{ [unowned self] (status) in
-                if status == .off {
-                    log.d("음성입력 모드 on...")
-                    
-                    self.viewModel.model.voiceText.accept("음성 ON")
-                    self.viewModel.model.voiceStatus.accept(.on)
-                    
-                    SpeechController.sharedInstance.delegate = self
-                    
-                    self.viewModel.model.sourceLanguageCode.value == "언어 감지" ? SpeechController.sharedInstance.prepare() : SpeechController.sharedInstance.prepare(code: self.viewModel.model.sourceLanguageCode.value)
+            .withLatestFrom(self.viewModel.model.currentTechWay){($0, $1)}
+            .bind{ [unowned self] (voiceStatus, techWay) in
+                if techWay == .papago {
+                    if voiceStatus == .off {
+                        log.d("음성입력 모드 on...")
+                        
+                        self.viewModel.model.voiceText.accept("음성 ON")
+                        self.viewModel.model.voiceStatus.accept(.on)
+                        
+                        SpeechController.sharedInstance.delegate = self
+                        
+                        self.viewModel.model.sourceLanguageCode.value == "언어 감지" ? SpeechController.sharedInstance.prepare() : SpeechController.sharedInstance.prepare(code: self.viewModel.model.sourceLanguageCode.value)
+                    }
+                    else {
+                        log.d("음성입력 모드 Off...")
+                        self.viewModel.model.voiceText.accept("음성 OFF")
+                        self.viewModel.model.voiceStatus.accept(.off)
+                        
+                        SpeechController.sharedInstance.stop()
+                    }
                 }
                 else {
-                    log.d("음성입력 모드 Off...")
-                    self.viewModel.model.voiceText.accept("음성 OFF")
-                    self.viewModel.model.voiceStatus.accept(.off)
+                    log.d("google cloud speech on...")
+                    let audioSession = AVAudioSession.sharedInstance()
+                    do {
+                        try audioSession.setCategory(AVAudioSession.Category.record)
+                    } catch {
+
+                    }
                     
-                    SpeechController.sharedInstance.stop()
+                    AudioController.sharedInstance.delegate = self
+                    
+                    _ = AudioController.sharedInstance.prepare(specifiedSampleRate: SAMPLE_RATE)
+                    
+                    _ = AudioController.sharedInstance.start()
+
                 }
 
             }

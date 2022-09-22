@@ -29,6 +29,9 @@ class TranslatorViewModel {
         var targetLanguage: Driver<String> = BehaviorRelay(value: "").asDriver()
         var translatedText: Driver<String> = BehaviorRelay(value: "").asDriver()
         var voiceText: Driver<String> = BehaviorRelay(value: "음성 OFF").asDriver()
+        var isPapago: Driver<Bool> = BehaviorRelay(value: false).asDriver()
+        var isGoogle: Driver<Bool> = BehaviorRelay(value: false).asDriver()
+        
     }
     
     var inputMode: Input?
@@ -127,6 +130,30 @@ class TranslatorViewModel {
         
         self.output.voiceText = model.voiceText
             .map{ return $0 }
+            .distinctUntilChanged()
+            .asDriver(onErrorRecover: { _ in .empty()})
+        
+        self.output.isPapago = model.currentTechWay
+            .map{
+                if $0 == .papago {
+                    return true
+                }
+                else {
+                    return false
+                }
+            }
+            .distinctUntilChanged()
+            .asDriver(onErrorRecover: { _ in .empty()})
+        
+        self.output.isGoogle = model.currentTechWay
+            .map{
+                if $0 == .google {
+                    return true
+                }
+                else {
+                    return false
+                }
+            }
             .distinctUntilChanged()
             .asDriver(onErrorRecover: { _ in .empty()})
         

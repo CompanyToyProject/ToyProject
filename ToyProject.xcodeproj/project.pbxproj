@@ -21,6 +21,16 @@
 		EFB51A9828D4558600A26C9B /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9728D4558600A26C9B /* GRPC */; };
 		EFB51A9A28D4558600A26C9B /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */; };
 		EFB51A9C28D455BA00A26C9B /* GoogleCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB51A9B28D455B900A26C9B /* GoogleCloud.swift */; };
+		EFCF9A7028DC4976004F42F0 /* cloud_speech.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6728DC4976004F42F0 /* cloud_speech.grpc.swift */; };
+		EFCF9A7128DC4976004F42F0 /* status.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6828DC4976004F42F0 /* status.pb.swift */; };
+		EFCF9A7228DC4976004F42F0 /* cloud_speech.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6928DC4976004F42F0 /* cloud_speech.pb.swift */; };
+		EFCF9A7328DC4976004F42F0 /* annotations.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6A28DC4976004F42F0 /* annotations.pb.swift */; };
+		EFCF9A7428DC4976004F42F0 /* operations.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6B28DC4976004F42F0 /* operations.grpc.swift */; };
+		EFCF9A7528DC4976004F42F0 /* http.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6C28DC4976004F42F0 /* http.pb.swift */; };
+		EFCF9A7628DC4976004F42F0 /* operations.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6D28DC4976004F42F0 /* operations.pb.swift */; };
+		EFCF9A7728DC4976004F42F0 /* resource.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6E28DC4976004F42F0 /* resource.pb.swift */; };
+		EFCF9A7828DC4976004F42F0 /* client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6F28DC4976004F42F0 /* client.pb.swift */; };
+		EFCF9A7C28DC501B004F42F0 /* TranslatorView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A7B28DC501B004F42F0 /* TranslatorView++.swift */; };
 		EFD595C628D7ECBE003BAA25 /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595C528D7ECBE003BAA25 /* TranslatorView.swift */; };
 		EFD595C828D7ECC6003BAA25 /* TranslatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595C728D7ECC6003BAA25 /* TranslatorViewModel.swift */; };
 		EFD595CA28D7ECCB003BAA25 /* TranslatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595C928D7ECCB003BAA25 /* TranslatorModel.swift */; };
@@ -84,6 +94,16 @@
 		EF6CB0E028DAC5D70028B832 /* TranslatorView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorView+.swift"; sourceTree = "<group>"; };
 		EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFB51A9B28D455B900A26C9B /* GoogleCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloud.swift; sourceTree = "<group>"; };
+		EFCF9A6728DC4976004F42F0 /* cloud_speech.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloud_speech.grpc.swift; sourceTree = "<group>"; };
+		EFCF9A6828DC4976004F42F0 /* status.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = status.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6928DC4976004F42F0 /* cloud_speech.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloud_speech.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6A28DC4976004F42F0 /* annotations.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = annotations.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6B28DC4976004F42F0 /* operations.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = operations.grpc.swift; sourceTree = "<group>"; };
+		EFCF9A6C28DC4976004F42F0 /* http.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = http.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6D28DC4976004F42F0 /* operations.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = operations.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6E28DC4976004F42F0 /* resource.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resource.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6F28DC4976004F42F0 /* client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = client.pb.swift; sourceTree = "<group>"; };
+		EFCF9A7B28DC501B004F42F0 /* TranslatorView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorView++.swift"; sourceTree = "<group>"; };
 		EFD595C528D7ECBE003BAA25 /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
 		EFD595C728D7ECC6003BAA25 /* TranslatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewModel.swift; sourceTree = "<group>"; };
 		EFD595C928D7ECCB003BAA25 /* TranslatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorModel.swift; sourceTree = "<group>"; };
@@ -171,10 +191,10 @@
 			isa = PBXGroup;
 			children = (
 				EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */,
+				EFCF9A6628DC4976004F42F0 /* google_protobuf */,
 				EF6CB0D928DA9E570028B832 /* SpeechController */,
 				EFD5962828D97B47003BAA25 /* Papago */,
 				EF6C8DD928D3FA1E000FB249 /* Utils */,
-				EF6C8DD828D3F9AD000FB249 /* SpeeachToText */,
 				EF6C8DD728D3F9AA000FB249 /* Translator */,
 			);
 			path = Translator;
@@ -188,13 +208,6 @@
 				EFD595BE28D7EC1D003BAA25 /* View */,
 			);
 			path = Translator;
-			sourceTree = "<group>";
-		};
-		EF6C8DD828D3F9AD000FB249 /* SpeeachToText */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SpeeachToText;
 			sourceTree = "<group>";
 		};
 		EF6C8DD928D3FA1E000FB249 /* Utils */ = {
@@ -216,10 +229,27 @@
 			path = SpeechController;
 			sourceTree = "<group>";
 		};
+		EFCF9A6628DC4976004F42F0 /* google_protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				EFCF9A6728DC4976004F42F0 /* cloud_speech.grpc.swift */,
+				EFCF9A6828DC4976004F42F0 /* status.pb.swift */,
+				EFCF9A6928DC4976004F42F0 /* cloud_speech.pb.swift */,
+				EFCF9A6A28DC4976004F42F0 /* annotations.pb.swift */,
+				EFCF9A6B28DC4976004F42F0 /* operations.grpc.swift */,
+				EFCF9A6C28DC4976004F42F0 /* http.pb.swift */,
+				EFCF9A6D28DC4976004F42F0 /* operations.pb.swift */,
+				EFCF9A6E28DC4976004F42F0 /* resource.pb.swift */,
+				EFCF9A6F28DC4976004F42F0 /* client.pb.swift */,
+			);
+			path = google_protobuf;
+			sourceTree = "<group>";
+		};
 		EFD595BE28D7EC1D003BAA25 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				EFD595C528D7ECBE003BAA25 /* TranslatorView.swift */,
+				EFCF9A7B28DC501B004F42F0 /* TranslatorView++.swift */,
 				EF6CB0E028DAC5D70028B832 /* TranslatorView+.swift */,
 			);
 			path = View;
@@ -683,8 +713,10 @@
 			files = (
 				F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */,
 				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,
+				EFCF9A7628DC4976004F42F0 /* operations.pb.swift in Sources */,
 				F05AA97C28D3104D00B77E4A /* MeteorologicalItem.swift in Sources */,
 				F05AA97928D3104D00B77E4A /* GoogleMapView+MapFunc.swift in Sources */,
+				EFCF9A7C28DC501B004F42F0 /* TranslatorView++.swift in Sources */,
 				EFD595C628D7ECBE003BAA25 /* TranslatorView.swift in Sources */,
 				EFD5962F28D97D0C003BAA25 /* PapagoCell.swift in Sources */,
 				EF6CB0DF28DAACEA0028B832 /* GlobalFunc.swift in Sources */,
@@ -699,6 +731,7 @@
 				EFD595C828D7ECC6003BAA25 /* TranslatorViewModel.swift in Sources */,
 				F05AA98F28D3105600B77E4A /* SearchLocalViewController.swift in Sources */,
 				F05AA99428D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift in Sources */,
+				EFCF9A7228DC4976004F42F0 /* cloud_speech.pb.swift in Sources */,
 				EFD595DA28D93A38003BAA25 /* TranslatorViewModel++.swift in Sources */,
 				EFD595CE28D7FBF3003BAA25 /* TranslatorModel+image.swift in Sources */,
 				EFD5962C28D97CED003BAA25 /* PapagoModel.swift in Sources */,
@@ -710,24 +743,31 @@
 				F05AA95228D3100A00B77E4A /* PersistenceManager.swift in Sources */,
 				EFD595CA28D7ECCB003BAA25 /* TranslatorModel.swift in Sources */,
 				F05AA99328D3107000B77E4A /* LocalCoordinate+CoreDataProperties.swift in Sources */,
+				EFCF9A7328DC4976004F42F0 /* annotations.pb.swift in Sources */,
 				EF6CB0DB28DA9E690028B832 /* SpeechController.swift in Sources */,
 				F05AA97F28D3104D00B77E4A /* WeatherMarkerView.swift in Sources */,
 				EFD595DC28D93A65003BAA25 /* Papago.swift in Sources */,
 				F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */,
 				F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */,
+				EFCF9A7128DC4976004F42F0 /* status.pb.swift in Sources */,
 				EF6C8DDB28D3FA25000FB249 /* AudioController.swift in Sources */,
 				EFD595CC28D7ED2A003BAA25 /* TranslatorModel+color.swift in Sources */,
 				F05AA98128D3104D00B77E4A /* SearchBarView+TextView.swift in Sources */,
+				EFCF9A7528DC4976004F42F0 /* http.pb.swift in Sources */,
+				EFCF9A7428DC4976004F42F0 /* operations.grpc.swift in Sources */,
 				F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */,
 				EFD5962A28D97B56003BAA25 /* PapagoLanguageView.swift in Sources */,
 				F05AA95128D3100A00B77E4A /* Logger.swift in Sources */,
+				EFCF9A7028DC4976004F42F0 /* cloud_speech.grpc.swift in Sources */,
 				F05AA95728D3100A00B77E4A /* OpenXlsx.swift in Sources */,
 				EF6CB0E128DAC5D70028B832 /* TranslatorView+.swift in Sources */,
 				F05AA97728D3104D00B77E4A /* GoogleMapView+LocationManager.swift in Sources */,
 				F05AA97D28D3104D00B77E4A /* WeatherInfo.swift in Sources */,
 				F05AA98328D3104D00B77E4A /* RegionTableViewController.swift in Sources */,
 				F05AA97828D3104D00B77E4A /* GoogleMapView+DataFunc.swift in Sources */,
+				EFCF9A7728DC4976004F42F0 /* resource.pb.swift in Sources */,
 				EFD5963328D9A58C003BAA25 /* extensions.swift in Sources */,
+				EFCF9A7828DC4976004F42F0 /* client.pb.swift in Sources */,
 				F05AA95628D3100A00B77E4A /* GlobalFunctions.swift in Sources */,
 				F05AA98D28D3105600B77E4A /* SearchLocal+TableView.swift in Sources */,
 			);

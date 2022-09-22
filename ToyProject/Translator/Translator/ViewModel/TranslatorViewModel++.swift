@@ -56,24 +56,7 @@ extension TranslatorViewModel {
     }
     
     func googleSupportedLanguage() {
-        let url = PapagoModel.supportedLanguagesURL
-//        let test = GTLRTranslateQuery(pathURITemplate: url, httpMethod: "GET", pathParameterNames: [""])
         
-//        DispatchQueue.main.async {
-//            let service = GTLRTranslateService()
-//            service.executeQuery(test) { (ticket, result, error) in
-//                log.d(error)
-//            }
-//        }
-        
-        Alamofire.request(url).responseJSON { (result) in
-            switch result.result {
-            case .success(let result):
-                log.d(result)
-            case .failure(let error):
-                log.d(error)
-            }
-        }
     }
     
 }

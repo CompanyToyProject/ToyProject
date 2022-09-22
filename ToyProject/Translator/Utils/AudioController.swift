@@ -9,9 +9,8 @@ import Foundation
 import UIKit
 import AVFoundation
 
-protocol AudioControllerDelegate {
+protocol AudioControllerDelegate: AnyObject {
     func processSampleData(_ data:Data) -> Void
-    func audioSessionToData(_ data : Data)
 }
 
 class AudioController {
