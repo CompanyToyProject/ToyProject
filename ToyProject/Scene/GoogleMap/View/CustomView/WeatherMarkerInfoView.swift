@@ -61,10 +61,10 @@ class WeatherMarkerInfoView: UIView {
         tempLabel.text = data.tempString
         
         if data.PTY == .none {
-            footerLabel.text = data.skyString
+            footerLabel.text = data.SKY.toString
         }
         else {
-            footerLabel.text = "\(data.skyString) / \(data.ptyString)"
+            footerLabel.text = "\(data.SKY.toString) / \(data.PTY.toString)"
         }
     }
     

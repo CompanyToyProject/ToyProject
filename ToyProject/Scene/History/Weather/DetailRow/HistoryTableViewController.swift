@@ -35,7 +35,7 @@ class HistoryTableViewController: NSObject {
             .map({ local -> [Weather] in
                 guard let infos = local.weatherInfo?.array as? [Weather] else { return [] }
                 
-                return infos
+                return infos.reversed()
             })
             .bind(to: arr)
             .disposed(by: disposeBag)
@@ -56,14 +56,18 @@ extension HistoryTableViewController: UITableViewDelegate {
     
     func setTableView() {
         self.tableView.allowsSelection = false
+        self.tableView.estimatedRowHeight = 200
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.register(HistoryRow.self, forCellReuseIdentifier: "HistoryRow")
         
         self.tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         arr
             .bind(to: self.tableView.rx.items) { (tableView: UITableView, index:Int, element: Weather) -> UITableViewCell in
-                let cell = UITableViewCell()
-                cell.textLabel?.text = element.date!.toString
-                cell.detailTextLabel?.text = "온도: \(element.t1h!)"
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryRow") as? HistoryRow else {
+                    return UITableViewCell()
+                }
+                cell.configUI(element)
 
                 return cell
             }

@@ -56,7 +56,7 @@ extension WeatherHistoryViewController {
             .bind { [weak self] isShowingDetailView in
                 guard let self = self else { return }
                 if isShowingDetailView {
-                    self.navigationItem.title = "MAIN"
+                    self.navigationItem.title = "Weather History"
                     self.tableViewController.removeFromSuperView()
                     self.tableViewController = nil
                     output.isShowingDetailView.accept(false)

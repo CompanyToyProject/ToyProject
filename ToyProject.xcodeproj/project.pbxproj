@@ -53,9 +53,10 @@
 		F069EC8B28D43AF900A89083 /* GoogleMapView+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */; };
 		F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04C828DA993E00D0E7FE /* Date+.swift */; };
 		F0AD04CD28DAEA6000D0E7FE /* WeatherHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04CC28DAEA6000D0E7FE /* WeatherHistoryViewController.swift */; };
-		F0AD04CF28DAF1CB00D0E7FE /* HistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04CE28DAF1CB00D0E7FE /* HistoryTableView.swift */; };
+		F0AD04CF28DAF1CB00D0E7FE /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04CE28DAF1CB00D0E7FE /* HistoryTableViewController.swift */; };
 		F0BC0AC628DBD89B006C4F26 /* WeatherHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC0AC528DBD89B006C4F26 /* WeatherHistoryViewModel.swift */; };
 		F0BC0AC928DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC0AC828DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift */; };
+		F0BC0AD128DBFF31006C4F26 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC0AD028DBFF31006C4F26 /* HistoryRow.swift */; };
 		F0C4903828D94CF600D957EF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903728D94CF600D957EF /* LoadingView.swift */; };
 		F0C4903B28D9536B00D957EF /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903A28D9536B00D957EF /* LoadingViewController.swift */; };
 		F0C4903E28D9852E00D957EF /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903D28D9852E00D957EF /* Toast.swift */; };
@@ -109,9 +110,10 @@
 		F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+SearchBar.swift"; sourceTree = "<group>"; };
 		F0AD04C828DA993E00D0E7FE /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		F0AD04CC28DAEA6000D0E7FE /* WeatherHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewController.swift; sourceTree = "<group>"; };
-		F0AD04CE28DAF1CB00D0E7FE /* HistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableView.swift; sourceTree = "<group>"; };
+		F0AD04CE28DAF1CB00D0E7FE /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		F0BC0AC528DBD89B006C4F26 /* WeatherHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewModel.swift; sourceTree = "<group>"; };
 		F0BC0AC828DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherHistoryViewController+Bind.swift"; sourceTree = "<group>"; };
+		F0BC0AD028DBFF31006C4F26 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 		F0C4903728D94CF600D957EF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F0C4903A28D9536B00D957EF /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		F0C4903D28D9852E00D957EF /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -429,9 +431,8 @@
 		F0AD04CB28DAEA4500D0E7FE /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				F0BC0AC428DBD858006C4F26 /* ViewModel */,
-				F0BC0AC328DBD852006C4F26 /* View */,
-				F0AD04CE28DAF1CB00D0E7FE /* HistoryTableView.swift */,
+				F0BC0ACC28DBFE64006C4F26 /* Local */,
+				F0BC0ACD28DBFE7F006C4F26 /* DetailRow */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -459,6 +460,24 @@
 				F0BC0AC828DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F0BC0ACC28DBFE64006C4F26 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				F0BC0AC328DBD852006C4F26 /* View */,
+				F0BC0AC428DBD858006C4F26 /* ViewModel */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		F0BC0ACD28DBFE7F006C4F26 /* DetailRow */ = {
+			isa = PBXGroup;
+			children = (
+				F0BC0AD028DBFF31006C4F26 /* HistoryRow.swift */,
+				F0AD04CE28DAF1CB00D0E7FE /* HistoryTableViewController.swift */,
+			);
+			path = DetailRow;
 			sourceTree = "<group>";
 		};
 		F0C4903928D9535900D957EF /* LoadingView */ = {
@@ -646,6 +665,7 @@
 				F0C4904128D9858000D957EF /* NotifyDelegate.swift in Sources */,
 				F0BC0AC928DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift in Sources */,
 				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,
+				F0BC0AD128DBFF31006C4F26 /* HistoryRow.swift in Sources */,
 				F05AA97C28D3104D00B77E4A /* MeteorologicalItem.swift in Sources */,
 				F05AA97928D3104D00B77E4A /* GoogleMapView+MapFunc.swift in Sources */,
 				F05AA98028D3104D00B77E4A /* WeatherMarkerInfoView.swift in Sources */,
@@ -674,7 +694,7 @@
 				F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */,
 				F05AA95128D3100A00B77E4A /* Logger.swift in Sources */,
 				F0AD04CD28DAEA6000D0E7FE /* WeatherHistoryViewController.swift in Sources */,
-				F0AD04CF28DAF1CB00D0E7FE /* HistoryTableView.swift in Sources */,
+				F0AD04CF28DAF1CB00D0E7FE /* HistoryTableViewController.swift in Sources */,
 				F05AA95728D3100A00B77E4A /* OpenXlsx.swift in Sources */,
 				F0C4905328D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift in Sources */,
 				F05AA97728D3104D00B77E4A /* GoogleMapView+LocationManager.swift in Sources */,
