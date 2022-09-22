@@ -22,9 +22,14 @@ extension GoogleMapViewController {
         deleteAllBtn.setTitle("deleteAllData", for: .normal)
         deleteAllBtn.addTarget(self, action: #selector(deleteAllData(_:)), for: .touchUpInside)
         
+        let loadLocalBtn = UIButton(type: .system)
+        loadLocalBtn.setTitle("loadLocal", for: .normal)
+        loadLocalBtn.addTarget(self, action: #selector(loadLocalData(_:)), for: .touchUpInside)
+        
         [
             loadBtn,
-            deleteAllBtn
+            deleteAllBtn,
+            loadLocalBtn
         ].forEach {
             $0.backgroundColor = .white
             self.view.addSubview($0)
@@ -38,6 +43,12 @@ extension GoogleMapViewController {
         
         deleteAllBtn.snp.makeConstraints { make in
             make.top.equalTo(loadBtn.snp.bottom).offset(10)
+            make.trailing.equalTo(loadBtn)
+            make.height.equalTo(30)
+        }
+        
+        loadLocalBtn.snp.makeConstraints { make in
+            make.top.equalTo(deleteAllBtn.snp.bottom).offset(10)
             make.trailing.equalTo(loadBtn)
             make.height.equalTo(30)
         }
@@ -63,12 +74,11 @@ extension GoogleMapViewController {
 //            log.d(info.weatherInfo)
 //        }
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LocalCoordinate")
-        fetchRequest.predicate = predicate
-        let fetchResult = PersistenceManager.shared.fetch(request: fetchRequest)
+        let request : NSFetchRequest<LocalCoordinate> = LocalCoordinate.fetchRequest()
+        request.predicate = predicate
+        let fetchRes = PersistenceManager.shared.fetch(request: request)
         
-        fetchResult.forEach { item in
-            guard let item = item as? LocalCoordinate else { return }
+        fetchRes.forEach { item in
             guard let infos = item.weatherInfo?.array as? [Weather] else { return }
             infos.forEach { info in
                 guard let date = info.date,
@@ -97,6 +107,17 @@ extension GoogleMapViewController {
         let arr = PersistenceManager.shared.fetch(request: request)
         if arr.isEmpty {
             log.d("Clean LocalCoordinate CoreData")
+        }
+    }
+    
+    @objc func loadLocalData(_ sender: UIButton) {
+        let request : NSFetchRequest<LocalCoordinate> = LocalCoordinate.fetchRequest()
+        let predicate = NSPredicate(format: "NONE weatherInfo == nil")
+        request.predicate = predicate
+        let fetchRes = PersistenceManager.shared.fetch(request: request)
+        
+        fetchRes.forEach {
+            print("hasWeatherItem: \($0.localFullString)")
         }
     }
 }

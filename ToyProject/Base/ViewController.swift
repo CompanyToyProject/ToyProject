@@ -34,6 +34,11 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func clickWeatherHistory(_ sender: Any) {
+        let vc = WeatherHistoryViewController()
+        getNavigationController().pushViewController(vc, animated: true)
+    }
+    
     func getLocalCoordinateDataFromXlsx(completeHandler: @escaping (() -> Void)) {
         let request: NSFetchRequest<LocalCoordinate> = LocalCoordinate.fetchRequest()
         let fetchResult = PersistenceManager.shared.fetch(request: request)

@@ -66,39 +66,60 @@ extension GoogleMapViewController {
     }
     
     func saveWeatherData(_ info: WeatherInfo) {
+        
+        var isEqual = false
+        
         guard let date = info.date?.toDate else { return }
         guard let localCoordinate = info.localCoordinate else { return }
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LocalCoordinate")
-        
-        let predicate = localCoordinate.getPredicate()
-        fetchRequest.predicate = predicate
+        fetchRequest.predicate = localCoordinate.getPredicate()
         let fetchResult = PersistenceManager.shared.fetch(request: fetchRequest)
-        guard let row = fetchResult.first else { return }
         
-        row.setValue(localCoordinate.level1, forKey: "level1")
-        row.setValue(localCoordinate.level2, forKey: "level2")
-        row.setValue(localCoordinate.level3, forKey: "level3")
-        row.setValue(localCoordinate.coordX, forKey: "coordX")
-        row.setValue(localCoordinate.coordY, forKey: "coordY")
-        row.setValue(localCoordinate.latitude, forKey: "latitude")
-        row.setValue(localCoordinate.longitude, forKey: "longitude")
+        fetchResult.forEach { item in
+            guard let item = item as? LocalCoordinate else { return }
+            guard let infos = item.weatherInfo?.array as? [Weather] else { return }
+            
+            infos.forEach { info in
+                if info.date == date {
+                    isEqual = true
+                    return
+                }
+            }
+        }
         
-        let weatherObj = NSEntityDescription.insertNewObject(forEntityName: "Weather", into: self.container.viewContext) as! Weather
-        weatherObj.date = date
-        weatherObj.t1h = info.T1H
-        weatherObj.sky = info.SKY.rawValue
-        weatherObj.reh = info.REH
-        weatherObj.pty = info.PTY.rawValue
-        weatherObj.rn1 = info.RN1
-        
-        (row as! LocalCoordinate).addToWeatherInfo(weatherObj)
-        
-        do {
-            try self.container.viewContext.save()
-        } catch {
-            Toast.show("저장 실패 가져오지 못했습니다")
-            log.d(error.localizedDescription)
+        if !isEqual {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LocalCoordinate")
+            
+            let predicate = localCoordinate.getPredicate()
+            fetchRequest.predicate = predicate
+            let fetchResult = PersistenceManager.shared.fetch(request: fetchRequest)
+            guard let row = fetchResult.first else { return }
+            
+            row.setValue(localCoordinate.level1, forKey: "level1")
+            row.setValue(localCoordinate.level2, forKey: "level2")
+            row.setValue(localCoordinate.level3, forKey: "level3")
+            row.setValue(localCoordinate.coordX, forKey: "coordX")
+            row.setValue(localCoordinate.coordY, forKey: "coordY")
+            row.setValue(localCoordinate.latitude, forKey: "latitude")
+            row.setValue(localCoordinate.longitude, forKey: "longitude")
+            
+            let weatherObj = NSEntityDescription.insertNewObject(forEntityName: "Weather", into: self.container.viewContext) as! Weather
+            weatherObj.date = date
+            weatherObj.t1h = info.T1H
+            weatherObj.sky = info.SKY.rawValue
+            weatherObj.reh = info.REH
+            weatherObj.pty = info.PTY.rawValue
+            weatherObj.rn1 = info.RN1
+            
+            (row as! LocalCoordinate).addToWeatherInfo(weatherObj)
+            
+            do {
+                try self.container.viewContext.save()
+            } catch {
+                Toast.show("저장 실패 가져오지 못했습니다")
+                log.d(error.localizedDescription)
+            }
         }
     }
 
