@@ -45,6 +45,13 @@ class TranslatorView: UIView {
         $0.backgroundColor = .blue
     }
     
+    lazy var currentTechWayLabel = UILabel().then{
+        $0.textAlignment = .center
+        $0.font = UIFont.boldSystemFont(ofSize: 14)
+        $0.textColor = .white
+        $0.text = "현재 방식 : "
+    }
+    
     // body
     lazy var bodyView = UIView().then{
         $0.backgroundColor = .clear
@@ -137,7 +144,7 @@ class TranslatorView: UIView {
     // voiceBtn
     lazy var speakVoiceBtn = UIButton().then{
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        $0.setTitle("음성", for: .normal)
+        $0.setTitle("음성 OFF", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .purple
     }
@@ -157,6 +164,26 @@ class TranslatorView: UIView {
     // bottom
     lazy var bottomView = UIView().then{
         $0.backgroundColor = .brown
+    }
+    
+    lazy var bottomStackView = UIStackView().then{
+        $0.axis = .horizontal
+        $0.distribution = .fillEqually
+        $0.alignment = .fill
+        $0.backgroundColor = .clear
+        $0.spacing = 10
+    }
+    
+    lazy var papagoBtn = UIButton().then{
+        $0.setTitle("파파고", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .systemPink
+    }
+    
+    lazy var googleBtn = UIButton().then{
+        $0.setTitle("구글", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .systemPink
     }
     
     var disposeBag = DisposeBag()
@@ -192,7 +219,9 @@ class TranslatorView: UIView {
             mainStackView.addArrangedSubview($0)
         }
         
-        headerView.addSubview(closeBtn)
+        [closeBtn, currentTechWayLabel].forEach{
+            headerView.addSubview($0)
+        }
         
         bodyView.addSubview(body_contrainerView)
 
@@ -231,6 +260,12 @@ class TranslatorView: UIView {
         translate_mediaView.addSubview(translateContrainerView)
         
         translateContrainerView.addSubview(translatedTextLabel)
+        
+        bottomView.addSubview(bottomStackView)
+        
+        [papagoBtn, googleBtn].forEach{
+            bottomStackView.addArrangedSubview($0)
+        }
     }
     
     private func setConstraints(){
@@ -246,19 +281,30 @@ class TranslatorView: UIView {
             $0.edges.equalToSuperview()
         }
 
+        // header
         headerView.snp.makeConstraints{
             $0.height.equalTo(60)
+        }
+        
+        currentTechWayLabel.snp.makeConstraints{
+            $0.edges.equalToSuperview()
         }
 
         closeBtn.snp.makeConstraints{
             $0.left.equalToSuperview().inset(10)
             $0.centerY.equalToSuperview()
         }
-
+        
+        // bottom
         bottomView.snp.makeConstraints{
             $0.height.equalTo(40)
         }
-
+        
+        bottomStackView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+        
+        // body
         body_contrainerView.snp.makeConstraints{
             $0.left.right.equalToSuperview().inset(10)
             $0.top.bottom.equalToSuperview()
@@ -383,7 +429,7 @@ class TranslatorView: UIView {
     }
     
     private func input(){
-        let inputs = TranslatorViewModel.Input(textInput: sourceTextView.rx.text.orEmpty.distinctUntilChanged().map{ $0.trimmingCharacters(in: .whitespacesAndNewlines)}, executeTranslate: executeTranslatedBtn.rx.tap.asObservable(), sourceLanguageTap: sourceLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, targetLanguageTap: targetLanguageView.rx.tapGesture().when(.recognized).map{ _ in})
+        let inputs = TranslatorViewModel.Input(textInput: sourceTextView.rx.text.orEmpty.distinctUntilChanged().map{ $0.trimmingCharacters(in: .whitespacesAndNewlines)}, executeTranslate: executeTranslatedBtn.rx.tap.asObservable(), sourceLanguageTap: sourceLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, targetLanguageTap: targetLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, papagoTap: papagoBtn.rx.tap.asObservable(), googleTap: googleBtn.rx.tap.asObservable())
 
         self.viewModel = TranslatorViewModel(input: inputs)
     }
@@ -406,8 +452,17 @@ class TranslatorView: UIView {
             .drive{ [unowned self] (text) in
                 self.translatedTextLabel.text = text
                 self.sourceTextView.endEditing(true)
-                self.viewModel.model.voiceStatus.accept(.off)
+ 
+                if self.viewModel.model.voiceStatus.value == .on {
+                    self.viewModel.model.voiceStatus.accept(.off)
+                    self.viewModel.model.voiceText.accept("음성 OFF")
+                }
+
             }
+            .disposed(by: disposeBag)
+        
+        self.viewModel.output.voiceText
+            .drive(speakVoiceBtn.rx.title())
             .disposed(by: disposeBag)
         
     }
@@ -427,17 +482,42 @@ class TranslatorView: UIView {
             }
             .disposed(by: disposeBag)
         
+//        self.speakVoiceBtn.rx.tap
+//            .withLatestFrom(self.viewModel.model.voiceStatus)
+//            .filter{ $0 == .off}
+//            .map{ _ in }
+//            .bind{ [unowned self] in
+//                log.d("음성입력 모드 on...")
+//                self.viewModel.model.voiceText.accept("음성 OFF")
+//                self.viewModel.model.voiceStatus.accept(.on)
+//
+//                SpeechController.sharedInstance.delegate = self
+//
+//                self.viewModel.model.sourceLanguageCode.value == "언어 감지" ? SpeechController.sharedInstance.prepare() : SpeechController.sharedInstance.prepare(code: self.viewModel.model.sourceLanguageCode.value)
+//
+//            }
+//            .disposed(by: disposeBag)
+        
         self.speakVoiceBtn.rx.tap
             .withLatestFrom(self.viewModel.model.voiceStatus)
-            .filter{ $0 == .off}
-            .map{ _ in }
-            .bind{ [unowned self] in
-                log.d("음성입력 모드 on...")
-                self.viewModel.model.voiceStatus.accept(.on)
-                
-                SpeechController.sharedInstance.delegate = self
-                
-                self.viewModel.model.sourceLanguageCode.value == "언어 감지" ? SpeechController.sharedInstance.prepare() : SpeechController.sharedInstance.prepare(code: self.viewModel.model.sourceLanguageCode.value)
+            .bind{ [unowned self] (status) in
+                if status == .off {
+                    log.d("음성입력 모드 on...")
+                    
+                    self.viewModel.model.voiceText.accept("음성 ON")
+                    self.viewModel.model.voiceStatus.accept(.on)
+                    
+                    SpeechController.sharedInstance.delegate = self
+                    
+                    self.viewModel.model.sourceLanguageCode.value == "언어 감지" ? SpeechController.sharedInstance.prepare() : SpeechController.sharedInstance.prepare(code: self.viewModel.model.sourceLanguageCode.value)
+                }
+                else {
+                    log.d("음성입력 모드 Off...")
+                    self.viewModel.model.voiceText.accept("음성 OFF")
+                    self.viewModel.model.voiceStatus.accept(.off)
+                    
+                    SpeechController.sharedInstance.stop()
+                }
 
             }
             .disposed(by: disposeBag)

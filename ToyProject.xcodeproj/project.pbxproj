@@ -16,6 +16,7 @@
 		EF6CB0DB28DA9E690028B832 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CB0DA28DA9E690028B832 /* SpeechController.swift */; };
 		EF6CB0DF28DAACEA0028B832 /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CB0DE28DAACEA0028B832 /* GlobalFunc.swift */; };
 		EF6CB0E128DAC5D70028B832 /* TranslatorView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CB0E028DAC5D70028B832 /* TranslatorView+.swift */; };
+		EF6CB0ED28DBF2710028B832 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */; };
 		EFB51A9628D4558600A26C9B /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9528D4558600A26C9B /* CGRPCZlib */; };
 		EFB51A9828D4558600A26C9B /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9728D4558600A26C9B /* GRPC */; };
 		EFB51A9A28D4558600A26C9B /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */; };
@@ -81,6 +82,7 @@
 		EF6CB0DA28DA9E690028B832 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		EF6CB0DE28DAACEA0028B832 /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		EF6CB0E028DAC5D70028B832 /* TranslatorView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorView+.swift"; sourceTree = "<group>"; };
+		EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFB51A9B28D455B900A26C9B /* GoogleCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloud.swift; sourceTree = "<group>"; };
 		EFD595C528D7ECBE003BAA25 /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
 		EFD595C728D7ECC6003BAA25 /* TranslatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewModel.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		EF6C8DD328D3F97A000FB249 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
+				EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */,
 				EF6CB0D928DA9E570028B832 /* SpeechController */,
 				EFD5962828D97B47003BAA25 /* Papago */,
 				EF6C8DD928D3FA1E000FB249 /* Utils */,
@@ -608,6 +611,7 @@
 				F05AA99928D310D900B77E4A /* Main.storyboard in Resources */,
 				F05AA93728D30B7700B77E4A /* Assets.xcassets in Resources */,
 				F05AA95C28D3102D00B77E4A /* meteorological_service.xlsx in Resources */,
+				EF6CB0ED28DBF2710028B832 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

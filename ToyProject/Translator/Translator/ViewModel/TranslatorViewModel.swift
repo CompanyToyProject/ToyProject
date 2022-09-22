@@ -18,6 +18,8 @@ class TranslatorViewModel {
         var executeTranslate: Observable<Void>
         var sourceLanguageTap: Observable<Void>
         var targetLanguageTap: Observable<Void>
+        var papagoTap: Observable<Void>
+        var googleTap: Observable<Void>
         var voiceInputText: PublishSubject<String> = .init()
     }
     
@@ -26,6 +28,7 @@ class TranslatorViewModel {
         var sourceLanguage: Driver<String> = BehaviorRelay(value: "").asDriver()
         var targetLanguage: Driver<String> = BehaviorRelay(value: "").asDriver()
         var translatedText: Driver<String> = BehaviorRelay(value: "").asDriver()
+        var voiceText: Driver<String> = BehaviorRelay(value: "음성 OFF").asDriver()
     }
     
     var inputMode: Input?
@@ -36,31 +39,70 @@ class TranslatorViewModel {
     
     init(input: Input){
         
+//        self.output.originalText = model.originalText
+//            .skip(1)
+//            .withLatestFrom(model.detectedStatus, resultSelector: { [unowned self] (text, status) in
+//
+//                if self.timer != nil {
+//                    self.timer.invalidate()
+//                    self.timer = nil
+//                }
+//
+//                if text.count != 0 {
+//                    self.timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { timer in
+//                        log.d("detechStatus : \(status) ...")
+//                        if status == .off {
+//                            self.detechToTransalte()
+//                        }
+//                        else {
+//                            self.translate()
+//                        }
+//
+//                        timer.invalidate()
+//                    })
+//                }
+//
+//                return text
+//            })
+//            .map{ return $0}
+//            .distinctUntilChanged()
+//            .asDriver(onErrorRecover: { _ in .empty()})
+        
         self.output.originalText = model.originalText
             .skip(1)
-            .withLatestFrom(model.detectedStatus, resultSelector: { [unowned self] (text, status) in
+            .withLatestFrom(model.detectedStatus){ ($0, $1)}
+            .withLatestFrom(model.currentTechWay){ ($0.0, $0.1, $1)}
+            .map{ [unowned self] (text, detechStatus, techWay) in
                 
                 if self.timer != nil {
                     self.timer.invalidate()
                     self.timer = nil
                 }
-
+                
                 if text.count != 0 {
                     self.timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { timer in
-                        log.d("detechStatus : \(status) ...")
-                        if status == .off {
-                            self.detechToTransalte()
+                        if techWay == .papago {
+                            if detechStatus == .off {
+                                self.detechToTransalte()
+                            }
+                            else {
+                                self.translate()
+                            }
                         }
                         else {
-                            self.translate()
+                            if detechStatus == .off {
+                                
+                            }
+                            else {
+                                
+                            }
                         }
-
                         timer.invalidate()
                     })
                 }
-//
+                
                 return text
-            })
+            }
             .map{ return $0}
             .distinctUntilChanged()
             .asDriver(onErrorRecover: { _ in .empty()})
@@ -83,6 +125,11 @@ class TranslatorViewModel {
             .distinctUntilChanged()
             .asDriver(onErrorRecover: { _ in .empty()})
         
+        self.output.voiceText = model.voiceText
+            .map{ return $0 }
+            .distinctUntilChanged()
+            .asDriver(onErrorRecover: { _ in .empty()})
+        
         self.setInputs(input)
     }
     
@@ -94,43 +141,63 @@ class TranslatorViewModel {
             .disposed(by: dispoesBag)
         
         input.sourceLanguageTap
-            .bind{
-                let view = PapagoLanguageView(frame: .zero)
-                view.selectModel(.source)
-                view.delegate = self
-                getTopViewController().view.addSubview(view)
-                view.snp.makeConstraints{
-                    $0.edges.equalToSuperview()
+            .withLatestFrom(self.model.currentTechWay)
+            .bind{ [unowned self] (techWay) in
+                if techWay == .papago {
+                    let view = PapagoLanguageView(frame: .zero)
+                    view.selectModel(.source)
+                    view.delegate = self
+                    getTopViewController().view.addSubview(view)
+                    view.snp.makeConstraints{
+                        $0.edges.equalToSuperview()
+                    }
+                }
+                else {
+                    self.googleSupportedLanguage()
                 }
             }
             .disposed(by: dispoesBag)
         
         input.targetLanguageTap
-            .bind{
-                let view = PapagoLanguageView(frame: .zero)
-                view.selectModel(.target)
-                view.delegate = self
-                getTopViewController().view.addSubview(view)
-                view.snp.makeConstraints{
-                    $0.edges.equalToSuperview()
+            .withLatestFrom(self.model.currentTechWay)
+            .bind{ (techWay) in
+                if techWay == .papago {
+                    let view = PapagoLanguageView(frame: .zero)
+                    view.selectModel(.target)
+                    view.delegate = self
+                    getTopViewController().view.addSubview(view)
+                    view.snp.makeConstraints{
+                        $0.edges.equalToSuperview()
+                    }
+                }
+                else {
+                    
                 }
             }
             .disposed(by: dispoesBag)
         
         input.executeTranslate
             .withLatestFrom(self.model.detectedStatus)
-            .bind{ [unowned self] (status) in
-                
+            .withLatestFrom(self.model.currentTechWay){($0, $1)}
+            .bind{ [unowned self] (detechStatus, techWay) in
+                log.d("11")
                 if self.timer != nil {
                     self.timer.invalidate()
                     self.timer = nil
                 }
-                
-                if status == .off {
-                    self.detechToTransalte()
+
+                if techWay == .papago {
+                    if detechStatus == .off {
+                        self.detechToTransalte()
+                    }
+                    else{
+                        self.translate()
+                    }
                 }
-                else{
-                    self.translate()
+                else {
+                    if detechStatus == .off {
+                        
+                    }
                 }
             }
             .disposed(by: dispoesBag)
@@ -139,7 +206,24 @@ class TranslatorViewModel {
             .bind(to: self.model.originalText)
             .disposed(by: dispoesBag)
 
+        input.papagoTap
+            .bind{ [unowned self] in
+                log.d("papago Technology on...")
+                self.model.currentTechWay.accept(.papago)
+            }
+            .disposed(by: dispoesBag)
+        
+        input.googleTap
+            .bind{ [unowned self] in
+                log.d("google Technology on...")
+                self.model.currentTechWay.accept(.google)
+            }
+            .disposed(by: dispoesBag)
 
+    }
+    
+    deinit {
+        log.d("TranslatorViewModel deinitdeinitdeinitdeinitdeinitdeinitdeinitdeinit")
     }
     
 }

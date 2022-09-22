@@ -10,7 +10,6 @@ import Foundation
 extension String {
     
     func localizeIdentifier() -> String{
-
         return Locale(identifier: Locale.preferredLanguages.first!).localizedString(forIdentifier: self) ?? "언어 감지"
     }
     

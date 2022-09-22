@@ -11,14 +11,14 @@ import RxSwift
 import RxCocoa
 import Speech
 
-protocol SpeechToTextProtocol {
+protocol SpeechToTextProtocol: AnyObject {
     func deliverText(text: String)
 }
 
 class SpeechController: NSObject, SFSpeechRecognizerDelegate,  SFSpeechRecognitionTaskDelegate {
     
     static let sharedInstance = SpeechController()
-    var delegate: SpeechToTextProtocol!
+    weak var delegate: SpeechToTextProtocol!
     var timer: Timer!
     
     let audioEngine: AVAudioEngine? = AVAudioEngine()   // audio stream - > 마이크가 오디오를 수신할 떄 업데이트를 제공하는 역할. 순수 소리만을 인식하는 오디오 엔진 객체다.
@@ -139,7 +139,7 @@ class SpeechController: NSObject, SFSpeechRecognizerDelegate,  SFSpeechRecogniti
     // 음성 말할 시, 해당 delegate로 들어옴
     func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didHypothesizeTranscription transcription: SFTranscription) {
         let words = transcription.formattedString
-        
+        log.d(words)
         if timer != nil {
             timer.invalidate()
             timer = nil
@@ -181,7 +181,6 @@ class SpeechController: NSObject, SFSpeechRecognizerDelegate,  SFSpeechRecogniti
         self.audioEngine?.inputNode.removeTap(onBus: 0)
         self.request?.endAudio()
         self.recognitionTask = nil
-        self.speechRecognizer = nil
     }
     
 }

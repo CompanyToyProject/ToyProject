@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SwiftyJSON
+import GoogleAPIClientForREST_Translate
+import Alamofire
 
 extension TranslatorViewModel {
     
@@ -50,6 +52,27 @@ extension TranslatorViewModel {
         
         papago.translatedLanguage(text: self.model.originalText.value, sourceLanguage: self.model.sourceLanguageCode.value, targetLanguage: self.model.targetLanguageCode.value) { [unowned self] (translatedText) in
             self.model.translatedText.accept(translatedText)
+        }
+    }
+    
+    func googleSupportedLanguage() {
+        let url = PapagoModel.supportedLanguagesURL
+//        let test = GTLRTranslateQuery(pathURITemplate: url, httpMethod: "GET", pathParameterNames: [""])
+        
+//        DispatchQueue.main.async {
+//            let service = GTLRTranslateService()
+//            service.executeQuery(test) { (ticket, result, error) in
+//                log.d(error)
+//            }
+//        }
+        
+        Alamofire.request(url).responseJSON { (result) in
+            switch result.result {
+            case .success(let result):
+                log.d(result)
+            case .failure(let error):
+                log.d(error)
+            }
         }
     }
     
