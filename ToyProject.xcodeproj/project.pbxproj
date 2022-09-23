@@ -44,19 +44,22 @@
 		F05AA98428D3104D00B77E4A /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA97428D3104D00B77E4A /* GoogleMapViewController.swift */; };
 		F05AA99428D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA99228D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift */; };
 		F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F05AA99528D3108300B77E4A /* Model.xcdatamodeld */; };
-		F05AA99928D310D900B77E4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05AA99828D310D900B77E4A /* Main.storyboard */; };
 		F05AA99C28D3117F00B77E4A /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = F05AA99B28D3117F00B77E4A /* CoreXLSX */; };
 		F05AA9A028D3120E00B77E4A /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA99F28D3120E00B77E4A /* ViewModelProtocol.swift */; };
 		F069EC8328D3F12E00A89083 /* SearchBarView+Bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8228D3F12E00A89083 /* SearchBarView+Bind.swift */; };
 		F069EC8728D434D300A89083 /* GoogleMapView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */; };
 		F069EC8928D4380D00A89083 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8828D4380D00A89083 /* Animation.swift */; };
 		F069EC8B28D43AF900A89083 /* GoogleMapView+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */; };
+		F0A20E4328DD30EC005A61D3 /* CoordinatorFinishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A20E4228DD30EC005A61D3 /* CoordinatorFinishDelegate.swift */; };
 		F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04C828DA993E00D0E7FE /* Date+.swift */; };
 		F0AD04CD28DAEA6000D0E7FE /* WeatherHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04CC28DAEA6000D0E7FE /* WeatherHistoryViewController.swift */; };
 		F0AD04CF28DAF1CB00D0E7FE /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04CE28DAF1CB00D0E7FE /* HistoryTableViewController.swift */; };
 		F0BC0AC628DBD89B006C4F26 /* WeatherHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC0AC528DBD89B006C4F26 /* WeatherHistoryViewModel.swift */; };
 		F0BC0AC928DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC0AC828DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift */; };
 		F0BC0AD128DBFF31006C4F26 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC0AD028DBFF31006C4F26 /* HistoryRow.swift */; };
+		F0BC0ADD28DC4D57006C4F26 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC0ADC28DC4D57006C4F26 /* Coordinator.swift */; };
+		F0BC0ADF28DC4D95006C4F26 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC0ADE28DC4D95006C4F26 /* MainCoordinator.swift */; };
+		F0BC0AE228DC524D006C4F26 /* ViewController+Bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC0AE128DC524D006C4F26 /* ViewController+Bind.swift */; };
 		F0C4903828D94CF600D957EF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903728D94CF600D957EF /* LoadingView.swift */; };
 		F0C4903B28D9536B00D957EF /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903A28D9536B00D957EF /* LoadingViewController.swift */; };
 		F0C4903E28D9852E00D957EF /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903D28D9852E00D957EF /* Toast.swift */; };
@@ -102,18 +105,21 @@
 		F05AA97428D3104D00B77E4A /* GoogleMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
 		F05AA99228D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalCoordinate+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F05AA99628D3108300B77E4A /* WeatherModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherModel.xcdatamodel; sourceTree = "<group>"; };
-		F05AA99828D310D900B77E4A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F05AA99F28D3120E00B77E4A /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		F069EC8228D3F12E00A89083 /* SearchBarView+Bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBarView+Bind.swift"; sourceTree = "<group>"; };
 		F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+Keyboard.swift"; sourceTree = "<group>"; };
 		F069EC8828D4380D00A89083 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+SearchBar.swift"; sourceTree = "<group>"; };
+		F0A20E4228DD30EC005A61D3 /* CoordinatorFinishDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFinishDelegate.swift; sourceTree = "<group>"; };
 		F0AD04C828DA993E00D0E7FE /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		F0AD04CC28DAEA6000D0E7FE /* WeatherHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewController.swift; sourceTree = "<group>"; };
 		F0AD04CE28DAF1CB00D0E7FE /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		F0BC0AC528DBD89B006C4F26 /* WeatherHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewModel.swift; sourceTree = "<group>"; };
 		F0BC0AC828DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherHistoryViewController+Bind.swift"; sourceTree = "<group>"; };
 		F0BC0AD028DBFF31006C4F26 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
+		F0BC0ADC28DC4D57006C4F26 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F0BC0ADE28DC4D95006C4F26 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		F0BC0AE128DC524D006C4F26 /* ViewController+Bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Bind.swift"; sourceTree = "<group>"; };
 		F0C4903728D94CF600D957EF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F0C4903A28D9536B00D957EF /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		F0C4903D28D9852E00D957EF /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -217,9 +223,9 @@
 		F05AA94128D30FC800B77E4A /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F0BC0ADA28DC4D3B006C4F26 /* Coordinator */,
 				F05AA94328D30FD800B77E4A /* View */,
 				F05AA94228D30FCF00B77E4A /* Delegate */,
-				F05AA93128D30B7600B77E4A /* ViewController.swift */,
 				F05AA99F28D3120E00B77E4A /* ViewModelProtocol.swift */,
 			);
 			path = Base;
@@ -237,7 +243,6 @@
 		F05AA94328D30FD800B77E4A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F05AA99828D310D900B77E4A /* Main.storyboard */,
 				F05AA93828D30B7700B77E4A /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -328,6 +333,7 @@
 		F05AA95D28D3103B00B77E4A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				F0BC0AE028DC50CE006C4F26 /* Main */,
 				F0AD04CA28DAEA3300D0E7FE /* History */,
 				F05AA95E28D3104D00B77E4A /* GoogleMap */,
 			);
@@ -480,6 +486,33 @@
 			path = DetailRow;
 			sourceTree = "<group>";
 		};
+		F0BC0ADA28DC4D3B006C4F26 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F0BC0ADB28DC4D42006C4F26 /* protocol */,
+				F0BC0ADE28DC4D95006C4F26 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F0BC0ADB28DC4D42006C4F26 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F0BC0ADC28DC4D57006C4F26 /* Coordinator.swift */,
+				F0A20E4228DD30EC005A61D3 /* CoordinatorFinishDelegate.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		F0BC0AE028DC50CE006C4F26 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F05AA93128D30B7600B77E4A /* ViewController.swift */,
+				F0BC0AE128DC524D006C4F26 /* ViewController+Bind.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		F0C4903928D9535900D957EF /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,7 +621,6 @@
 			files = (
 				F05AA93A28D30B7700B77E4A /* LaunchScreen.storyboard in Resources */,
 				F05AA97E28D3104D00B77E4A /* GoogleMapView.storyboard in Resources */,
-				F05AA99928D310D900B77E4A /* Main.storyboard in Resources */,
 				F05AA93728D30B7700B77E4A /* Assets.xcassets in Resources */,
 				F05AA95C28D3102D00B77E4A /* meteorological_service.xlsx in Resources */,
 			);
@@ -660,8 +692,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A20E4328DD30EC005A61D3 /* CoordinatorFinishDelegate.swift in Sources */,
 				F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */,
 				F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */,
+				F0BC0ADD28DC4D57006C4F26 /* Coordinator.swift in Sources */,
+				F0BC0AE228DC524D006C4F26 /* ViewController+Bind.swift in Sources */,
 				F0C4904128D9858000D957EF /* NotifyDelegate.swift in Sources */,
 				F0BC0AC928DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift in Sources */,
 				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,
@@ -683,6 +718,7 @@
 				F05AA95328D3100A00B77E4A /* HTTPManager.swift in Sources */,
 				F05AA97528D3104D00B77E4A /* GoogleMapViewModel+Data.swift in Sources */,
 				F05AA9A028D3120E00B77E4A /* ViewModelProtocol.swift in Sources */,
+				F0BC0ADF28DC4D95006C4F26 /* MainCoordinator.swift in Sources */,
 				F05AA95228D3100A00B77E4A /* PersistenceManager.swift in Sources */,
 				F069EC8928D4380D00A89083 /* Animation.swift in Sources */,
 				F05AA97F28D3104D00B77E4A /* WeatherMarkerView.swift in Sources */,
@@ -846,9 +882,10 @@
 				DEVELOPMENT_TEAM = CBM8C92C3U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToyProject/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크를 사용할게요!";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "음성인식을 사용할게요!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -875,9 +912,10 @@
 				DEVELOPMENT_TEAM = CBM8C92C3U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToyProject/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크를 사용할게요!";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "음성인식을 사용할게요!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

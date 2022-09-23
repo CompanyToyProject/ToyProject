@@ -11,32 +11,93 @@ import GooglePlaces
 import CoreData
 import SwiftyJSON
 import CoreXLSX
+import SnapKit
+import Then
+import RxSwift
 
 class ViewController: UIViewController {
     
+    var weatherMapBtn = UIButton().then {
+        $0.setTitleColor(.tintColor, for: .normal)
+        $0.setTitle("날씨 지도", for: .normal)
+        $0.setImage(UIImage(systemName: "cloud.fill"), for: .normal)
+    }
+    
+    var weatherHistoryBtn = UIButton().then {
+        $0.setTitleColor(.tintColor, for: .normal)
+        $0.setTitle("히스토리", for: .normal)
+        $0.setImage(UIImage(systemName: "note.text"), for: .normal)
+    }
+    
+    var translateBtn = UIButton().then {
+        $0.setTitleColor(.tintColor, for: .normal)
+        $0.setTitle("음성 번역", for: .normal)
+        $0.setImage(UIImage(systemName: "mic.fill"), for: .normal)
+    }
+    
+    var translateHistoryBtn = UIButton().then {
+        $0.setTitleColor(.tintColor, for: .normal)
+        $0.setTitle("히스토리", for: .normal)
+        $0.setImage(UIImage(systemName: "note.text"), for: .normal)
+    }
+    
+    var weatherStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 10
+    }
+    var translateStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 10
+    }
+    var containerStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 20
+    }
+    
+    weak var coordinator: MainCoordinator?
+    var disposeBag = DisposeBag()
     var container: NSPersistentContainer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
+        
+        bind()
         self.container = PersistenceManager.shared.persistentContainer
     }
     
-    @IBAction func clickGooglePlaces(_ sender: Any) {
-        
-        getLocalCoordinateDataFromXlsx {
-            DispatchQueue.main.async {
-                let storyBoard = UIStoryboard(name: "GoogleMapView", bundle: nil)
-                guard let vc = storyBoard.instantiateViewController(withIdentifier: "GoogleMapView") as? GoogleMapViewController else {
-                    return
-                }
-                getNavigationController().pushViewController(vc, animated: true)
-            }
-        }
+    func initView() {
+        setUI()
+        setConstraints()
     }
     
-    @IBAction func clickWeatherHistory(_ sender: Any) {
-        let vc = WeatherHistoryViewController()
-        getNavigationController().pushViewController(vc, animated: true)
+    func setUI() {
+        self.view.backgroundColor = .white
+        
+        self.view.addSubview(containerStackView)
+        
+        [
+            weatherStackView,
+            translateStackView
+        ].forEach { containerStackView.addArrangedSubview($0) }
+        
+        
+        [
+            weatherMapBtn,
+            weatherHistoryBtn
+        ].forEach { weatherStackView.addArrangedSubview($0) }
+        
+        [
+            translateBtn,
+            translateHistoryBtn
+        ].forEach { translateStackView.addArrangedSubview($0) }
+        
+    }
+    
+    func setConstraints() {
+        containerStackView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
     }
     
     func getLocalCoordinateDataFromXlsx(completeHandler: @escaping (() -> Void)) {
