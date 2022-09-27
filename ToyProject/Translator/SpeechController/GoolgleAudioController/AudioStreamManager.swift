@@ -152,6 +152,8 @@ class AudioStreamManager {
             throw AudioStreamError.failedToConfigure
         }
         
+        log.d("ok")
+        
     }
     
     deinit {
@@ -185,7 +187,6 @@ func audioRecordingCallBack(
     let buffers = withUnsafeMutablePointer(to: &bufferList.mBuffers) {
         UnsafeMutableBufferPointer(start: $0, count: Int(bufferList.mNumberBuffers))
     }
-    
     
     buffers[0].mNumberChannels = 1
     buffers[0].mDataByteSize = inNumberFrames * 2

@@ -19,6 +19,7 @@ extension TranslatorViewModel {
             }
             else {
                 AudioStreamManager.shared.stop()
+                self.service.stopStreaming()
             }
         }
         
@@ -55,6 +56,7 @@ extension TranslatorViewModel {
         else {
             if status == .off {
                 AudioStreamManager.shared.delegate = self
+                self.audioData = NSMutableData()
                 do {
                     try AudioStreamManager.shared.prepare()
                     AudioStreamManager.shared.start()
@@ -65,9 +67,9 @@ extension TranslatorViewModel {
             }
             else {
                 AudioStreamManager.shared.stop()
+                self.service.stopStreaming()
             }
         }
-    
         
     }
 }

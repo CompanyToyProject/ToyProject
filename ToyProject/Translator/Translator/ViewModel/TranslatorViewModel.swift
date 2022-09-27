@@ -41,39 +41,11 @@ class TranslatorViewModel {
     var dispoesBag = DisposeBag()
     var model = TranslatorModel()
     var timer: Timer!
-    let sample_rate = 16000
+    var audioData : NSMutableData!
+    var service = SpeechRecognizeService()
     
     init(input: Input){
-        
-//        self.output.originalText = model.originalText
-//            .skip(1)
-//            .withLatestFrom(model.detectedStatus, resultSelector: { [unowned self] (text, status) in
-//
-//                if self.timer != nil {
-//                    self.timer.invalidate()
-//                    self.timer = nil
-//                }
-//
-//                if text.count != 0 {
-//                    self.timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { timer in
-//                        log.d("detechStatus : \(status) ...")
-//                        if status == .off {
-//                            self.detechToTransalte()
-//                        }
-//                        else {
-//                            self.translate()
-//                        }
-//
-//                        timer.invalidate()
-//                    })
-//                }
-//
-//                return text
-//            })
-//            .map{ return $0}
-//            .distinctUntilChanged()
-//            .asDriver(onErrorRecover: { _ in .empty()})
-        
+
         self.output.originalText = model.originalText
             .skip(1)
             .withLatestFrom(model.detectedStatus){ ($0, $1)}
@@ -256,67 +228,16 @@ class TranslatorViewModel {
             .withLatestFrom(self.model.currentTechWay){($0, $1)}
             .bind{ [unowned self] (voiceStatus, techWay) in
                 self.speakVoiceTap(voiceStatus, techWay)
-//                if techWay == .papago {
-//                    if voiceStatus == .off {
-//                        log.d("음성입력 모드 on...")
-//
-//                        self.model.voiceText.accept("음성 ON")
-//                        self.model.voiceStatus.accept(.on)
-//
-//                        SpeechController.sharedInstance.delegate = self
-//
-//                        self.model.sourceLanguageCode.value == "언어 감지" ? SpeechController.sharedInstance.prepare() : SpeechController.sharedInstance.prepare(code: self.model.sourceLanguageCode.value)
-//                    }
-//                    else {
-//                        log.d("음성입력 모드 Off...")
-//                        self.voiceStatus(.off)
-//                        SpeechController.sharedInstance.stop()
-//                    }
-//                }
-//                else {
-//                    log.d("google cloud speech on...")
-//                    if voiceStatus == .off {
-//                        self.model.voiceText.accept("음성 ON")
-//                        self.model.voiceStatus.accept(.on)
-//
-//                        AudioStreamManager.shared.delegate = self
-//
-//                        do {
-//                            try AudioStreamManager.shared.prepare()
-//                            AudioStreamManager.shared.start()
-//                        }
-//                        catch {
-//                            log.d(error)
-//                        }
-//                    }
-//                    else {
-//                        log.d("음성입력 모드 Off...")
-//                        self.voiceStatus(.off)
-//                        AudioStreamManager.shared.stop()
-//                    }
-//
-//                }
-
             }
             .disposed(by: dispoesBag)
         
         self.inputMode?.voiceInputText
             .bind(to: self.model.originalText)
             .disposed(by: dispoesBag)
-        
-        
 
     }
     
     deinit {
-//        if self.model.voiceStatus.value == .on {
-//            if self.model.currentTechWay.value == .papago {
-//                SpeechController.sharedInstance.stop()
-//            }
-//            else {
-//                AudioStreamManager.shared.stop()
-//            }
-//        }
         log.d("TranslatorViewModel deinitdeinitdeinitdeinitdeinitdeinitdeinitdeinit")
     }
     

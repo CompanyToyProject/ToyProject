@@ -22,12 +22,10 @@ class SpeechRecognizeService {
     }
     
     private var client: Google_Cloud_Speech_V1_SpeechNIOClient
-    
     private var state: State = .idle
     
     init(){
-        
-        precondition(GoogleCloudModel.apiKey.isEmpty, "Google Cloud API Key is Missing. Please Enter Your API Key")
+        precondition(!GoogleCloudModel.apiKey.isEmpty, "Google Cloud API Key is Missing. Please Enter Your API Key")
         
         // 특정 플랫폼에 대한 이벤트 루프 그룹 만들기(iOS용 NIOTSeventLoopGroup)
         // 자세한 내용은 https://github.com/grpc/grpc-swift/blob/main/docs/apple-platforms.md 을 참조하십시오.
@@ -53,10 +51,9 @@ class SpeechRecognizeService {
         
     }
     
-    func getStreamResponse(_ data: Data,_ languageCode: String ,completion: ((Google_Cloud_Speech_V1_StreamingRecognizeResponse) -> Void)? = nil ) {
+    func getStreamResponse(_ data: NSData,_ languageCode: String = Locale.preferredLanguages.first! ,completion: ((Google_Cloud_Speech_V1_StreamingRecognizeResponse) -> Void)? = nil ) {
         switch self.state {
         case .idle:
-            log.d("idle")
             // 양방향 스트림 초기화
             let call = self.client.streamingRecognize { response in
                 // 서버로부터 메세지가 도착하고, 클로저를 통해 response 전달
@@ -64,7 +61,7 @@ class SpeechRecognizeService {
             }
             
             self.state = .streaming(call)
-            
+            log.d("languageCode : \(languageCode)")
             // 오디오 세부 정보 지정
             let config = Google_Cloud_Speech_V1_RecognitionConfig.with {
                 $0.encoding = .linear16
@@ -82,6 +79,8 @@ class SpeechRecognizeService {
             let request = Google_Cloud_Speech_V1_StreamingRecognizeRequest.with {
                 $0.streamingConfig = Google_Cloud_Speech_V1_StreamingRecognitionConfig.with{
                     $0.config = config
+                    $0.singleUtterance = false
+                    $0.interimResults = true
                 }
             }
             
@@ -89,19 +88,18 @@ class SpeechRecognizeService {
             call.sendMessage(request, promise: nil)
             
             // 오디오 세부 정보가 포함된 전송할 스트림 요청
+            
             let streamAudioDataRequest = Google_Cloud_Speech_V1_StreamingRecognizeRequest.with{
-                $0.audioContent = data
+                $0.audioContent = data as Data
             }
             
             // 오디오 데이터 전송
             call.sendMessage(streamAudioDataRequest, promise: nil)
             
         case let .streaming(call):
-            log.d("streaming")
-            
             // 오디오 세부 정보가 포함된 전송할 스트림 요청
             let streamAudioDataRequest = Google_Cloud_Speech_V1_StreamingRecognizeRequest.with{
-                $0.audioContent = data
+                $0.audioContent = data as Data
             }
             
             // 오디오 데이터 전송
