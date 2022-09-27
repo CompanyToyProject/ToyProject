@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import AVFoundation
 
 class TranslatorViewModel {
     
@@ -20,6 +21,7 @@ class TranslatorViewModel {
         var targetLanguageTap: Observable<Void>
         var papagoTap: Observable<Void>
         var googleTap: Observable<Void>
+        var speakVoiceTap: Observable<Void>
         var voiceInputText: PublishSubject<String> = .init()
     }
     
@@ -39,6 +41,7 @@ class TranslatorViewModel {
     var dispoesBag = DisposeBag()
     var model = TranslatorModel()
     var timer: Timer!
+    let sample_rate = 16000
     
     init(input: Input){
         
@@ -225,17 +228,17 @@ class TranslatorViewModel {
                     if detechStatus == .off {
                         
                     }
+                    else {
+                        
+                    }
                 }
             }
-            .disposed(by: dispoesBag)
-        
-        input.voiceInputText
-            .bind(to: self.model.originalText)
             .disposed(by: dispoesBag)
 
         input.papagoTap
             .bind{ [unowned self] in
                 log.d("papago Technology on...")
+                self.voiceStatus(.off)
                 self.model.currentTechWay.accept(.papago)
             }
             .disposed(by: dispoesBag)
@@ -243,13 +246,77 @@ class TranslatorViewModel {
         input.googleTap
             .bind{ [unowned self] in
                 log.d("google Technology on...")
+                self.voiceStatus(.off)
                 self.model.currentTechWay.accept(.google)
             }
             .disposed(by: dispoesBag)
+        
+        input.speakVoiceTap
+            .withLatestFrom(self.model.voiceStatus)
+            .withLatestFrom(self.model.currentTechWay){($0, $1)}
+            .bind{ [unowned self] (voiceStatus, techWay) in
+                self.speakVoiceTap(voiceStatus, techWay)
+//                if techWay == .papago {
+//                    if voiceStatus == .off {
+//                        log.d("음성입력 모드 on...")
+//
+//                        self.model.voiceText.accept("음성 ON")
+//                        self.model.voiceStatus.accept(.on)
+//
+//                        SpeechController.sharedInstance.delegate = self
+//
+//                        self.model.sourceLanguageCode.value == "언어 감지" ? SpeechController.sharedInstance.prepare() : SpeechController.sharedInstance.prepare(code: self.model.sourceLanguageCode.value)
+//                    }
+//                    else {
+//                        log.d("음성입력 모드 Off...")
+//                        self.voiceStatus(.off)
+//                        SpeechController.sharedInstance.stop()
+//                    }
+//                }
+//                else {
+//                    log.d("google cloud speech on...")
+//                    if voiceStatus == .off {
+//                        self.model.voiceText.accept("음성 ON")
+//                        self.model.voiceStatus.accept(.on)
+//
+//                        AudioStreamManager.shared.delegate = self
+//
+//                        do {
+//                            try AudioStreamManager.shared.prepare()
+//                            AudioStreamManager.shared.start()
+//                        }
+//                        catch {
+//                            log.d(error)
+//                        }
+//                    }
+//                    else {
+//                        log.d("음성입력 모드 Off...")
+//                        self.voiceStatus(.off)
+//                        AudioStreamManager.shared.stop()
+//                    }
+//
+//                }
+
+            }
+            .disposed(by: dispoesBag)
+        
+        self.inputMode?.voiceInputText
+            .bind(to: self.model.originalText)
+            .disposed(by: dispoesBag)
+        
+        
 
     }
     
     deinit {
+//        if self.model.voiceStatus.value == .on {
+//            if self.model.currentTechWay.value == .papago {
+//                SpeechController.sharedInstance.stop()
+//            }
+//            else {
+//                AudioStreamManager.shared.stop()
+//            }
+//        }
         log.d("TranslatorViewModel deinitdeinitdeinitdeinitdeinitdeinitdeinitdeinit")
     }
     

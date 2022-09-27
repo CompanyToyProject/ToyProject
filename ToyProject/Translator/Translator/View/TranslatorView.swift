@@ -414,7 +414,6 @@ class TranslatorView: UIView {
     
     private func firstSetting(){
         getNavigationController().isNavigationBarHidden = true
-        sourceTextView.delegate = self
         settingLayer()
         input()
         output()
@@ -432,7 +431,7 @@ class TranslatorView: UIView {
     }
     
     private func input(){
-        let inputs = TranslatorViewModel.Input(textInput: sourceTextView.rx.text.orEmpty.distinctUntilChanged().map{ $0.trimmingCharacters(in: .whitespacesAndNewlines)}, executeTranslate: executeTranslatedBtn.rx.tap.asObservable(), sourceLanguageTap: sourceLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, targetLanguageTap: targetLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, papagoTap: papagoBtn.rx.tap.asObservable(), googleTap: googleBtn.rx.tap.asObservable())
+        let inputs = TranslatorViewModel.Input(textInput: sourceTextView.rx.text.orEmpty.distinctUntilChanged().map{ $0.trimmingCharacters(in: .whitespacesAndNewlines)}, executeTranslate: executeTranslatedBtn.rx.tap.asObservable(), sourceLanguageTap: sourceLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, targetLanguageTap: targetLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, papagoTap: papagoBtn.rx.tap.asObservable(), googleTap: googleBtn.rx.tap.asObservable(), speakVoiceTap: speakVoiceBtn.rx.tap.asObservable())
 
         self.viewModel = TranslatorViewModel(input: inputs)
     }
@@ -506,65 +505,7 @@ class TranslatorView: UIView {
                 self.sourceTextView.endEditing(true)
             }
             .disposed(by: disposeBag)
-        
-//        self.speakVoiceBtn.rx.tap
-//            .withLatestFrom(self.viewModel.model.voiceStatus)
-//            .filter{ $0 == .off}
-//            .map{ _ in }
-//            .bind{ [unowned self] in
-//                log.d("음성입력 모드 on...")
-//                self.viewModel.model.voiceText.accept("음성 OFF")
-//                self.viewModel.model.voiceStatus.accept(.on)
-//
-//                SpeechController.sharedInstance.delegate = self
-//
-//                self.viewModel.model.sourceLanguageCode.value == "언어 감지" ? SpeechController.sharedInstance.prepare() : SpeechController.sharedInstance.prepare(code: self.viewModel.model.sourceLanguageCode.value)
-//
-//            }
-//            .disposed(by: disposeBag)
-        
-        self.speakVoiceBtn.rx.tap
-            .withLatestFrom(self.viewModel.model.voiceStatus)
-            .withLatestFrom(self.viewModel.model.currentTechWay){($0, $1)}
-            .bind{ [unowned self] (voiceStatus, techWay) in
-                if techWay == .papago {
-                    if voiceStatus == .off {
-                        log.d("음성입력 모드 on...")
-                        
-                        self.viewModel.model.voiceText.accept("음성 ON")
-                        self.viewModel.model.voiceStatus.accept(.on)
-                        
-                        SpeechController.sharedInstance.delegate = self
-                        
-                        self.viewModel.model.sourceLanguageCode.value == "언어 감지" ? SpeechController.sharedInstance.prepare() : SpeechController.sharedInstance.prepare(code: self.viewModel.model.sourceLanguageCode.value)
-                    }
-                    else {
-                        log.d("음성입력 모드 Off...")
-                        self.viewModel.model.voiceText.accept("음성 OFF")
-                        self.viewModel.model.voiceStatus.accept(.off)
-                        
-                        SpeechController.sharedInstance.stop()
-                    }
-                }
-                else {
-                    log.d("google cloud speech on...")
-                    let audioSession = AVAudioSession.sharedInstance()
-                    do {
-                        try audioSession.setCategory(AVAudioSession.Category.record)
-                    } catch {
 
-                    }
-                    
-                    AudioController.sharedInstance.delegate = self
-                    
-                    _ = AudioController.sharedInstance.prepare(specifiedSampleRate: SAMPLE_RATE)
-                    
-                    _ = AudioController.sharedInstance.start()
-
-                }
-
-            }
-            .disposed(by: disposeBag)
     }
     
     deinit {

@@ -131,11 +131,11 @@ func recordingCallback( // AURenderCallback - 오디오 장치에 입력 샘플�
         bufferList.mNumberBuffers = channelCount // mNumberBuffers : 리스트의 오디오 버퍼 수
         
         // 버퍼(buffer)는 연속적인 메모리 공간을 의미. 메모리를 할당해서 구한 포인터는 이 버퍼의 시작 주소를 담고 있다고 볼 수 있다. 버퍼는 메모리 덩어리 그 자체, 하지만 Swift에서는 포인터를 쓸 수 있는 언어가 아니기 떄문에 연속적인 메모리를 액세스 하는 것이 불가능. 그래서 Swift에서는 버퍼를 대체하기위해 배열을 대신 사용
-        let buffers = UnsafeMutableBufferPointer<AudioBuffer>(start: &bufferList.mBuffers,
-                                                              count: Int(bufferList.mNumberBuffers)) // UnsafeMutableBufferPointer :
-        //      let buffers = withUnsafeMutablePointer(to: &bufferList.mBuffers) {
-        //          UnsafeMutableBufferPointer(start: $0, count: Int(bufferList.mNumberBuffers))
-        //        }
+//        let buffers = UnsafeMutableBufferPointer<AudioBuffer>(start: &bufferList.mBuffers,
+//                                                              count: Int(bufferList.mNumberBuffers)) // UnsafeMutableBufferPointer :
+              let buffers = withUnsafeMutablePointer(to: &bufferList.mBuffers) {
+                  UnsafeMutableBufferPointer(start: $0, count: Int(bufferList.mNumberBuffers))
+                }
         buffers[0].mNumberChannels = 1 // mNumberChannels : 버퍼의 인터리브된 채널 수
         buffers[0].mDataByteSize = inNumberFrames * 2 // mDataByteSize : 버퍼의 바이트 수
         buffers[0].mData = nil    // mData : 오디오 데이터의 버퍼에 대한 포인터
