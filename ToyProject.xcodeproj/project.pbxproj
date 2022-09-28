@@ -16,6 +16,10 @@
 		EF6CB0DB28DA9E690028B832 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CB0DA28DA9E690028B832 /* SpeechController.swift */; };
 		EF6CB0DF28DAACEA0028B832 /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CB0DE28DAACEA0028B832 /* GlobalFunc.swift */; };
 		EF6CB0ED28DBF2710028B832 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */; };
+		EFB16B6228E4015700766A34 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFB16B6128E4015700766A34 /* FirebaseAuth */; };
+		EFB16B6428E4015700766A34 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = EFB16B6328E4015700766A34 /* FirebaseFunctions */; };
+		EFB16BAD28E4121F00766A34 /* AudioFileToText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BAC28E4121F00766A34 /* AudioFileToText.swift */; };
+		EFB16BB028E4137E00766A34 /* AudioRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BAF28E4137E00766A34 /* AudioRecordView.swift */; };
 		EFB51A9628D4558600A26C9B /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9528D4558600A26C9B /* CGRPCZlib */; };
 		EFB51A9828D4558600A26C9B /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9728D4558600A26C9B /* GRPC */; };
 		EFB51A9A28D4558600A26C9B /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */; };
@@ -96,6 +100,8 @@
 		EF6CB0DA28DA9E690028B832 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		EF6CB0DE28DAACEA0028B832 /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFB16BAC28E4121F00766A34 /* AudioFileToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileToText.swift; sourceTree = "<group>"; };
+		EFB16BAF28E4137E00766A34 /* AudioRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordView.swift; sourceTree = "<group>"; };
 		EFCF9A6728DC4976004F42F0 /* cloud_speech.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloud_speech.grpc.swift; sourceTree = "<group>"; };
 		EFCF9A6828DC4976004F42F0 /* status.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = status.pb.swift; sourceTree = "<group>"; };
 		EFCF9A6928DC4976004F42F0 /* cloud_speech.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloud_speech.pb.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFB51A9828D4558600A26C9B /* GRPC in Frameworks */,
+				EFB16B6228E4015700766A34 /* FirebaseAuth in Frameworks */,
 				EF6C8DD228D3F8C0000FB249 /* GoogleAPIClientForREST_Translate in Frameworks */,
 				F05AA99C28D3117F00B77E4A /* CoreXLSX in Frameworks */,
 				EFB51A9628D4558600A26C9B /* CGRPCZlib in Frameworks */,
@@ -179,6 +186,7 @@
 				EFB51A9A28D4558600A26C9B /* protoc-gen-grpc-swift in Frameworks */,
 				EF6C8DD028D3F8C0000FB249 /* GoogleAPIClientForREST_Speech in Frameworks */,
 				EF6C8DCE28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 in Frameworks */,
+				EFB16B6428E4015700766A34 /* FirebaseFunctions in Frameworks */,
 				ABCF6EBC90A8E0E37B9E3D7A /* Pods_ToyProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +213,7 @@
 				EFEB1ABC28E1826C00D9CAC3 /* GoogleCloud */,
 				EFD5962828D97B47003BAA25 /* Papago */,
 				EF6C8DD728D3F9AA000FB249 /* Translator */,
+				EFB16BAE28E4136700766A34 /* Audio */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -235,6 +244,14 @@
 				EFEB1A6628E15C5900D9CAC3 /* GoolgleAudioController */,
 			);
 			path = SpeechController;
+			sourceTree = "<group>";
+		};
+		EFB16BAE28E4136700766A34 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BAF28E4137E00766A34 /* AudioRecordView.swift */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		EFCF9A6628DC4976004F42F0 /* google_protobuf */ = {
@@ -326,6 +343,7 @@
 				EFEB1ABF28E1963700D9CAC3 /* GoogleCloudModel.swift */,
 				EFEB1ABD28E1906A00D9CAC3 /* SpeechRecognizeService.swift */,
 				EF184EF228E2F1D10070BD9F /* TranslationService.swift */,
+				EFB16BAC28E4121F00766A34 /* AudioFileToText.swift */,
 			);
 			path = GoogleCloud;
 			sourceTree = "<group>";
@@ -623,6 +641,8 @@
 				EFB51A9528D4558600A26C9B /* CGRPCZlib */,
 				EFB51A9728D4558600A26C9B /* GRPC */,
 				EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */,
+				EFB16B6128E4015700766A34 /* FirebaseAuth */,
+				EFB16B6328E4015700766A34 /* FirebaseFunctions */,
 			);
 			productName = ToyProject;
 			productReference = F05AA92A28D30B7600B77E4A /* ToyProject.app */;
@@ -656,6 +676,7 @@
 				F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */,
 				EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */,
 				EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */,
+				EFB16B6028E4015700766A34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F05AA92B28D30B7600B77E4A /* Products */;
 			projectDirPath = "";
@@ -757,6 +778,7 @@
 				EFEB1ABE28E1906A00D9CAC3 /* SpeechRecognizeService.swift in Sources */,
 				EFD5962F28D97D0C003BAA25 /* PapagoCell.swift in Sources */,
 				EF6CB0DF28DAACEA0028B832 /* GlobalFunc.swift in Sources */,
+				EFB16BAD28E4121F00766A34 /* AudioFileToText.swift in Sources */,
 				EFD5963528D9B71F003BAA25 /* TranslatorViewModel+++.swift in Sources */,
 				F05AA98028D3104D00B77E4A /* WeatherMarkerInfoView.swift in Sources */,
 				F05AA93228D30B7600B77E4A /* ViewController.swift in Sources */,
@@ -778,6 +800,7 @@
 				EFEB1AC028E1963700D9CAC3 /* GoogleCloudModel.swift in Sources */,
 				F05AA97528D3104D00B77E4A /* GoogleMapViewModel+Data.swift in Sources */,
 				F05AA9A028D3120E00B77E4A /* ViewModelProtocol.swift in Sources */,
+				EFB16BB028E4137E00766A34 /* AudioRecordView.swift in Sources */,
 				F05AA95228D3100A00B77E4A /* PersistenceManager.swift in Sources */,
 				EFD595CA28D7ECCB003BAA25 /* TranslatorModel.swift in Sources */,
 				F05AA99328D3107000B77E4A /* LocalCoordinate+CoreDataProperties.swift in Sources */,
@@ -1031,6 +1054,14 @@
 				minimumVersion = 2.0.1;
 			};
 		};
+		EFB16B6028E4015700766A34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.6.0;
+			};
+		};
 		EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/grpc/grpc-swift.git";
@@ -1069,6 +1100,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
 			productName = GoogleAPIClientForREST_Translate;
+		};
+		EFB16B6128E4015700766A34 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB16B6028E4015700766A34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EFB16B6328E4015700766A34 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB16B6028E4015700766A34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
 		};
 		EFB51A9528D4558600A26C9B /* CGRPCZlib */ = {
 			isa = XCSwiftPackageProductDependency;

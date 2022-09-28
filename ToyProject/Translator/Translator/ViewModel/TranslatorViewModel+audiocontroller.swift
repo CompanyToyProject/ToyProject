@@ -28,12 +28,28 @@ extension TranslatorViewModel: SpeechToTextProtocol, StreamDelegate {
         if self.audioData.count > chunkSize {
             if self.model.sourceLanguageText.value == "언어 감지" {
                 self.service.getStreamResponse(self.audioData, completion: { [unowned self] (response) in
-                    log.d(response.results.first)
+                    guard let results = response.results.first else {
+                        return
+                    }
+                    
+                    guard let text = results.alternatives.first?.transcript else {
+                        return
+                    }
+
+                    self.model.originalText.accept(text)
                 })
             }
             else {
                 self.service.getStreamResponse(self.audioData, self.model.sourceLanguageCode.value, completion: { [unowned self] (response) in
-                    log.d(response.results.first)
+                    guard let results = response.results.first else {
+                        return
+                    }
+                    
+                    guard let text = results.alternatives.first?.transcript else {
+                        return
+                    }
+                    
+                    self.model.originalText.accept(text)
                 })
             }
             self.audioData = NSMutableData()

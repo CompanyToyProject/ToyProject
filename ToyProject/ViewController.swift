@@ -23,6 +23,13 @@ class ViewController: UIViewController {
         $0.backgroundColor = .blue
     }
     
+    lazy var goRecordView = UIButton().then{
+        $0.setTitle("녹음기", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+        $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        $0.backgroundColor = .blue
+    }
+    
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -39,12 +46,18 @@ class ViewController: UIViewController {
         getNavigationController().pushViewController(vc, animated: true)    }
     
     private func setting(){
-        self.view.addSubview(goTranslator)
+        [goTranslator, goRecordView].forEach{
+            self.view.addSubview($0)
+        }
         
         goTranslator.snp.makeConstraints{
             $0.top.equalTo(googleMapBtn.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
-            
+        }
+        
+        goRecordView.snp.makeConstraints{
+            $0.top.equalTo(goRecordView.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
         }
     }
     
@@ -52,6 +65,16 @@ class ViewController: UIViewController {
         goTranslator.rx.tap
             .bind{ [unowned self] in
                 let view = TranslatorView(frame: .zero)
+                self.view.addSubview(view)
+                view.snp.makeConstraints{
+                    $0.edges.equalToSuperview()
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        goRecordView.rx.tap
+            .bind{ [unowned self] in
+                let view = AudioRecordView(frame: .zero)
                 self.view.addSubview(view)
                 view.snp.makeConstraints{
                     $0.edges.equalToSuperview()

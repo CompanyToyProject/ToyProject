@@ -59,22 +59,28 @@ class TranslatorViewModel {
                 
                 if text.count != 0 {
                     self.timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { timer in
-                        if techWay == .papago {
-                            if detechStatus == .off {
-                                self.detechToTransalte()
-                            }
-                            else {
-                                self.translate()
-                            }
+                        if detechStatus == .off {
+                            self.detechToTransalte()
                         }
                         else {
-                            if detechStatus == .off {
-                                
-                            }
-                            else {
-                                
-                            }
+                            self.translate()
                         }
+//                        if techWay == .papago {
+//                            if detechStatus == .off {
+//                                self.detechToTransalte()
+//                            }
+//                            else {
+//                                self.translate()
+//                            }
+//                        }
+//                        else {
+//                            if detechStatus == .off {
+//
+//                            }
+//                            else {
+//
+//                            }
+//                        }
                         timer.invalidate()
                     })
                 }
@@ -145,7 +151,7 @@ class TranslatorViewModel {
         input.sourceLanguageTap
             .withLatestFrom(self.model.currentTechWay)
             .bind{ [unowned self] (techWay) in
-                if techWay == .papago {
+//                if techWay == .papago {
                     let view = PapagoLanguageView(frame: .zero)
                     view.selectModel(.source)
                     view.delegate = self
@@ -153,17 +159,17 @@ class TranslatorViewModel {
                     view.snp.makeConstraints{
                         $0.edges.equalToSuperview()
                     }
-                }
-                else {
-                    self.googleSupportedLanguage()
-                }
+//                }
+//                else {
+//                    self.googleSupportedLanguage()
+//                }
             }
             .disposed(by: dispoesBag)
         
         input.targetLanguageTap
             .withLatestFrom(self.model.currentTechWay)
             .bind{ (techWay) in
-                if techWay == .papago {
+//                if techWay == .papago {
                     let view = PapagoLanguageView(frame: .zero)
                     view.selectModel(.target)
                     view.delegate = self
@@ -171,10 +177,10 @@ class TranslatorViewModel {
                     view.snp.makeConstraints{
                         $0.edges.equalToSuperview()
                     }
-                }
-                else {
-                    
-                }
+//                }
+//                else {
+//
+//                }
             }
             .disposed(by: dispoesBag)
         
@@ -187,23 +193,29 @@ class TranslatorViewModel {
                     self.timer.invalidate()
                     self.timer = nil
                 }
-
-                if techWay == .papago {
-                    if detechStatus == .off {
-                        self.detechToTransalte()
-                    }
-                    else{
-                        self.translate()
-                    }
+                
+                if detechStatus == .off {
+                    self.detechToTransalte()
                 }
                 else {
-                    if detechStatus == .off {
-                        
-                    }
-                    else {
-                        
-                    }
+                    self.detechToTransalte()
                 }
+//                if techWay == .papago {
+//                    if detechStatus == .off {
+//                        self.detechToTransalte()
+//                    }
+//                    else{
+//                        self.translate()
+//                    }
+//                }
+//                else {
+//                    if detechStatus == .off {
+//
+//                    }
+//                    else {
+//
+//                    }
+//                }
             }
             .disposed(by: dispoesBag)
 
