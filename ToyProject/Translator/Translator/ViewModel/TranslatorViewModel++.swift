@@ -55,8 +55,4 @@ extension TranslatorViewModel {
         }
     }
     
-    func googleSupportedLanguage() {
-        
-    }
-    
 }

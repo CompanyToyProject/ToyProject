@@ -189,17 +189,6 @@ class TranslatorView: UIView {
     var disposeBag = DisposeBag()
     var viewModel: TranslatorViewModel!
     
-    var timer: Timer!
-    
-    let audioEngine: AVAudioEngine? = AVAudioEngine()   // audio stream - > 마이크가 오디오를 수신할 떄 업데이트를 제공하는 역할. 순수 소리만을 인식하는 오디오 엔진 객체다.
-    var speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()    // 음성 인식을 수행하는 역할. 음성 인식에 실패하면 nil을 반환할 수 있으므로 옵셔널로 만드는 것이 적절하다.
-    var request : SFSpeechAudioBufferRecognitionRequest?   // 사용자가 실시간으로 말할 때 음성을 할당하고 버퍼링을 제어하는 역할.
-    // 만약 오디오가 미리 녹음되어있는 경우일때는 SFSpeechURLRecognitionRequest를 사용
-    var recognitionTask: SFSpeechRecognitionTask?       // 음성 인식 작업을 관리, 취소, 중지등 결과를 제공하는 Task 객체
-    
-    var audioData = Data()
-    let SAMPLE_RATE = 16000
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setView()

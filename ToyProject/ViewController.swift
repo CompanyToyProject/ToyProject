@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         }
         
         goRecordView.snp.makeConstraints{
-            $0.top.equalTo(goRecordView.snp.bottom).offset(20)
+            $0.top.equalTo(goTranslator.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
         }
     }
