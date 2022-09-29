@@ -182,6 +182,7 @@ class AudioRecordView: UIView, AVAudioRecorderDelegate, AVAudioPlayerDelegate, A
     }
     
     private func firstSetting(){
+        getNavigationController().isNavigationBarHidden = true
         
         let audioSession = AVAudioSession.sharedInstance()
         do {

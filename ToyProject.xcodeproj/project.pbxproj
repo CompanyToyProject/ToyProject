@@ -23,6 +23,15 @@
 		EFB16BB928E445E600766A34 /* AudioTitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BB828E445E600766A34 /* AudioTitleService.swift */; };
 		EFB16BBB28E51B0E00766A34 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BBA28E51B0E00766A34 /* LoadingIndicator.swift */; };
 		EFB16BBE28E51DA400766A34 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BBD28E51DA400766A34 /* VideoView.swift */; };
+		EFB16BC328E52A2200766A34 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BC228E52A2200766A34 /* VideoViewModel.swift */; };
+		EFB16BC928E52A4800766A34 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BC828E52A4800766A34 /* VideoModel.swift */; };
+		EFB16BCC28E5388800766A34 /* VideoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BCB28E5388800766A34 /* VideoCollectionView.swift */; };
+		EFB16BD228E538A600766A34 /* VideoCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BD128E538A600766A34 /* VideoCollectionViewModel.swift */; };
+		EFB16BD428E538B200766A34 /* VideoCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BD328E538B200766A34 /* VideoCollectionModel.swift */; };
+		EFB16BDC28E5559600766A34 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BDB28E5559600766A34 /* VideoCell.swift */; };
+		EFB16BDE28E555DC00766A34 /* VideoCollectionView+collectionview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BDD28E555DC00766A34 /* VideoCollectionView+collectionview.swift */; };
+		EFB16BE028E5609300766A34 /* VideoViewModel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BDF28E5609300766A34 /* VideoViewModel+.swift */; };
+		EFB16BE328E56B3500766A34 /* AlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BE228E56B3500766A34 /* AlbumManager.swift */; };
 		EFB51A9628D4558600A26C9B /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9528D4558600A26C9B /* CGRPCZlib */; };
 		EFB51A9828D4558600A26C9B /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9728D4558600A26C9B /* GRPC */; };
 		EFB51A9A28D4558600A26C9B /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */; };
@@ -108,6 +117,15 @@
 		EFB16BB828E445E600766A34 /* AudioTitleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTitleService.swift; sourceTree = "<group>"; };
 		EFB16BBA28E51B0E00766A34 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		EFB16BBD28E51DA400766A34 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		EFB16BC228E52A2200766A34 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		EFB16BC828E52A4800766A34 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		EFB16BCB28E5388800766A34 /* VideoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionView.swift; sourceTree = "<group>"; };
+		EFB16BD128E538A600766A34 /* VideoCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewModel.swift; sourceTree = "<group>"; };
+		EFB16BD328E538B200766A34 /* VideoCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionModel.swift; sourceTree = "<group>"; };
+		EFB16BDB28E5559600766A34 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		EFB16BDD28E555DC00766A34 /* VideoCollectionView+collectionview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoCollectionView+collectionview.swift"; sourceTree = "<group>"; };
+		EFB16BDF28E5609300766A34 /* VideoViewModel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewModel+.swift"; sourceTree = "<group>"; };
+		EFB16BE228E56B3500766A34 /* AlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumManager.swift; sourceTree = "<group>"; };
 		EFCF9A6728DC4976004F42F0 /* cloud_speech.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloud_speech.grpc.swift; sourceTree = "<group>"; };
 		EFCF9A6828DC4976004F42F0 /* status.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = status.pb.swift; sourceTree = "<group>"; };
 		EFCF9A6928DC4976004F42F0 /* cloud_speech.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloud_speech.pb.swift; sourceTree = "<group>"; };
@@ -274,9 +292,98 @@
 		EFB16BBC28E51D9900766A34 /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				EFB16BBD28E51DA400766A34 /* VideoView.swift */,
+				EFB16BCA28E5387700766A34 /* VideoCollection */,
+				EFB16BC728E52A4000766A34 /* Model */,
+				EFB16BC028E52A1600766A34 /* ViewModel */,
+				EFB16BBF28E52A1300766A34 /* View */,
 			);
 			path = Video;
+			sourceTree = "<group>";
+		};
+		EFB16BBF28E52A1300766A34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BBD28E51DA400766A34 /* VideoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFB16BC028E52A1600766A34 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BC228E52A2200766A34 /* VideoViewModel.swift */,
+				EFB16BDF28E5609300766A34 /* VideoViewModel+.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EFB16BC728E52A4000766A34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BC828E52A4800766A34 /* VideoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFB16BCA28E5387700766A34 /* VideoCollection */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BE128E56B2900766A34 /* AlbumManager */,
+				EFB16BD528E539B600766A34 /* DataOperations */,
+				EFB16BCF28E5389400766A34 /* Model */,
+				EFB16BCE28E5389100766A34 /* ViewModel */,
+				EFB16BCD28E5388F00766A34 /* View */,
+			);
+			path = VideoCollection;
+			sourceTree = "<group>";
+		};
+		EFB16BCD28E5388F00766A34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BDA28E5558D00766A34 /* cell */,
+				EFB16BCB28E5388800766A34 /* VideoCollectionView.swift */,
+				EFB16BDD28E555DC00766A34 /* VideoCollectionView+collectionview.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFB16BCE28E5389100766A34 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BD128E538A600766A34 /* VideoCollectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EFB16BCF28E5389400766A34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BD328E538B200766A34 /* VideoCollectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFB16BD528E539B600766A34 /* DataOperations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataOperations;
+			sourceTree = "<group>";
+		};
+		EFB16BDA28E5558D00766A34 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BDB28E5559600766A34 /* VideoCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		EFB16BE128E56B2900766A34 /* AlbumManager */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BE228E56B3500766A34 /* AlbumManager.swift */,
+			);
+			path = AlbumManager;
 			sourceTree = "<group>";
 		};
 		EFCF9A6628DC4976004F42F0 /* google_protobuf */ = {
@@ -793,9 +900,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB16BD228E538A600766A34 /* VideoCollectionViewModel.swift in Sources */,
 				F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */,
 				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,
 				EFCF9A7628DC4976004F42F0 /* operations.pb.swift in Sources */,
+				EFB16BC928E52A4800766A34 /* VideoModel.swift in Sources */,
 				F05AA97C28D3104D00B77E4A /* MeteorologicalItem.swift in Sources */,
 				F05AA97928D3104D00B77E4A /* GoogleMapView+MapFunc.swift in Sources */,
 				EF184EF328E2F1D10070BD9F /* TranslationService.swift in Sources */,
@@ -816,6 +925,7 @@
 				F05AA98F28D3105600B77E4A /* SearchLocalViewController.swift in Sources */,
 				F05AA99428D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift in Sources */,
 				EFCF9A7228DC4976004F42F0 /* cloud_speech.pb.swift in Sources */,
+				EFB16BE328E56B3500766A34 /* AlbumManager.swift in Sources */,
 				EFB16BB928E445E600766A34 /* AudioTitleService.swift in Sources */,
 				EFD595DA28D93A38003BAA25 /* TranslatorViewModel++.swift in Sources */,
 				EFD595CE28D7FBF3003BAA25 /* TranslatorModel+image.swift in Sources */,
@@ -824,6 +934,7 @@
 				F05AA95328D3100A00B77E4A /* HTTPManager.swift in Sources */,
 				F05AA98C28D3105600B77E4A /* SearchLocal+SearchResultsUpdating.swift in Sources */,
 				EFEB1AC028E1963700D9CAC3 /* GoogleCloudModel.swift in Sources */,
+				EFB16BDE28E555DC00766A34 /* VideoCollectionView+collectionview.swift in Sources */,
 				F05AA97528D3104D00B77E4A /* GoogleMapViewModel+Data.swift in Sources */,
 				F05AA9A028D3120E00B77E4A /* ViewModelProtocol.swift in Sources */,
 				EFB16BB028E4137E00766A34 /* AudioRecordView.swift in Sources */,
@@ -836,13 +947,16 @@
 				F05AA97F28D3104D00B77E4A /* WeatherMarkerView.swift in Sources */,
 				EFD595DC28D93A65003BAA25 /* Papago.swift in Sources */,
 				F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */,
+				EFB16BE028E5609300766A34 /* VideoViewModel+.swift in Sources */,
 				F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */,
 				EFCF9A7128DC4976004F42F0 /* status.pb.swift in Sources */,
 				EFD595CC28D7ED2A003BAA25 /* TranslatorModel+color.swift in Sources */,
 				F05AA98128D3104D00B77E4A /* SearchBarView+TextView.swift in Sources */,
+				EFB16BCC28E5388800766A34 /* VideoCollectionView.swift in Sources */,
 				EFCF9A7528DC4976004F42F0 /* http.pb.swift in Sources */,
 				EFCF9A7428DC4976004F42F0 /* operations.grpc.swift in Sources */,
 				F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */,
+				EFB16BD428E538B200766A34 /* VideoCollectionModel.swift in Sources */,
 				EFD5962A28D97B56003BAA25 /* PapagoLanguageView.swift in Sources */,
 				EFEB1A6928E15E9800D9CAC3 /* translation_service.pb.swift in Sources */,
 				EFEB1A6C28E160B700D9CAC3 /* TranslatorViewModel+audiocontroller.swift in Sources */,
@@ -857,6 +971,8 @@
 				F05AA97828D3104D00B77E4A /* GoogleMapView+DataFunc.swift in Sources */,
 				EFB16BBB28E51B0E00766A34 /* LoadingIndicator.swift in Sources */,
 				EFCF9A7728DC4976004F42F0 /* resource.pb.swift in Sources */,
+				EFB16BC328E52A2200766A34 /* VideoViewModel.swift in Sources */,
+				EFB16BDC28E5559600766A34 /* VideoCell.swift in Sources */,
 				EFD5963328D9A58C003BAA25 /* extensions.swift in Sources */,
 				EFCF9A7828DC4976004F42F0 /* client.pb.swift in Sources */,
 				F05AA95628D3100A00B77E4A /* GlobalFunctions.swift in Sources */,

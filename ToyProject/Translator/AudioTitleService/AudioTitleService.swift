@@ -17,7 +17,6 @@ class AudioTitleService: NSObject, SFSpeechRecognizerDelegate,  SFSpeechRecognit
     
     static let sharedInstance = AudioTitleService()
     
-    let audioEngine: AVAudioEngine? = AVAudioEngine()
     var speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
     var request: SFSpeechURLRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?

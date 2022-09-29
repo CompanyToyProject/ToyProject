@@ -16,6 +16,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var googleMapBtn: UIButton!
     
+    lazy var btnStackView = UIStackView().then{
+        $0.spacing = 10
+        $0.alignment = .fill
+        $0.distribution = .fillEqually
+        $0.axis = .vertical
+    }
+    
     lazy var goTranslator = UIButton().then{
         $0.setTitle("번역기", for: .normal)
         $0.setTitleColor(.black, for: .normal)
@@ -23,8 +30,15 @@ class ViewController: UIViewController {
         $0.backgroundColor = .blue
     }
     
-    lazy var goRecordView = UIButton().then{
-        $0.setTitle("녹음기", for: .normal)
+    lazy var goAudioView = UIButton().then{
+        $0.setTitle("오디오", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+        $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        $0.backgroundColor = .blue
+    }
+    
+    lazy var goVideoView = UIButton().then{
+        $0.setTitle("비디오", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         $0.backgroundColor = .blue
@@ -46,19 +60,17 @@ class ViewController: UIViewController {
         getNavigationController().pushViewController(vc, animated: true)    }
     
     private func setting(){
-        [goTranslator, goRecordView].forEach{
-            self.view.addSubview($0)
+        self.view.addSubview(btnStackView)
+        
+        [goTranslator, goAudioView, goVideoView].forEach{
+            btnStackView.addArrangedSubview($0)
         }
         
-        goTranslator.snp.makeConstraints{
+        btnStackView.snp.makeConstraints{
             $0.top.equalTo(googleMapBtn.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
         }
-        
-        goRecordView.snp.makeConstraints{
-            $0.top.equalTo(goTranslator.snp.bottom).offset(20)
-            $0.centerX.equalToSuperview()
-        }
+
     }
     
     private func bind(){
@@ -72,9 +84,19 @@ class ViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        goRecordView.rx.tap
+        goAudioView.rx.tap
             .bind{ [unowned self] in
                 let view = AudioRecordView(frame: .zero)
+                self.view.addSubview(view)
+                view.snp.makeConstraints{
+                    $0.edges.equalToSuperview()
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        goVideoView.rx.tap
+            .bind{ [unowned self] in
+                let view = VideoView(frame: .zero)
                 self.view.addSubview(view)
                 view.snp.makeConstraints{
                     $0.edges.equalToSuperview()
