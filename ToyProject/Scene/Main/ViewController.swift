@@ -19,25 +19,25 @@ class ViewController: UIViewController {
     
     var weatherMapBtn = UIButton().then {
         $0.setTitleColor(.tintColor, for: .normal)
-        $0.setTitle("날씨 지도", for: .normal)
+        $0.setTitle("WeatherMap_BtnText".localized, for: .normal)
         $0.setImage(UIImage(systemName: "cloud.fill"), for: .normal)
     }
     
     var weatherHistoryBtn = UIButton().then {
         $0.setTitleColor(.tintColor, for: .normal)
-        $0.setTitle("히스토리", for: .normal)
+        $0.setTitle("History_BtnText".localized, for: .normal)
         $0.setImage(UIImage(systemName: "note.text"), for: .normal)
     }
     
     var translateBtn = UIButton().then {
         $0.setTitleColor(.tintColor, for: .normal)
-        $0.setTitle("음성 번역", for: .normal)
+        $0.setTitle("translate_BtnText".localized, for: .normal)
         $0.setImage(UIImage(systemName: "mic.fill"), for: .normal)
     }
     
     var translateHistoryBtn = UIButton().then {
         $0.setTitleColor(.tintColor, for: .normal)
-        $0.setTitle("히스토리", for: .normal)
+        $0.setTitle("History_BtnText".localized, for: .normal)
         $0.setImage(UIImage(systemName: "note.text"), for: .normal)
     }
     

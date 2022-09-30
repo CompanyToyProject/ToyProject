@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  ToyProject
+
+  Created by yeoboya on 2022/09/30.
+  
+*/
+
+"WeatherMap_BtnText" = "날씨 지도";
+"translate_BtnText" = "음성 번역";
+"History_BtnText" = "히스토리";
+
+"WeatherMap_TitleText" = "날씨 지도 화면";
+"WeatherMap_SearchBar_PlaceholderText" = "지역을 입력해주세요";
+
+"WeatherInfo_rain" = "비";
+"WeatherInfo_sleet" = "비와 눈";
+"WeatherInfo_snowflake" = "눈";
+"WeahterInfo_drizzle" = "빗방울";
+"WeatherInfo_hail" = "빗방울 눈날림";
+"WeatherInfo_snow" = "눈날림";
+"WeatherInfo_sunny" = "맑음";
+"WeatherInfo_cloudiness" = "구름많음";
+"WeatherInfo_cloudy" = "흐림";
+
+"WeatherHistory_TitleText" = "날씨 히스토리 화면";
+

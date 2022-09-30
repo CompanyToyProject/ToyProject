@@ -39,7 +39,7 @@ class WeatherHistoryViewController: UIViewController, UITableViewDelegate {
     func setNavigationBar() {
         self.view.backgroundColor = .white
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        self.navigationItem.title = "Weather History"
+        self.navigationItem.title = "WeatherHistory_TitleText".localized
         
         leftBarButton = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.left.fill"), primaryAction: nil, menu: nil)
         self.navigationItem.leftBarButtonItem = leftBarButton

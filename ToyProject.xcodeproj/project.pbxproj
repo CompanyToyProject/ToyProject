@@ -50,6 +50,7 @@
 		F069EC8728D434D300A89083 /* GoogleMapView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */; };
 		F069EC8928D4380D00A89083 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8828D4380D00A89083 /* Animation.swift */; };
 		F069EC8B28D43AF900A89083 /* GoogleMapView+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */; };
+		F088949928E6C3E8002430BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F088949B28E6C3E8002430BD /* Localizable.strings */; };
 		F0A20E4328DD30EC005A61D3 /* CoordinatorFinishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A20E4228DD30EC005A61D3 /* CoordinatorFinishDelegate.swift */; };
 		F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04C828DA993E00D0E7FE /* Date+.swift */; };
 		F0AD04CD28DAEA6000D0E7FE /* WeatherHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04CC28DAEA6000D0E7FE /* WeatherHistoryViewController.swift */; };
@@ -110,10 +111,13 @@
 		F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+Keyboard.swift"; sourceTree = "<group>"; };
 		F069EC8828D4380D00A89083 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+SearchBar.swift"; sourceTree = "<group>"; };
+		F088949A28E6C3E8002430BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F088949C28E6C42D002430BD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F0A20E4228DD30EC005A61D3 /* CoordinatorFinishDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFinishDelegate.swift; sourceTree = "<group>"; };
 		F0AD04C828DA993E00D0E7FE /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		F0AD04CC28DAEA6000D0E7FE /* WeatherHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewController.swift; sourceTree = "<group>"; };
 		F0AD04CE28DAF1CB00D0E7FE /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		F0BBFC0A28E6F0FC00AA7075 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F0BC0AC528DBD89B006C4F26 /* WeatherHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewModel.swift; sourceTree = "<group>"; };
 		F0BC0AC828DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherHistoryViewController+Bind.swift"; sourceTree = "<group>"; };
 		F0BC0AD028DBFF31006C4F26 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
@@ -308,6 +312,7 @@
 		F05AA95828D3101B00B77E4A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				F088949D28E6C87B002430BD /* Strings */,
 				F05AA95A28D3102D00B77E4A /* File */,
 				F05AA95928D3102300B77E4A /* Assets */,
 			);
@@ -424,6 +429,14 @@
 				F0C4905628D9ACCA00D957EF /* Weather+CoreDataProperties.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F088949D28E6C87B002430BD /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				F088949B28E6C3E8002430BD /* Localizable.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		F0AD04CA28DAEA3300D0E7FE /* History */ = {
@@ -594,11 +607,13 @@
 			};
 			buildConfigurationList = F05AA92528D30B7600B77E4A /* Build configuration list for PBXProject "ToyProject" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
+				"zh-Hans",
 			);
 			mainGroup = F05AA92128D30B7600B77E4A;
 			packageReferences = (
@@ -619,6 +634,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F088949928E6C3E8002430BD /* Localizable.strings in Resources */,
 				F05AA93A28D30B7700B77E4A /* LaunchScreen.storyboard in Resources */,
 				F05AA97E28D3104D00B77E4A /* GoogleMapView.storyboard in Resources */,
 				F05AA93728D30B7700B77E4A /* Assets.xcassets in Resources */,
@@ -754,6 +770,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		F088949B28E6C3E8002430BD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F088949A28E6C3E8002430BD /* en */,
+				F088949C28E6C42D002430BD /* ko */,
+				F0BBFC0A28E6F0FC00AA7075 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -761,6 +787,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -821,6 +848,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
