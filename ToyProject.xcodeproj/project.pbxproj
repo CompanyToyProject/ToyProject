@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ABCF6EBC90A8E0E37B9E3D7A /* Pods_ToyProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A439308B305145759E12955 /* Pods_ToyProject.framework */; };
 		EF184EF328E2F1D10070BD9F /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF184EF228E2F1D10070BD9F /* TranslationService.swift */; };
+		EF3CD69B28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3CD69A28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift */; };
 		EF6C8DCC28D3F8C0000FB249 /* GoogleAPIClientForRESTCore in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCB28D3F8C0000FB249 /* GoogleAPIClientForRESTCore */; };
 		EF6C8DCE28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCD28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 */; };
 		EF6C8DD028D3F8C0000FB249 /* GoogleAPIClientForREST_Speech in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCF28D3F8C0000FB249 /* GoogleAPIClientForREST_Speech */; };
@@ -114,7 +115,6 @@
 		F0C4903B28D9536B00D957EF /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903A28D9536B00D957EF /* LoadingViewController.swift */; };
 		F0C4903E28D9852E00D957EF /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4903D28D9852E00D957EF /* Toast.swift */; };
 		F0C4904128D9858000D957EF /* NotifyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4904028D9858000D957EF /* NotifyDelegate.swift */; };
-		F0C4905328D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4904E28D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +122,7 @@
 		3A439308B305145759E12955 /* Pods_ToyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D851FD8AED024BB375828A /* Pods-ToyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToyProject.debug.xcconfig"; path = "Target Support Files/Pods-ToyProject/Pods-ToyProject.debug.xcconfig"; sourceTree = "<group>"; };
 		EF184EF228E2F1D10070BD9F /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
+		EF3CD69A28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalCoordinate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EF6CB0DA28DA9E690028B832 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		EF6CB0DE28DAACEA0028B832 /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -219,7 +220,6 @@
 		F0C4903A28D9536B00D957EF /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		F0C4903D28D9852E00D957EF /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		F0C4904028D9858000D957EF /* NotifyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyDelegate.swift; sourceTree = "<group>"; };
-		F0C4904E28D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocalCoordinate+CoreDataProperties.swift"; path = "/Volumes/500/dev/ToyProject/ToyProject/CoreData/LocalCoordinate+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		F0C4905428D9AC9A00D957EF /* Weather+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weather+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F0C4905628D9ACCA00D957EF /* Weather+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weather+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -740,7 +740,7 @@
 			isa = PBXGroup;
 			children = (
 				F05AA99228D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift */,
-				F0C4904E28D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift */,
+				EF3CD69A28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift */,
 				F0C4905428D9AC9A00D957EF /* Weather+CoreDataClass.swift */,
 				F0C4905628D9ACCA00D957EF /* Weather+CoreDataProperties.swift */,
 			);
@@ -1050,11 +1050,11 @@
 				F05AA97628D3104D00B77E4A /* GoogleMapViewModel.swift in Sources */,
 				F069EC8728D434D300A89083 /* GoogleMapView+Keyboard.swift in Sources */,
 				F0C4903E28D9852E00D957EF /* Toast.swift in Sources */,
+				EF3CD69B28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift in Sources */,
 				F0BC0AC628DBD89B006C4F26 /* WeatherHistoryViewModel.swift in Sources */,
 				F05AA95528D3100A00B77E4A /* String+.swift in Sources */,
 				EFD595C828D7ECC6003BAA25 /* TranslatorViewModel.swift in Sources */,
 				EFEB1AC428E27D1200D9CAC3 /* AudioStreamManager.swift in Sources */,
-				F05AA98F28D3105600B77E4A /* SearchLocalViewController.swift in Sources */,
 				F05AA99428D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift in Sources */,
 				EFCF9A7228DC4976004F42F0 /* cloud_speech.pb.swift in Sources */,
 				EFB16BE328E56B3500766A34 /* AlbumManager.swift in Sources */,
@@ -1069,7 +1069,6 @@
 				F0BC0ADF28DC4D95006C4F26 /* MainCoordinator.swift in Sources */,
 				F05AA95228D3100A00B77E4A /* PersistenceManager.swift in Sources */,
 				F069EC8928D4380D00A89083 /* Animation.swift in Sources */,
-				F05AA98C28D3105600B77E4A /* SearchLocal+SearchResultsUpdating.swift in Sources */,
 				EFEB1AC028E1963700D9CAC3 /* GoogleCloudModel.swift in Sources */,
 				EFB16BDE28E555DC00766A34 /* VideoCollectionView+collectionview.swift in Sources */,
 				EFB16BB028E4137E00766A34 /* AudioRecordView.swift in Sources */,
@@ -1083,7 +1082,6 @@
 				EFB16BE028E5609300766A34 /* VideoViewModel+.swift in Sources */,
 				F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */,
 				F0C4903B28D9536B00D957EF /* LoadingViewController.swift in Sources */,
-				EF6C8DDB28D3FA25000FB249 /* AudioController.swift in Sources */,
 				EFCF9A7128DC4976004F42F0 /* status.pb.swift in Sources */,
 				EFD595CC28D7ED2A003BAA25 /* TranslatorModel+color.swift in Sources */,
 				F05AA98128D3104D00B77E4A /* SearchBarView+TextView.swift in Sources */,
@@ -1101,7 +1099,6 @@
 				F0AD04CF28DAF1CB00D0E7FE /* HistoryTableViewController.swift in Sources */,
 				EFCF9A7028DC4976004F42F0 /* cloud_speech.grpc.swift in Sources */,
 				F05AA95728D3100A00B77E4A /* OpenXlsx.swift in Sources */,
-				F0C4905328D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift in Sources */,
 				F05AA97728D3104D00B77E4A /* GoogleMapView+LocationManager.swift in Sources */,
 				F05AA97D28D3104D00B77E4A /* WeatherInfo.swift in Sources */,
 				F05AA98328D3104D00B77E4A /* RegionTableViewController.swift in Sources */,
@@ -1255,7 +1252,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CBM8C92C3U;
+				DEVELOPMENT_TEAM = GP9D94CZ57;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToyProject/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크를 사용할게요!";
@@ -1285,7 +1282,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CBM8C92C3U;
+				DEVELOPMENT_TEAM = GP9D94CZ57;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToyProject/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크를 사용할게요!";
