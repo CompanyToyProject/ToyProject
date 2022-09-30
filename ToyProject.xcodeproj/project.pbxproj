@@ -8,11 +8,61 @@
 
 /* Begin PBXBuildFile section */
 		ABCF6EBC90A8E0E37B9E3D7A /* Pods_ToyProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A439308B305145759E12955 /* Pods_ToyProject.framework */; };
+		EF184EF328E2F1D10070BD9F /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF184EF228E2F1D10070BD9F /* TranslationService.swift */; };
 		EF6C8DCC28D3F8C0000FB249 /* GoogleAPIClientForRESTCore in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCB28D3F8C0000FB249 /* GoogleAPIClientForRESTCore */; };
 		EF6C8DCE28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCD28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 */; };
 		EF6C8DD028D3F8C0000FB249 /* GoogleAPIClientForREST_Speech in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCF28D3F8C0000FB249 /* GoogleAPIClientForREST_Speech */; };
 		EF6C8DD228D3F8C0000FB249 /* GoogleAPIClientForREST_Translate in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DD128D3F8C0000FB249 /* GoogleAPIClientForREST_Translate */; };
-		EF6C8DDB28D3FA25000FB249 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6C8DDA28D3FA25000FB249 /* AudioController.swift */; };
+		EF6CB0DB28DA9E690028B832 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CB0DA28DA9E690028B832 /* SpeechController.swift */; };
+		EF6CB0DF28DAACEA0028B832 /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6CB0DE28DAACEA0028B832 /* GlobalFunc.swift */; };
+		EF6CB0ED28DBF2710028B832 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */; };
+		EFB16B6228E4015700766A34 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFB16B6128E4015700766A34 /* FirebaseAuth */; };
+		EFB16B6428E4015700766A34 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = EFB16B6328E4015700766A34 /* FirebaseFunctions */; };
+		EFB16BAD28E4121F00766A34 /* AudioFileToText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BAC28E4121F00766A34 /* AudioFileToText.swift */; };
+		EFB16BB028E4137E00766A34 /* AudioRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BAF28E4137E00766A34 /* AudioRecordView.swift */; };
+		EFB16BB928E445E600766A34 /* AudioTitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BB828E445E600766A34 /* AudioTitleService.swift */; };
+		EFB16BBB28E51B0E00766A34 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BBA28E51B0E00766A34 /* LoadingIndicator.swift */; };
+		EFB16BBE28E51DA400766A34 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BBD28E51DA400766A34 /* VideoView.swift */; };
+		EFB16BC328E52A2200766A34 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BC228E52A2200766A34 /* VideoViewModel.swift */; };
+		EFB16BC928E52A4800766A34 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BC828E52A4800766A34 /* VideoModel.swift */; };
+		EFB16BCC28E5388800766A34 /* VideoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BCB28E5388800766A34 /* VideoCollectionView.swift */; };
+		EFB16BD228E538A600766A34 /* VideoCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BD128E538A600766A34 /* VideoCollectionViewModel.swift */; };
+		EFB16BD428E538B200766A34 /* VideoCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BD328E538B200766A34 /* VideoCollectionModel.swift */; };
+		EFB16BDC28E5559600766A34 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BDB28E5559600766A34 /* VideoCell.swift */; };
+		EFB16BDE28E555DC00766A34 /* VideoCollectionView+collectionview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BDD28E555DC00766A34 /* VideoCollectionView+collectionview.swift */; };
+		EFB16BE028E5609300766A34 /* VideoViewModel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BDF28E5609300766A34 /* VideoViewModel+.swift */; };
+		EFB16BE328E56B3500766A34 /* AlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BE228E56B3500766A34 /* AlbumManager.swift */; };
+		EFB51A9628D4558600A26C9B /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9528D4558600A26C9B /* CGRPCZlib */; };
+		EFB51A9828D4558600A26C9B /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9728D4558600A26C9B /* GRPC */; };
+		EFB51A9A28D4558600A26C9B /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */; };
+		EFCF9A7028DC4976004F42F0 /* cloud_speech.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6728DC4976004F42F0 /* cloud_speech.grpc.swift */; };
+		EFCF9A7128DC4976004F42F0 /* status.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6828DC4976004F42F0 /* status.pb.swift */; };
+		EFCF9A7228DC4976004F42F0 /* cloud_speech.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6928DC4976004F42F0 /* cloud_speech.pb.swift */; };
+		EFCF9A7328DC4976004F42F0 /* annotations.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6A28DC4976004F42F0 /* annotations.pb.swift */; };
+		EFCF9A7428DC4976004F42F0 /* operations.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6B28DC4976004F42F0 /* operations.grpc.swift */; };
+		EFCF9A7528DC4976004F42F0 /* http.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6C28DC4976004F42F0 /* http.pb.swift */; };
+		EFCF9A7628DC4976004F42F0 /* operations.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6D28DC4976004F42F0 /* operations.pb.swift */; };
+		EFCF9A7728DC4976004F42F0 /* resource.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6E28DC4976004F42F0 /* resource.pb.swift */; };
+		EFCF9A7828DC4976004F42F0 /* client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCF9A6F28DC4976004F42F0 /* client.pb.swift */; };
+		EFD595C628D7ECBE003BAA25 /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595C528D7ECBE003BAA25 /* TranslatorView.swift */; };
+		EFD595C828D7ECC6003BAA25 /* TranslatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595C728D7ECC6003BAA25 /* TranslatorViewModel.swift */; };
+		EFD595CA28D7ECCB003BAA25 /* TranslatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595C928D7ECCB003BAA25 /* TranslatorModel.swift */; };
+		EFD595CC28D7ED2A003BAA25 /* TranslatorModel+color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595CB28D7ED2A003BAA25 /* TranslatorModel+color.swift */; };
+		EFD595CE28D7FBF3003BAA25 /* TranslatorModel+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595CD28D7FBF3003BAA25 /* TranslatorModel+image.swift */; };
+		EFD595DA28D93A38003BAA25 /* TranslatorViewModel++.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595D928D93A38003BAA25 /* TranslatorViewModel++.swift */; };
+		EFD595DC28D93A65003BAA25 /* Papago.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD595DB28D93A65003BAA25 /* Papago.swift */; };
+		EFD5962A28D97B56003BAA25 /* PapagoLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5962928D97B56003BAA25 /* PapagoLanguageView.swift */; };
+		EFD5962C28D97CED003BAA25 /* PapagoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5962B28D97CED003BAA25 /* PapagoModel.swift */; };
+		EFD5962F28D97D0C003BAA25 /* PapagoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5962E28D97D0C003BAA25 /* PapagoCell.swift */; };
+		EFD5963328D9A58C003BAA25 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5963228D9A58C003BAA25 /* extensions.swift */; };
+		EFD5963528D9B71F003BAA25 /* TranslatorViewModel+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD5963428D9B71F003BAA25 /* TranslatorViewModel+++.swift */; };
+		EFEB1A6928E15E9800D9CAC3 /* translation_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEB1A6728E15E9800D9CAC3 /* translation_service.pb.swift */; };
+		EFEB1A6A28E15E9800D9CAC3 /* translation_service.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEB1A6828E15E9800D9CAC3 /* translation_service.grpc.swift */; };
+		EFEB1A6C28E160B700D9CAC3 /* TranslatorViewModel+audiocontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEB1A6B28E160B700D9CAC3 /* TranslatorViewModel+audiocontroller.swift */; };
+		EFEB1A6E28E1633600D9CAC3 /* TranslatorViewModel+voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEB1A6D28E1633600D9CAC3 /* TranslatorViewModel+voice.swift */; };
+		EFEB1ABE28E1906A00D9CAC3 /* SpeechRecognizeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEB1ABD28E1906A00D9CAC3 /* SpeechRecognizeService.swift */; };
+		EFEB1AC028E1963700D9CAC3 /* GoogleCloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEB1ABF28E1963700D9CAC3 /* GoogleCloudModel.swift */; };
+		EFEB1AC428E27D1200D9CAC3 /* AudioStreamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEB1AC328E27D1200D9CAC3 /* AudioStreamManager.swift */; };
 		F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA92D28D30B7600B77E4A /* AppDelegate.swift */; };
 		F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA92F28D30B7600B77E4A /* SceneDelegate.swift */; };
 		F05AA93228D30B7600B77E4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AA93128D30B7600B77E4A /* ViewController.swift */; };
@@ -71,7 +121,52 @@
 		2289244BC57957B0E03CA89D /* Pods-ToyProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToyProject.release.xcconfig"; path = "Target Support Files/Pods-ToyProject/Pods-ToyProject.release.xcconfig"; sourceTree = "<group>"; };
 		3A439308B305145759E12955 /* Pods_ToyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D851FD8AED024BB375828A /* Pods-ToyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToyProject.debug.xcconfig"; path = "Target Support Files/Pods-ToyProject/Pods-ToyProject.debug.xcconfig"; sourceTree = "<group>"; };
-		EF6C8DDA28D3FA25000FB249 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		EF184EF228E2F1D10070BD9F /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
+		EF6CB0DA28DA9E690028B832 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
+		EF6CB0DE28DAACEA0028B832 /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
+		EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFB16BAC28E4121F00766A34 /* AudioFileToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileToText.swift; sourceTree = "<group>"; };
+		EFB16BAF28E4137E00766A34 /* AudioRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordView.swift; sourceTree = "<group>"; };
+		EFB16BB828E445E600766A34 /* AudioTitleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTitleService.swift; sourceTree = "<group>"; };
+		EFB16BBA28E51B0E00766A34 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		EFB16BBD28E51DA400766A34 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		EFB16BC228E52A2200766A34 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		EFB16BC828E52A4800766A34 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		EFB16BCB28E5388800766A34 /* VideoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionView.swift; sourceTree = "<group>"; };
+		EFB16BD128E538A600766A34 /* VideoCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewModel.swift; sourceTree = "<group>"; };
+		EFB16BD328E538B200766A34 /* VideoCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionModel.swift; sourceTree = "<group>"; };
+		EFB16BDB28E5559600766A34 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		EFB16BDD28E555DC00766A34 /* VideoCollectionView+collectionview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoCollectionView+collectionview.swift"; sourceTree = "<group>"; };
+		EFB16BDF28E5609300766A34 /* VideoViewModel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewModel+.swift"; sourceTree = "<group>"; };
+		EFB16BE228E56B3500766A34 /* AlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumManager.swift; sourceTree = "<group>"; };
+		EFCF9A6728DC4976004F42F0 /* cloud_speech.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloud_speech.grpc.swift; sourceTree = "<group>"; };
+		EFCF9A6828DC4976004F42F0 /* status.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = status.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6928DC4976004F42F0 /* cloud_speech.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloud_speech.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6A28DC4976004F42F0 /* annotations.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = annotations.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6B28DC4976004F42F0 /* operations.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = operations.grpc.swift; sourceTree = "<group>"; };
+		EFCF9A6C28DC4976004F42F0 /* http.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = http.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6D28DC4976004F42F0 /* operations.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = operations.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6E28DC4976004F42F0 /* resource.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resource.pb.swift; sourceTree = "<group>"; };
+		EFCF9A6F28DC4976004F42F0 /* client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = client.pb.swift; sourceTree = "<group>"; };
+		EFD595C528D7ECBE003BAA25 /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
+		EFD595C728D7ECC6003BAA25 /* TranslatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewModel.swift; sourceTree = "<group>"; };
+		EFD595C928D7ECCB003BAA25 /* TranslatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorModel.swift; sourceTree = "<group>"; };
+		EFD595CB28D7ED2A003BAA25 /* TranslatorModel+color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorModel+color.swift"; sourceTree = "<group>"; };
+		EFD595CD28D7FBF3003BAA25 /* TranslatorModel+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorModel+image.swift"; sourceTree = "<group>"; };
+		EFD595D928D93A38003BAA25 /* TranslatorViewModel++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorViewModel++.swift"; sourceTree = "<group>"; };
+		EFD595DB28D93A65003BAA25 /* Papago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Papago.swift; sourceTree = "<group>"; };
+		EFD5962928D97B56003BAA25 /* PapagoLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoLanguageView.swift; sourceTree = "<group>"; };
+		EFD5962B28D97CED003BAA25 /* PapagoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoModel.swift; sourceTree = "<group>"; };
+		EFD5962E28D97D0C003BAA25 /* PapagoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoCell.swift; sourceTree = "<group>"; };
+		EFD5963228D9A58C003BAA25 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		EFD5963428D9B71F003BAA25 /* TranslatorViewModel+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorViewModel+++.swift"; sourceTree = "<group>"; };
+		EFEB1A6728E15E9800D9CAC3 /* translation_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = translation_service.pb.swift; sourceTree = "<group>"; };
+		EFEB1A6828E15E9800D9CAC3 /* translation_service.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = translation_service.grpc.swift; sourceTree = "<group>"; };
+		EFEB1A6B28E160B700D9CAC3 /* TranslatorViewModel+audiocontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorViewModel+audiocontroller.swift"; sourceTree = "<group>"; };
+		EFEB1A6D28E1633600D9CAC3 /* TranslatorViewModel+voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslatorViewModel+voice.swift"; sourceTree = "<group>"; };
+		EFEB1ABD28E1906A00D9CAC3 /* SpeechRecognizeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizeService.swift; sourceTree = "<group>"; };
+		EFEB1ABF28E1963700D9CAC3 /* GoogleCloudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudModel.swift; sourceTree = "<group>"; };
+		EFEB1AC328E27D1200D9CAC3 /* AudioStreamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStreamManager.swift; sourceTree = "<group>"; };
 		F05AA92A28D30B7600B77E4A /* ToyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05AA92D28D30B7600B77E4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F05AA92F28D30B7600B77E4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,11 +229,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB51A9828D4558600A26C9B /* GRPC in Frameworks */,
+				EFB16B6228E4015700766A34 /* FirebaseAuth in Frameworks */,
 				EF6C8DD228D3F8C0000FB249 /* GoogleAPIClientForREST_Translate in Frameworks */,
 				F05AA99C28D3117F00B77E4A /* CoreXLSX in Frameworks */,
+				EFB51A9628D4558600A26C9B /* CGRPCZlib in Frameworks */,
 				EF6C8DCC28D3F8C0000FB249 /* GoogleAPIClientForRESTCore in Frameworks */,
+				EFB51A9A28D4558600A26C9B /* protoc-gen-grpc-swift in Frameworks */,
 				EF6C8DD028D3F8C0000FB249 /* GoogleAPIClientForREST_Speech in Frameworks */,
 				EF6C8DCE28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 in Frameworks */,
+				EFB16B6428E4015700766A34 /* FirebaseFunctions in Frameworks */,
 				ABCF6EBC90A8E0E37B9E3D7A /* Pods_ToyProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,36 +255,257 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		EF6C8DD328D3F97A000FB249 /* GoogleCloud */ = {
+		EF6C8DD328D3F97A000FB249 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
+				EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */,
 				EF6C8DD928D3FA1E000FB249 /* Utils */,
-				EF6C8DD828D3F9AD000FB249 /* STT */,
-				EF6C8DD728D3F9AA000FB249 /* Translate */,
+				EFCF9A6628DC4976004F42F0 /* google_protobuf */,
+				EFB16BB728E445D300766A34 /* AudioTitleService */,
+				EF6CB0D928DA9E570028B832 /* SpeechController */,
+				EFEB1ABC28E1826C00D9CAC3 /* GoogleCloud */,
+				EFD5962828D97B47003BAA25 /* Papago */,
+				EF6C8DD728D3F9AA000FB249 /* Translator */,
+				EFB16BAE28E4136700766A34 /* Audio */,
+				EFB16BBC28E51D9900766A34 /* Video */,
 			);
-			path = GoogleCloud;
+			path = Translator;
 			sourceTree = "<group>";
 		};
-		EF6C8DD728D3F9AA000FB249 /* Translate */ = {
+		EF6C8DD728D3F9AA000FB249 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
+				EFD595C028D7EC21003BAA25 /* Model */,
+				EFD595BF28D7EC1F003BAA25 /* ViewModel */,
+				EFD595BE28D7EC1D003BAA25 /* View */,
 			);
-			path = Translate;
-			sourceTree = "<group>";
-		};
-		EF6C8DD828D3F9AD000FB249 /* STT */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = STT;
+			path = Translator;
 			sourceTree = "<group>";
 		};
 		EF6C8DD928D3FA1E000FB249 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				EF6C8DDA28D3FA25000FB249 /* AudioController.swift */,
+				EFD5963228D9A58C003BAA25 /* extensions.swift */,
+				EF6CB0DE28DAACEA0028B832 /* GlobalFunc.swift */,
+				EFB16BBA28E51B0E00766A34 /* LoadingIndicator.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EF6CB0D928DA9E570028B832 /* SpeechController */ = {
+			isa = PBXGroup;
+			children = (
+				EFEB1A6528E15C4600D9CAC3 /* PapagoAuidoController */,
+				EFEB1A6628E15C5900D9CAC3 /* GoolgleAudioController */,
+			);
+			path = SpeechController;
+			sourceTree = "<group>";
+		};
+		EFB16BAE28E4136700766A34 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BAF28E4137E00766A34 /* AudioRecordView.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		EFB16BB728E445D300766A34 /* AudioTitleService */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BB828E445E600766A34 /* AudioTitleService.swift */,
+			);
+			path = AudioTitleService;
+			sourceTree = "<group>";
+		};
+		EFB16BBC28E51D9900766A34 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BCA28E5387700766A34 /* VideoCollection */,
+				EFB16BC728E52A4000766A34 /* Model */,
+				EFB16BC028E52A1600766A34 /* ViewModel */,
+				EFB16BBF28E52A1300766A34 /* View */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		EFB16BBF28E52A1300766A34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BBD28E51DA400766A34 /* VideoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFB16BC028E52A1600766A34 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BC228E52A2200766A34 /* VideoViewModel.swift */,
+				EFB16BDF28E5609300766A34 /* VideoViewModel+.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EFB16BC728E52A4000766A34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BC828E52A4800766A34 /* VideoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFB16BCA28E5387700766A34 /* VideoCollection */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BE128E56B2900766A34 /* AlbumManager */,
+				EFB16BD528E539B600766A34 /* DataOperations */,
+				EFB16BCF28E5389400766A34 /* Model */,
+				EFB16BCE28E5389100766A34 /* ViewModel */,
+				EFB16BCD28E5388F00766A34 /* View */,
+			);
+			path = VideoCollection;
+			sourceTree = "<group>";
+		};
+		EFB16BCD28E5388F00766A34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BDA28E5558D00766A34 /* cell */,
+				EFB16BCB28E5388800766A34 /* VideoCollectionView.swift */,
+				EFB16BDD28E555DC00766A34 /* VideoCollectionView+collectionview.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFB16BCE28E5389100766A34 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BD128E538A600766A34 /* VideoCollectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EFB16BCF28E5389400766A34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BD328E538B200766A34 /* VideoCollectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFB16BD528E539B600766A34 /* DataOperations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataOperations;
+			sourceTree = "<group>";
+		};
+		EFB16BDA28E5558D00766A34 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BDB28E5559600766A34 /* VideoCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		EFB16BE128E56B2900766A34 /* AlbumManager */ = {
+			isa = PBXGroup;
+			children = (
+				EFB16BE228E56B3500766A34 /* AlbumManager.swift */,
+			);
+			path = AlbumManager;
+			sourceTree = "<group>";
+		};
+		EFCF9A6628DC4976004F42F0 /* google_protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				EFCF9A6728DC4976004F42F0 /* cloud_speech.grpc.swift */,
+				EFCF9A6828DC4976004F42F0 /* status.pb.swift */,
+				EFCF9A6928DC4976004F42F0 /* cloud_speech.pb.swift */,
+				EFCF9A6A28DC4976004F42F0 /* annotations.pb.swift */,
+				EFCF9A6B28DC4976004F42F0 /* operations.grpc.swift */,
+				EFCF9A6C28DC4976004F42F0 /* http.pb.swift */,
+				EFCF9A6D28DC4976004F42F0 /* operations.pb.swift */,
+				EFCF9A6E28DC4976004F42F0 /* resource.pb.swift */,
+				EFCF9A6F28DC4976004F42F0 /* client.pb.swift */,
+				EFEB1A6828E15E9800D9CAC3 /* translation_service.grpc.swift */,
+				EFEB1A6728E15E9800D9CAC3 /* translation_service.pb.swift */,
+			);
+			path = google_protobuf;
+			sourceTree = "<group>";
+		};
+		EFD595BE28D7EC1D003BAA25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFD595C528D7ECBE003BAA25 /* TranslatorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFD595BF28D7EC1F003BAA25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFD595C728D7ECC6003BAA25 /* TranslatorViewModel.swift */,
+				EFD595D928D93A38003BAA25 /* TranslatorViewModel++.swift */,
+				EFD5963428D9B71F003BAA25 /* TranslatorViewModel+++.swift */,
+				EFEB1A6D28E1633600D9CAC3 /* TranslatorViewModel+voice.swift */,
+				EFEB1A6B28E160B700D9CAC3 /* TranslatorViewModel+audiocontroller.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EFD595C028D7EC21003BAA25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFD595C928D7ECCB003BAA25 /* TranslatorModel.swift */,
+				EFD595CB28D7ED2A003BAA25 /* TranslatorModel+color.swift */,
+				EFD595CD28D7FBF3003BAA25 /* TranslatorModel+image.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFD5962828D97B47003BAA25 /* Papago */ = {
+			isa = PBXGroup;
+			children = (
+				EFD595DB28D93A65003BAA25 /* Papago.swift */,
+				EFD5962B28D97CED003BAA25 /* PapagoModel.swift */,
+				EFD5962928D97B56003BAA25 /* PapagoLanguageView.swift */,
+				EFD5962D28D97CFE003BAA25 /* cell */,
+			);
+			path = Papago;
+			sourceTree = "<group>";
+		};
+		EFD5962D28D97CFE003BAA25 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				EFD5962E28D97D0C003BAA25 /* PapagoCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		EFEB1A6528E15C4600D9CAC3 /* PapagoAuidoController */ = {
+			isa = PBXGroup;
+			children = (
+				EF6CB0DA28DA9E690028B832 /* SpeechController.swift */,
+			);
+			path = PapagoAuidoController;
+			sourceTree = "<group>";
+		};
+		EFEB1A6628E15C5900D9CAC3 /* GoolgleAudioController */ = {
+			isa = PBXGroup;
+			children = (
+				EFEB1AC328E27D1200D9CAC3 /* AudioStreamManager.swift */,
+			);
+			path = GoolgleAudioController;
+			sourceTree = "<group>";
+		};
+		EFEB1ABC28E1826C00D9CAC3 /* GoogleCloud */ = {
+			isa = PBXGroup;
+			children = (
+				EFEB1ABF28E1963700D9CAC3 /* GoogleCloudModel.swift */,
+				EFEB1ABD28E1906A00D9CAC3 /* SpeechRecognizeService.swift */,
+				EF184EF228E2F1D10070BD9F /* TranslationService.swift */,
+				EFB16BAC28E4121F00766A34 /* AudioFileToText.swift */,
+			);
+			path = GoogleCloud;
 			sourceTree = "<group>";
 		};
 		F05AA92128D30B7600B77E4A = {
@@ -213,7 +534,7 @@
 				F05AA94428D30FFB00B77E4A /* Module */,
 				F05AA95D28D3103B00B77E4A /* Scene */,
 				F05AA95828D3101B00B77E4A /* Resource */,
-				EF6C8DD328D3F97A000FB249 /* GoogleCloud */,
+				EF6C8DD328D3F97A000FB249 /* Translator */,
 				F05AA93B28D30B7700B77E4A /* Info.plist */,
 				F05AA99528D3108300B77E4A /* Model.xcdatamodeld */,
 			);
@@ -572,6 +893,11 @@
 				EF6C8DCD28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 */,
 				EF6C8DCF28D3F8C0000FB249 /* GoogleAPIClientForREST_Speech */,
 				EF6C8DD128D3F8C0000FB249 /* GoogleAPIClientForREST_Translate */,
+				EFB51A9528D4558600A26C9B /* CGRPCZlib */,
+				EFB51A9728D4558600A26C9B /* GRPC */,
+				EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */,
+				EFB16B6128E4015700766A34 /* FirebaseAuth */,
+				EFB16B6328E4015700766A34 /* FirebaseFunctions */,
 			);
 			productName = ToyProject;
 			productReference = F05AA92A28D30B7600B77E4A /* ToyProject.app */;
@@ -604,6 +930,8 @@
 			packageReferences = (
 				F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */,
 				EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */,
+				EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */,
+				EFB16B6028E4015700766A34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F05AA92B28D30B7600B77E4A /* Products */;
 			projectDirPath = "";
@@ -623,6 +951,7 @@
 				F05AA97E28D3104D00B77E4A /* GoogleMapView.storyboard in Resources */,
 				F05AA93728D30B7700B77E4A /* Assets.xcassets in Resources */,
 				F05AA95C28D3102D00B77E4A /* meteorological_service.xlsx in Resources */,
+				EF6CB0ED28DBF2710028B832 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +1023,7 @@
 			files = (
 				F0A20E4328DD30EC005A61D3 /* CoordinatorFinishDelegate.swift in Sources */,
 				F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */,
+				EFB16BD228E538A600766A34 /* VideoCollectionViewModel.swift in Sources */,
 				F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */,
 				F0BC0ADD28DC4D57006C4F26 /* Coordinator.swift in Sources */,
 				F0BC0AE228DC524D006C4F26 /* ViewController+Bind.swift in Sources */,
@@ -701,8 +1031,17 @@
 				F0BC0AC928DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift in Sources */,
 				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,
 				F0BC0AD128DBFF31006C4F26 /* HistoryRow.swift in Sources */,
+				EFCF9A7628DC4976004F42F0 /* operations.pb.swift in Sources */,
+				EFB16BC928E52A4800766A34 /* VideoModel.swift in Sources */,
 				F05AA97C28D3104D00B77E4A /* MeteorologicalItem.swift in Sources */,
 				F05AA97928D3104D00B77E4A /* GoogleMapView+MapFunc.swift in Sources */,
+				EF184EF328E2F1D10070BD9F /* TranslationService.swift in Sources */,
+				EFD595C628D7ECBE003BAA25 /* TranslatorView.swift in Sources */,
+				EFEB1ABE28E1906A00D9CAC3 /* SpeechRecognizeService.swift in Sources */,
+				EFD5962F28D97D0C003BAA25 /* PapagoCell.swift in Sources */,
+				EF6CB0DF28DAACEA0028B832 /* GlobalFunc.swift in Sources */,
+				EFB16BAD28E4121F00766A34 /* AudioFileToText.swift in Sources */,
+				EFD5963528D9B71F003BAA25 /* TranslatorViewModel+++.swift in Sources */,
 				F05AA98028D3104D00B77E4A /* WeatherMarkerInfoView.swift in Sources */,
 				F05AA93228D30B7600B77E4A /* ViewController.swift in Sources */,
 				F05AA98228D3104D00B77E4A /* SearchBarView.swift in Sources */,
@@ -713,7 +1052,16 @@
 				F0C4903E28D9852E00D957EF /* Toast.swift in Sources */,
 				F0BC0AC628DBD89B006C4F26 /* WeatherHistoryViewModel.swift in Sources */,
 				F05AA95528D3100A00B77E4A /* String+.swift in Sources */,
+				EFD595C828D7ECC6003BAA25 /* TranslatorViewModel.swift in Sources */,
+				EFEB1AC428E27D1200D9CAC3 /* AudioStreamManager.swift in Sources */,
+				F05AA98F28D3105600B77E4A /* SearchLocalViewController.swift in Sources */,
 				F05AA99428D3107000B77E4A /* LocalCoordinate+CoreDataClass.swift in Sources */,
+				EFCF9A7228DC4976004F42F0 /* cloud_speech.pb.swift in Sources */,
+				EFB16BE328E56B3500766A34 /* AlbumManager.swift in Sources */,
+				EFB16BB928E445E600766A34 /* AudioTitleService.swift in Sources */,
+				EFD595DA28D93A38003BAA25 /* TranslatorViewModel++.swift in Sources */,
+				EFD595CE28D7FBF3003BAA25 /* TranslatorModel+image.swift in Sources */,
+				EFD5962C28D97CED003BAA25 /* PapagoModel.swift in Sources */,
 				F05AA98428D3104D00B77E4A /* GoogleMapViewController.swift in Sources */,
 				F05AA95328D3100A00B77E4A /* HTTPManager.swift in Sources */,
 				F05AA97528D3104D00B77E4A /* GoogleMapViewModel+Data.swift in Sources */,
@@ -721,16 +1069,37 @@
 				F0BC0ADF28DC4D95006C4F26 /* MainCoordinator.swift in Sources */,
 				F05AA95228D3100A00B77E4A /* PersistenceManager.swift in Sources */,
 				F069EC8928D4380D00A89083 /* Animation.swift in Sources */,
+				F05AA98C28D3105600B77E4A /* SearchLocal+SearchResultsUpdating.swift in Sources */,
+				EFEB1AC028E1963700D9CAC3 /* GoogleCloudModel.swift in Sources */,
+				EFB16BDE28E555DC00766A34 /* VideoCollectionView+collectionview.swift in Sources */,
+				EFB16BB028E4137E00766A34 /* AudioRecordView.swift in Sources */,
+				EFD595CA28D7ECCB003BAA25 /* TranslatorModel.swift in Sources */,
+				EFCF9A7328DC4976004F42F0 /* annotations.pb.swift in Sources */,
+				EF6CB0DB28DA9E690028B832 /* SpeechController.swift in Sources */,
+				EFB16BBE28E51DA400766A34 /* VideoView.swift in Sources */,
 				F05AA97F28D3104D00B77E4A /* WeatherMarkerView.swift in Sources */,
+				EFD595DC28D93A65003BAA25 /* Papago.swift in Sources */,
 				F05AA92E28D30B7600B77E4A /* AppDelegate.swift in Sources */,
+				EFB16BE028E5609300766A34 /* VideoViewModel+.swift in Sources */,
 				F05AA99728D3108300B77E4A /* Model.xcdatamodeld in Sources */,
 				F0C4903B28D9536B00D957EF /* LoadingViewController.swift in Sources */,
 				EF6C8DDB28D3FA25000FB249 /* AudioController.swift in Sources */,
+				EFCF9A7128DC4976004F42F0 /* status.pb.swift in Sources */,
+				EFD595CC28D7ED2A003BAA25 /* TranslatorModel+color.swift in Sources */,
 				F05AA98128D3104D00B77E4A /* SearchBarView+TextView.swift in Sources */,
+				EFB16BCC28E5388800766A34 /* VideoCollectionView.swift in Sources */,
+				EFCF9A7528DC4976004F42F0 /* http.pb.swift in Sources */,
+				EFCF9A7428DC4976004F42F0 /* operations.grpc.swift in Sources */,
 				F05AA93028D30B7600B77E4A /* SceneDelegate.swift in Sources */,
+				EFB16BD428E538B200766A34 /* VideoCollectionModel.swift in Sources */,
+				EFD5962A28D97B56003BAA25 /* PapagoLanguageView.swift in Sources */,
+				EFEB1A6928E15E9800D9CAC3 /* translation_service.pb.swift in Sources */,
+				EFEB1A6C28E160B700D9CAC3 /* TranslatorViewModel+audiocontroller.swift in Sources */,
+				EFEB1A6A28E15E9800D9CAC3 /* translation_service.grpc.swift in Sources */,
 				F05AA95128D3100A00B77E4A /* Logger.swift in Sources */,
 				F0AD04CD28DAEA6000D0E7FE /* WeatherHistoryViewController.swift in Sources */,
 				F0AD04CF28DAF1CB00D0E7FE /* HistoryTableViewController.swift in Sources */,
+				EFCF9A7028DC4976004F42F0 /* cloud_speech.grpc.swift in Sources */,
 				F05AA95728D3100A00B77E4A /* OpenXlsx.swift in Sources */,
 				F0C4905328D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift in Sources */,
 				F05AA97728D3104D00B77E4A /* GoogleMapView+LocationManager.swift in Sources */,
@@ -739,6 +1108,13 @@
 				F069EC8328D3F12E00A89083 /* SearchBarView+Bind.swift in Sources */,
 				F05AA97828D3104D00B77E4A /* GoogleMapView+DataFunc.swift in Sources */,
 				F0C4903828D94CF600D957EF /* LoadingView.swift in Sources */,
+				EFEB1A6E28E1633600D9CAC3 /* TranslatorViewModel+voice.swift in Sources */,
+				EFB16BBB28E51B0E00766A34 /* LoadingIndicator.swift in Sources */,
+				EFCF9A7728DC4976004F42F0 /* resource.pb.swift in Sources */,
+				EFB16BC328E52A2200766A34 /* VideoViewModel.swift in Sources */,
+				EFB16BDC28E5559600766A34 /* VideoCell.swift in Sources */,
+				EFD5963328D9A58C003BAA25 /* extensions.swift in Sources */,
+				EFCF9A7828DC4976004F42F0 /* client.pb.swift in Sources */,
 				F05AA95628D3100A00B77E4A /* GlobalFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -963,6 +1339,22 @@
 				minimumVersion = 2.0.1;
 			};
 		};
+		EFB16B6028E4015700766A34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.6.0;
+			};
+		};
+		EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
 		F05AA99A28D3117F00B77E4A /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CoreOffice/CoreXLSX.git";
@@ -993,6 +1385,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF6C8DCA28D3F8C0000FB249 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
 			productName = GoogleAPIClientForREST_Translate;
+		};
+		EFB16B6128E4015700766A34 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB16B6028E4015700766A34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EFB16B6328E4015700766A34 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB16B6028E4015700766A34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		EFB51A9528D4558600A26C9B /* CGRPCZlib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = CGRPCZlib;
+		};
+		EFB51A9728D4558600A26C9B /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+		EFB51A9928D4558600A26C9B /* protoc-gen-grpc-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB51A9428D4558600A26C9B /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = "protoc-gen-grpc-swift";
 		};
 		F05AA99B28D3117F00B77E4A /* CoreXLSX */ = {
 			isa = XCSwiftPackageProductDependency;

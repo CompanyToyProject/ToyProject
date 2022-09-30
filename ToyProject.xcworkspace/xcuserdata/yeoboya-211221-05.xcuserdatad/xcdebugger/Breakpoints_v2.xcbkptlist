@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "99CF62CF-E49D-4FFB-B0E0-30F28A8E814B"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1910268E-CC75-499B-9DEF-5C47F94262E4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/ToyProject-bpgxyeuxfphvrxhlghkaqmcxkdsc/SourcePackages/checkouts/grpc-swift/Examples/Google/SpeechToText/Sources/SpeechService.swift"
+            startingColumnNumber = "18"
+            endingColumnNumber = "24"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
