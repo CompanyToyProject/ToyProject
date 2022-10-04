@@ -39,6 +39,7 @@ class SearchBarView: UIView, SFSpeechRecognizerDelegate {
     
     let textView = UITextView().then {
         $0.textColor = .black
+        $0.backgroundColor = .white
         $0.textAlignment = .left
         $0.font = .systemFont(ofSize: 15)
         $0.isScrollEnabled = false

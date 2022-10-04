@@ -103,7 +103,10 @@ class GoogleMapViewController: UIViewController {
     }
     
     func setNavigationBar() {
-        navigationItem.title = "WeatherMap_TitleText".localized
+        self.view.backgroundColor = .white
+        self.navigationItem.title = "WeatherMap_TitleText".localized
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor : UIColor.black]
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         rightBarButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: nil, action: nil)

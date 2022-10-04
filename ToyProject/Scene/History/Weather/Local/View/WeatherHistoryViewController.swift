@@ -38,6 +38,8 @@ class WeatherHistoryViewController: UIViewController, UITableViewDelegate {
     
     func setNavigationBar() {
         self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor : UIColor.black]
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         self.navigationItem.title = "WeatherHistory_TitleText".localized
         
@@ -46,6 +48,7 @@ class WeatherHistoryViewController: UIViewController, UITableViewDelegate {
     }
     
     func setTableView() {
+        tableView.backgroundColor = .white
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(self.view.safeAreaLayoutGuide)

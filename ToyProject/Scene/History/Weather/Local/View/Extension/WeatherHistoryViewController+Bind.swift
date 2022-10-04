@@ -26,6 +26,8 @@ extension WeatherHistoryViewController {
                 let cell = UITableViewCell()
                 cell.textLabel?.text = element.localFullString
                 cell.selectionStyle = .none
+                cell.backgroundColor = .white
+                cell.textLabel?.textColor = .black
                 return cell
             }
             .disposed(by: disposeBag)
