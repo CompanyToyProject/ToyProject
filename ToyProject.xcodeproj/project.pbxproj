@@ -50,6 +50,12 @@
 		F069EC8728D434D300A89083 /* GoogleMapView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */; };
 		F069EC8928D4380D00A89083 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8828D4380D00A89083 /* Animation.swift */; };
 		F069EC8B28D43AF900A89083 /* GoogleMapView+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */; };
+		F06EDBA728EBB10700341247 /* WeatherHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBA628EBB10700341247 /* WeatherHistoryCoordinator.swift */; };
+		F06EDBA928EBB17400341247 /* DefaultWeatherHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBA828EBB17400341247 /* DefaultWeatherHistoryCoordinator.swift */; };
+		F06EDBAC28EBB30300341247 /* WeatherInfoHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBAB28EBB30300341247 /* WeatherInfoHistoryViewController.swift */; };
+		F06EDBAF28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBAE28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift */; };
+		F06EDBB228EBB7D200341247 /* WeatherInfoHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBB128EBB7D200341247 /* WeatherInfoHistoryViewModel.swift */; };
+		F06EDBB528EBB93E00341247 /* WeatherInfoHistoryView+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBB428EBB93E00341247 /* WeatherInfoHistoryView+TableView.swift */; };
 		F088949928E6C3E8002430BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F088949B28E6C3E8002430BD /* Localizable.strings */; };
 		F0A20E4328DD30EC005A61D3 /* CoordinatorFinishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A20E4228DD30EC005A61D3 /* CoordinatorFinishDelegate.swift */; };
 		F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04C828DA993E00D0E7FE /* Date+.swift */; };
@@ -111,6 +117,12 @@
 		F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+Keyboard.swift"; sourceTree = "<group>"; };
 		F069EC8828D4380D00A89083 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+SearchBar.swift"; sourceTree = "<group>"; };
+		F06EDBA628EBB10700341247 /* WeatherHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryCoordinator.swift; sourceTree = "<group>"; };
+		F06EDBA828EBB17400341247 /* DefaultWeatherHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWeatherHistoryCoordinator.swift; sourceTree = "<group>"; };
+		F06EDBAB28EBB30300341247 /* WeatherInfoHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoHistoryViewController.swift; sourceTree = "<group>"; };
+		F06EDBAE28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherInfoHistoryView+Bind.swift"; sourceTree = "<group>"; };
+		F06EDBB128EBB7D200341247 /* WeatherInfoHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoHistoryViewModel.swift; sourceTree = "<group>"; };
+		F06EDBB428EBB93E00341247 /* WeatherInfoHistoryView+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherInfoHistoryView+TableView.swift"; sourceTree = "<group>"; };
 		F088949A28E6C3E8002430BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F088949C28E6C42D002430BD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F0A20E4228DD30EC005A61D3 /* CoordinatorFinishDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFinishDelegate.swift; sourceTree = "<group>"; };
@@ -431,6 +443,49 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		F06EDBA428EBB0B700341247 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDBA528EBB0DF00341247 /* protocol */,
+				F06EDBA828EBB17400341247 /* DefaultWeatherHistoryCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F06EDBA528EBB0DF00341247 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDBA628EBB10700341247 /* WeatherHistoryCoordinator.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		F06EDBAA28EBB2E600341247 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDBAB28EBB30300341247 /* WeatherInfoHistoryViewController.swift */,
+				F06EDBAD28EBB6BF00341247 /* Extension */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F06EDBAD28EBB6BF00341247 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDBAE28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift */,
+				F06EDBB428EBB93E00341247 /* WeatherInfoHistoryView+TableView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F06EDBB028EBB78A00341247 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDBB128EBB7D200341247 /* WeatherInfoHistoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F088949D28E6C87B002430BD /* Strings */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,8 +505,9 @@
 		F0AD04CB28DAEA4500D0E7FE /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				F0BC0ACC28DBFE64006C4F26 /* Local */,
-				F0BC0ACD28DBFE7F006C4F26 /* DetailRow */,
+				F06EDBA428EBB0B700341247 /* Coordinator */,
+				F0BC0ACC28DBFE64006C4F26 /* LocalView */,
+				F0BC0ACD28DBFE7F006C4F26 /* InfoView */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -481,22 +537,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		F0BC0ACC28DBFE64006C4F26 /* Local */ = {
+		F0BC0ACC28DBFE64006C4F26 /* LocalView */ = {
 			isa = PBXGroup;
 			children = (
 				F0BC0AC328DBD852006C4F26 /* View */,
 				F0BC0AC428DBD858006C4F26 /* ViewModel */,
 			);
-			path = Local;
+			path = LocalView;
 			sourceTree = "<group>";
 		};
-		F0BC0ACD28DBFE7F006C4F26 /* DetailRow */ = {
+		F0BC0ACD28DBFE7F006C4F26 /* InfoView */ = {
 			isa = PBXGroup;
 			children = (
+				F06EDBAA28EBB2E600341247 /* View */,
 				F0BC0AD028DBFF31006C4F26 /* HistoryRow.swift */,
+				F06EDBB028EBB78A00341247 /* ViewModel */,
 				F0AD04CE28DAF1CB00D0E7FE /* HistoryTableViewController.swift */,
 			);
-			path = DetailRow;
+			path = InfoView;
 			sourceTree = "<group>";
 		};
 		F0BC0ADA28DC4D3B006C4F26 /* Coordinator */ = {
@@ -708,11 +766,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F06EDBB528EBB93E00341247 /* WeatherInfoHistoryView+TableView.swift in Sources */,
 				F0A20E4328DD30EC005A61D3 /* CoordinatorFinishDelegate.swift in Sources */,
 				F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */,
+				F06EDBAC28EBB30300341247 /* WeatherInfoHistoryViewController.swift in Sources */,
+				F06EDBA728EBB10700341247 /* WeatherHistoryCoordinator.swift in Sources */,
 				F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */,
 				F0BC0ADD28DC4D57006C4F26 /* Coordinator.swift in Sources */,
 				F0BC0AE228DC524D006C4F26 /* ViewController+Bind.swift in Sources */,
+				F06EDBAF28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift in Sources */,
 				F0C4904128D9858000D957EF /* NotifyDelegate.swift in Sources */,
 				F0BC0AC928DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift in Sources */,
 				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,
@@ -724,6 +786,7 @@
 				F05AA98228D3104D00B77E4A /* SearchBarView.swift in Sources */,
 				F05AA97B28D3104D00B77E4A /* GoogleMapView+MapDelegate.swift in Sources */,
 				F069EC8B28D43AF900A89083 /* GoogleMapView+SearchBar.swift in Sources */,
+				F06EDBB228EBB7D200341247 /* WeatherInfoHistoryViewModel.swift in Sources */,
 				F05AA97628D3104D00B77E4A /* GoogleMapViewModel.swift in Sources */,
 				F069EC8728D434D300A89083 /* GoogleMapView+Keyboard.swift in Sources */,
 				F0C4903E28D9852E00D957EF /* Toast.swift in Sources */,
@@ -751,6 +814,7 @@
 				F0C4905328D9AC1700D957EF /* LocalCoordinate+CoreDataProperties.swift in Sources */,
 				F05AA97728D3104D00B77E4A /* GoogleMapView+LocationManager.swift in Sources */,
 				F05AA97D28D3104D00B77E4A /* WeatherInfo.swift in Sources */,
+				F06EDBA928EBB17400341247 /* DefaultWeatherHistoryCoordinator.swift in Sources */,
 				F05AA98328D3104D00B77E4A /* RegionTableViewController.swift in Sources */,
 				F069EC8328D3F12E00A89083 /* SearchBarView+Bind.swift in Sources */,
 				F05AA97828D3104D00B77E4A /* GoogleMapView+DataFunc.swift in Sources */,
