@@ -32,7 +32,19 @@ class MainCoordinator: Coordinator {
     }
     
     func pushWeatherHistoryVC() {
-        let vc = WeatherHistoryViewController()
-        getNavigationController().pushViewController(vc, animated: true)
+        let weatherHistoryCoordinator = DefaultWeatherHistoryCoordinator(self.navigationController)
+        weatherHistoryCoordinator.finishDelegate = self
+        self.childCoordinators.append(weatherHistoryCoordinator)
+        weatherHistoryCoordinator.start()
+    }
+    
+    func finish() {
+        self.finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+    }
+}
+
+extension MainCoordinator: CoordinatorFinishDelegate {
+    func coordinatorDidFinish(childCoordinator: Coordinator) {
+        log.d("finish MainCoordinator")
     }
 }

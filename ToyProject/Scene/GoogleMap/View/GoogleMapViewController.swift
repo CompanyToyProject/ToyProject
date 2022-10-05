@@ -60,7 +60,7 @@ class GoogleMapViewController: UIViewController {
         bind()
         
         setSearchBarView()
-        setCoreDataBtn()
+//        setCoreDataBtn()
         
         let loading = LoadingViewController.shared
         loading.loadingViewSetting(view: self.view, delay: .seconds(2))
@@ -103,7 +103,10 @@ class GoogleMapViewController: UIViewController {
     }
     
     func setNavigationBar() {
-        navigationItem.title = "GoogleMap"
+        self.view.backgroundColor = .white
+        self.navigationItem.title = "WeatherMap_TitleText".localized
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor : UIColor.black]
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         rightBarButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: nil, action: nil)

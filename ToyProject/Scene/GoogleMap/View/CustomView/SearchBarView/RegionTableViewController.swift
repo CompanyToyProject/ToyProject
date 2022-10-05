@@ -73,6 +73,7 @@ class RegionTableViewController: NSObject {
 extension RegionTableViewController: UITableViewDelegate {
     
     func setTableView() {
+        self.tableView.backgroundColor = .white
         self.tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         self.tableView.rx.itemSelected
@@ -100,7 +101,8 @@ extension RegionTableViewController: UITableViewDelegate {
             .bind(to: self.tableView.rx.items) { (tableView: UITableView, index:Int, element: LocalCoordinate) -> UITableViewCell in
                 let cell = UITableViewCell()
                 cell.textLabel?.text = element.localFullString
-
+                cell.backgroundColor = .white
+                cell.textLabel?.textColor = .black
                 return cell
             }
             .disposed(by: disposeBag)

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		ABCF6EBC90A8E0E37B9E3D7A /* Pods_ToyProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A439308B305145759E12955 /* Pods_ToyProject.framework */; };
-		EF184EF328E2F1D10070BD9F /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF184EF228E2F1D10070BD9F /* TranslationService.swift */; };
 		EF3CD69B28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3CD69A28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift */; };
 		EF6C8DCC28D3F8C0000FB249 /* GoogleAPIClientForRESTCore in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCB28D3F8C0000FB249 /* GoogleAPIClientForRESTCore */; };
 		EF6C8DCE28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCD28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 */; };
@@ -19,7 +18,6 @@
 		EF6CB0ED28DBF2710028B832 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */; };
 		EFB16B6228E4015700766A34 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFB16B6128E4015700766A34 /* FirebaseAuth */; };
 		EFB16B6428E4015700766A34 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = EFB16B6328E4015700766A34 /* FirebaseFunctions */; };
-		EFB16BAD28E4121F00766A34 /* AudioFileToText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BAC28E4121F00766A34 /* AudioFileToText.swift */; };
 		EFB16BB028E4137E00766A34 /* AudioRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BAF28E4137E00766A34 /* AudioRecordView.swift */; };
 		EFB16BB928E445E600766A34 /* AudioTitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BB828E445E600766A34 /* AudioTitleService.swift */; };
 		EFB16BBB28E51B0E00766A34 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB16BBA28E51B0E00766A34 /* LoadingIndicator.swift */; };
@@ -101,6 +99,13 @@
 		F069EC8728D434D300A89083 /* GoogleMapView+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */; };
 		F069EC8928D4380D00A89083 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8828D4380D00A89083 /* Animation.swift */; };
 		F069EC8B28D43AF900A89083 /* GoogleMapView+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */; };
+		F06EDBA728EBB10700341247 /* WeatherHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBA628EBB10700341247 /* WeatherHistoryCoordinator.swift */; };
+		F06EDBA928EBB17400341247 /* DefaultWeatherHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBA828EBB17400341247 /* DefaultWeatherHistoryCoordinator.swift */; };
+		F06EDBAC28EBB30300341247 /* WeatherInfoHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBAB28EBB30300341247 /* WeatherInfoHistoryViewController.swift */; };
+		F06EDBAF28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBAE28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift */; };
+		F06EDBB228EBB7D200341247 /* WeatherInfoHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBB128EBB7D200341247 /* WeatherInfoHistoryViewModel.swift */; };
+		F06EDBB528EBB93E00341247 /* WeatherInfoHistoryView+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06EDBB428EBB93E00341247 /* WeatherInfoHistoryView+TableView.swift */; };
+		F088949928E6C3E8002430BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F088949B28E6C3E8002430BD /* Localizable.strings */; };
 		F0A20E4328DD30EC005A61D3 /* CoordinatorFinishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A20E4228DD30EC005A61D3 /* CoordinatorFinishDelegate.swift */; };
 		F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04C828DA993E00D0E7FE /* Date+.swift */; };
 		F0AD04CD28DAEA6000D0E7FE /* WeatherHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD04CC28DAEA6000D0E7FE /* WeatherHistoryViewController.swift */; };
@@ -121,12 +126,10 @@
 		2289244BC57957B0E03CA89D /* Pods-ToyProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToyProject.release.xcconfig"; path = "Target Support Files/Pods-ToyProject/Pods-ToyProject.release.xcconfig"; sourceTree = "<group>"; };
 		3A439308B305145759E12955 /* Pods_ToyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D851FD8AED024BB375828A /* Pods-ToyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToyProject.debug.xcconfig"; path = "Target Support Files/Pods-ToyProject/Pods-ToyProject.debug.xcconfig"; sourceTree = "<group>"; };
-		EF184EF228E2F1D10070BD9F /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 		EF3CD69A28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalCoordinate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EF6CB0DA28DA9E690028B832 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		EF6CB0DE28DAACEA0028B832 /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EFB16BAC28E4121F00766A34 /* AudioFileToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileToText.swift; sourceTree = "<group>"; };
 		EFB16BAF28E4137E00766A34 /* AudioRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordView.swift; sourceTree = "<group>"; };
 		EFB16BB828E445E600766A34 /* AudioTitleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTitleService.swift; sourceTree = "<group>"; };
 		EFB16BBA28E51B0E00766A34 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
@@ -206,10 +209,19 @@
 		F069EC8628D434D300A89083 /* GoogleMapView+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+Keyboard.swift"; sourceTree = "<group>"; };
 		F069EC8828D4380D00A89083 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		F069EC8A28D43AF900A89083 /* GoogleMapView+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapView+SearchBar.swift"; sourceTree = "<group>"; };
+		F06EDBA628EBB10700341247 /* WeatherHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryCoordinator.swift; sourceTree = "<group>"; };
+		F06EDBA828EBB17400341247 /* DefaultWeatherHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWeatherHistoryCoordinator.swift; sourceTree = "<group>"; };
+		F06EDBAB28EBB30300341247 /* WeatherInfoHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoHistoryViewController.swift; sourceTree = "<group>"; };
+		F06EDBAE28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherInfoHistoryView+Bind.swift"; sourceTree = "<group>"; };
+		F06EDBB128EBB7D200341247 /* WeatherInfoHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoHistoryViewModel.swift; sourceTree = "<group>"; };
+		F06EDBB428EBB93E00341247 /* WeatherInfoHistoryView+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherInfoHistoryView+TableView.swift"; sourceTree = "<group>"; };
+		F088949A28E6C3E8002430BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F088949C28E6C42D002430BD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F0A20E4228DD30EC005A61D3 /* CoordinatorFinishDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFinishDelegate.swift; sourceTree = "<group>"; };
 		F0AD04C828DA993E00D0E7FE /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		F0AD04CC28DAEA6000D0E7FE /* WeatherHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewController.swift; sourceTree = "<group>"; };
 		F0AD04CE28DAF1CB00D0E7FE /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		F0BBFC0A28E6F0FC00AA7075 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F0BC0AC528DBD89B006C4F26 /* WeatherHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewModel.swift; sourceTree = "<group>"; };
 		F0BC0AC828DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherHistoryViewController+Bind.swift"; sourceTree = "<group>"; };
 		F0BC0AD028DBFF31006C4F26 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
@@ -266,8 +278,6 @@
 				EFEB1ABC28E1826C00D9CAC3 /* GoogleCloud */,
 				EFD5962828D97B47003BAA25 /* Papago */,
 				EF6C8DD728D3F9AA000FB249 /* Translator */,
-				EFB16BAE28E4136700766A34 /* Audio */,
-				EFB16BBC28E51D9900766A34 /* Video */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -301,12 +311,12 @@
 			path = SpeechController;
 			sourceTree = "<group>";
 		};
-		EFB16BAE28E4136700766A34 /* Audio */ = {
+		EFB16BAE28E4136700766A34 /* AudioTest */ = {
 			isa = PBXGroup;
 			children = (
 				EFB16BAF28E4137E00766A34 /* AudioRecordView.swift */,
 			);
-			path = Audio;
+			path = AudioTest;
 			sourceTree = "<group>";
 		};
 		EFB16BB728E445D300766A34 /* AudioTitleService */ = {
@@ -317,7 +327,7 @@
 			path = AudioTitleService;
 			sourceTree = "<group>";
 		};
-		EFB16BBC28E51D9900766A34 /* Video */ = {
+		EFB16BBC28E51D9900766A34 /* VideoTest */ = {
 			isa = PBXGroup;
 			children = (
 				EFB16BCA28E5387700766A34 /* VideoCollection */,
@@ -325,7 +335,7 @@
 				EFB16BC028E52A1600766A34 /* ViewModel */,
 				EFB16BBF28E52A1300766A34 /* View */,
 			);
-			path = Video;
+			path = VideoTest;
 			sourceTree = "<group>";
 		};
 		EFB16BBF28E52A1300766A34 /* View */ = {
@@ -502,8 +512,6 @@
 			children = (
 				EFEB1ABF28E1963700D9CAC3 /* GoogleCloudModel.swift */,
 				EFEB1ABD28E1906A00D9CAC3 /* SpeechRecognizeService.swift */,
-				EF184EF228E2F1D10070BD9F /* TranslationService.swift */,
-				EFB16BAC28E4121F00766A34 /* AudioFileToText.swift */,
 			);
 			path = GoogleCloud;
 			sourceTree = "<group>";
@@ -535,6 +543,8 @@
 				F05AA95D28D3103B00B77E4A /* Scene */,
 				F05AA95828D3101B00B77E4A /* Resource */,
 				EF6C8DD328D3F97A000FB249 /* Translator */,
+				EFB16BAE28E4136700766A34 /* AudioTest */,
+				EFB16BBC28E51D9900766A34 /* VideoTest */,
 				F05AA93B28D30B7700B77E4A /* Info.plist */,
 				F05AA99528D3108300B77E4A /* Model.xcdatamodeld */,
 			);
@@ -629,6 +639,7 @@
 		F05AA95828D3101B00B77E4A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				F088949D28E6C87B002430BD /* Strings */,
 				F05AA95A28D3102D00B77E4A /* File */,
 				F05AA95928D3102300B77E4A /* Assets */,
 			);
@@ -747,6 +758,57 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		F06EDBA428EBB0B700341247 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDBA528EBB0DF00341247 /* protocol */,
+				F06EDBA828EBB17400341247 /* DefaultWeatherHistoryCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F06EDBA528EBB0DF00341247 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDBA628EBB10700341247 /* WeatherHistoryCoordinator.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		F06EDBAA28EBB2E600341247 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDBAB28EBB30300341247 /* WeatherInfoHistoryViewController.swift */,
+				F06EDBAD28EBB6BF00341247 /* Extension */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F06EDBAD28EBB6BF00341247 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDBAE28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift */,
+				F06EDBB428EBB93E00341247 /* WeatherInfoHistoryView+TableView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F06EDBB028EBB78A00341247 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F06EDBB128EBB7D200341247 /* WeatherInfoHistoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F088949D28E6C87B002430BD /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				F088949B28E6C3E8002430BD /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		F0AD04CA28DAEA3300D0E7FE /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -758,8 +820,9 @@
 		F0AD04CB28DAEA4500D0E7FE /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				F0BC0ACC28DBFE64006C4F26 /* Local */,
-				F0BC0ACD28DBFE7F006C4F26 /* DetailRow */,
+				F06EDBA428EBB0B700341247 /* Coordinator */,
+				F0BC0ACC28DBFE64006C4F26 /* LocalView */,
+				F0BC0ACD28DBFE7F006C4F26 /* InfoView */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -789,22 +852,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		F0BC0ACC28DBFE64006C4F26 /* Local */ = {
+		F0BC0ACC28DBFE64006C4F26 /* LocalView */ = {
 			isa = PBXGroup;
 			children = (
 				F0BC0AC328DBD852006C4F26 /* View */,
 				F0BC0AC428DBD858006C4F26 /* ViewModel */,
 			);
-			path = Local;
+			path = LocalView;
 			sourceTree = "<group>";
 		};
-		F0BC0ACD28DBFE7F006C4F26 /* DetailRow */ = {
+		F0BC0ACD28DBFE7F006C4F26 /* InfoView */ = {
 			isa = PBXGroup;
 			children = (
+				F06EDBAA28EBB2E600341247 /* View */,
 				F0BC0AD028DBFF31006C4F26 /* HistoryRow.swift */,
+				F06EDBB028EBB78A00341247 /* ViewModel */,
 				F0AD04CE28DAF1CB00D0E7FE /* HistoryTableViewController.swift */,
 			);
-			path = DetailRow;
+			path = InfoView;
 			sourceTree = "<group>";
 		};
 		F0BC0ADA28DC4D3B006C4F26 /* Coordinator */ = {
@@ -920,11 +985,13 @@
 			};
 			buildConfigurationList = F05AA92528D30B7600B77E4A /* Build configuration list for PBXProject "ToyProject" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
+				"zh-Hans",
 			);
 			mainGroup = F05AA92128D30B7600B77E4A;
 			packageReferences = (
@@ -947,6 +1014,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F088949928E6C3E8002430BD /* Localizable.strings in Resources */,
 				F05AA93A28D30B7700B77E4A /* LaunchScreen.storyboard in Resources */,
 				F05AA97E28D3104D00B77E4A /* GoogleMapView.storyboard in Resources */,
 				F05AA93728D30B7700B77E4A /* Assets.xcassets in Resources */,
@@ -1021,12 +1089,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F06EDBB528EBB93E00341247 /* WeatherInfoHistoryView+TableView.swift in Sources */,
 				F0A20E4328DD30EC005A61D3 /* CoordinatorFinishDelegate.swift in Sources */,
 				F0AD04C928DA993E00D0E7FE /* Date+.swift in Sources */,
 				EFB16BD228E538A600766A34 /* VideoCollectionViewModel.swift in Sources */,
+				F06EDBAC28EBB30300341247 /* WeatherInfoHistoryViewController.swift in Sources */,
+				F06EDBA728EBB10700341247 /* WeatherHistoryCoordinator.swift in Sources */,
 				F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */,
 				F0BC0ADD28DC4D57006C4F26 /* Coordinator.swift in Sources */,
 				F0BC0AE228DC524D006C4F26 /* ViewController+Bind.swift in Sources */,
+				F06EDBAF28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift in Sources */,
 				F0C4904128D9858000D957EF /* NotifyDelegate.swift in Sources */,
 				F0BC0AC928DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift in Sources */,
 				F05AA97A28D3104D00B77E4A /* GoogleMapView+Bind.swift in Sources */,
@@ -1035,18 +1107,17 @@
 				EFB16BC928E52A4800766A34 /* VideoModel.swift in Sources */,
 				F05AA97C28D3104D00B77E4A /* MeteorologicalItem.swift in Sources */,
 				F05AA97928D3104D00B77E4A /* GoogleMapView+MapFunc.swift in Sources */,
-				EF184EF328E2F1D10070BD9F /* TranslationService.swift in Sources */,
 				EFD595C628D7ECBE003BAA25 /* TranslatorView.swift in Sources */,
 				EFEB1ABE28E1906A00D9CAC3 /* SpeechRecognizeService.swift in Sources */,
 				EFD5962F28D97D0C003BAA25 /* PapagoCell.swift in Sources */,
 				EF6CB0DF28DAACEA0028B832 /* GlobalFunc.swift in Sources */,
-				EFB16BAD28E4121F00766A34 /* AudioFileToText.swift in Sources */,
 				EFD5963528D9B71F003BAA25 /* TranslatorViewModel+++.swift in Sources */,
 				F05AA98028D3104D00B77E4A /* WeatherMarkerInfoView.swift in Sources */,
 				F05AA93228D30B7600B77E4A /* ViewController.swift in Sources */,
 				F05AA98228D3104D00B77E4A /* SearchBarView.swift in Sources */,
 				F05AA97B28D3104D00B77E4A /* GoogleMapView+MapDelegate.swift in Sources */,
 				F069EC8B28D43AF900A89083 /* GoogleMapView+SearchBar.swift in Sources */,
+				F06EDBB228EBB7D200341247 /* WeatherInfoHistoryViewModel.swift in Sources */,
 				F05AA97628D3104D00B77E4A /* GoogleMapViewModel.swift in Sources */,
 				F069EC8728D434D300A89083 /* GoogleMapView+Keyboard.swift in Sources */,
 				F0C4903E28D9852E00D957EF /* Toast.swift in Sources */,
@@ -1101,6 +1172,7 @@
 				F05AA95728D3100A00B77E4A /* OpenXlsx.swift in Sources */,
 				F05AA97728D3104D00B77E4A /* GoogleMapView+LocationManager.swift in Sources */,
 				F05AA97D28D3104D00B77E4A /* WeatherInfo.swift in Sources */,
+				F06EDBA928EBB17400341247 /* DefaultWeatherHistoryCoordinator.swift in Sources */,
 				F05AA98328D3104D00B77E4A /* RegionTableViewController.swift in Sources */,
 				F069EC8328D3F12E00A89083 /* SearchBarView+Bind.swift in Sources */,
 				F05AA97828D3104D00B77E4A /* GoogleMapView+DataFunc.swift in Sources */,
@@ -1127,6 +1199,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		F088949B28E6C3E8002430BD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F088949A28E6C3E8002430BD /* en */,
+				F088949C28E6C42D002430BD /* ko */,
+				F0BBFC0A28E6F0FC00AA7075 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1134,6 +1216,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1194,6 +1277,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

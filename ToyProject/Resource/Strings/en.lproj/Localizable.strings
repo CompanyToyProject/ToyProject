@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  ToyProject
+
+  Created by yeoboya on 2022/09/30.
+  
+*/
+
+"WeatherMap_BtnText" = "Weather Map";
+"translate_BtnText" = "Void Translate";
+"History_BtnText" = "History";
+
+"WeatherMap_TitleText" = "Weather Map View";
+"WeatherMap_SearchBar_PlaceholderText" = "Search Region!";
+
+"WeatherInfo_rain" = "rain";
+"WeatherInfo_sleet" = "sleet";
+"WeatherInfo_snowflake" = "snow";
+"WeahterInfo_drizzle" = "drizzle";
+"WeatherInfo_hail" = "hail";
+"WeatherInfo_snow" = "snow";
+"WeatherInfo_sunny" = "sunny";
+"WeatherInfo_cloudiness" = "cloudiness";
+"WeatherInfo_cloudy" = "cloudy";
+
+"WeatherHistory_TitleText" = "Weather History View";

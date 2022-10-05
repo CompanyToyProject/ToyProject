@@ -1,29 +1,25 @@
 //
-//  WeatherHistoryViewController.swift
+//  WeatherInfoHistoryViewController.swift
 //  ToyProject
 //
-//  Created by yeoboya on 2022/09/21.
+//  Created by yeoboya on 2022/10/04.
 //
 
 import Foundation
 import UIKit
+import SnapKit
+import Then
 import RxSwift
 import RxCocoa
-import Then
-import SnapKit
-import CoreData
 
-class WeatherHistoryViewController: UIViewController, UITableViewDelegate {
-    
+class WeatherInfoHistoryViewController: UIViewController {
     var tableView = UITableView()
     var leftBarButton: UIBarButtonItem!
     
     let localData: BehaviorRelay<[LocalCoordinate]> = .init(value: [])
     var disposeBag = DisposeBag()
     
-    var viewModel: WeatherHistoryViewModel!
-    
-    var tableViewController: HistoryTableViewController!
+    var viewModel: WeatherInfoHistoryViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,30 +27,22 @@ class WeatherHistoryViewController: UIViewController, UITableViewDelegate {
         setNavigationBar()
         setTableView()
         
-        setInput()
         bind()
-        viewModel.loadHasHistoryData()
+        
+        self.viewModel.loadWeatherDatas()
     }
     
     func setNavigationBar() {
         self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor : UIColor.black]
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        self.navigationItem.title = "Weather History"
         
         leftBarButton = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.left.fill"), primaryAction: nil, menu: nil)
         self.navigationItem.leftBarButtonItem = leftBarButton
     }
     
-    func setTableView() {
-        self.view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
-            make.edges.equalTo(self.view.safeAreaLayoutGuide)
-        }
-        
-        tableView.rx.setDelegate(self).disposed(by: disposeBag)
-    }
-    
     deinit {
-        print("WeatherHisytoryViewController deinit...")
+        print("WeatherInfoHistoryViewController deinit...")
     }
 }

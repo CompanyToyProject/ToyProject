@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  ToyProject
+
+  Created by yeoboya on 2022/09/30.
+  
+*/
+
+"WeatherMap_BtnText" = "天气地图";
+"translate_BtnText" = "语音翻译";
+"History_BtnText" = "记录";
+
+"WeatherMap_TitleText" = "天气地图画面";
+"WeatherMap_SearchBar_PlaceholderText" = "请输入地区";
+
+"WeatherInfo_rain" = "雨";
+"WeatherInfo_sleet" = "雨雪";
+"WeatherInfo_snowflake" = "眼睛";
+"WeahterInfo_drizzle" = "雨点";
+"WeatherInfo_hail" = "冰雹";
+"WeatherInfo_snow" = "飞雪";
+"WeatherInfo_sunny" = "晴朗";
+"WeatherInfo_cloudiness" = "多云";
+"WeatherInfo_cloudy" = "阴霾";
+
+"WeatherHistory_TitleText" = "天气记录扩大";
+

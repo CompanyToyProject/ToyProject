@@ -24,7 +24,6 @@ class WeatherHistoryViewModel: ViewModelProtocol {
     struct Output {
         var localDatas: PublishSubject<[LocalCoordinate]>
         var selectItem: PublishSubject<LocalCoordinate>
-        var isShowingDetailView: BehaviorRelay<Bool>
     }
     
     var model: Dependency       = .init()
@@ -35,12 +34,8 @@ class WeatherHistoryViewModel: ViewModelProtocol {
     init(input: Input) {
         let localDatas = PublishSubject<[LocalCoordinate]>()
         let selectItem = PublishSubject<LocalCoordinate>()
-        let isShowingDetailView = BehaviorRelay<Bool>(value: false)
         
         input.selectIndex
-            .do(onNext: { _ in
-                isShowingDetailView.accept(true)
-            })
             .map({ indexPath -> LocalCoordinate in
                 return self.model.localDatas[indexPath.row]
             })
@@ -49,8 +44,7 @@ class WeatherHistoryViewModel: ViewModelProtocol {
         
         self.input = input
         self.output = Output(localDatas: localDatas,
-                             selectItem: selectItem,
-                             isShowingDetailView: isShowingDetailView)
+                             selectItem: selectItem)
     }
     
     func loadHasHistoryData() {

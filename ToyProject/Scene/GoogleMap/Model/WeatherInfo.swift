@@ -82,11 +82,11 @@ enum SKY_CODE: String, Codable {
     var toString: String {
         switch self {
         case .sunny:
-            return "맑음"
+            return "WeatherInfo_sunny".localized
         case .cloudiness:
-            return "구름많음"
+            return "WeatherInfo_cloudiness".localized
         case .cloudy:
-            return "흐림"
+            return "WeatherInfo_cloudy".localized
         }
     }
     
@@ -116,17 +116,17 @@ enum PTY_CODE: String, Codable {
         case .none:
             return ""
         case .rain:
-            return "비"
+            return "WeatherInfo_rain".localized
         case .sleet:
-            return "비와 눈"
+            return "WeatherInfo_sleet".localized
         case .snowflake:
-            return "눈"
+            return "WeatherInfo_snowflake".localized
         case .drizzle:
-            return "빗방울"
+            return "WeahterInfo_drizzle".localized
         case .hail:
-            return "빗방울 눈날림"
+            return "WeatherInfo_hail".localized
         case .snow:
-            return "눈날림"
+            return "WeatherInfo_snow".localized
         }
     }
     

@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import SnapKit
 
 extension ViewController {
     func bind() {
@@ -29,6 +30,16 @@ extension ViewController {
             .bind(onNext: { _ in
                 self.coordinator?.pushWeatherHistoryVC()
             })
+            .disposed(by: disposeBag)
+        
+        translateBtn.rx.tap
+            .bind{ [unowned self] in
+                let view = TranslatorView(frame: .zero)
+                self.view.addSubview(view)
+                view.snp.makeConstraints{
+                    $0.edges.equalToSuperview()
+                }
+            }
             .disposed(by: disposeBag)
     }
 }

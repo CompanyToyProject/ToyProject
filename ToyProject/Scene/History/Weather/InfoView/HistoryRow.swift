@@ -13,10 +13,12 @@ import Then
 class HistoryRow: UITableViewCell {
     let fcstDateLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 16)
+        $0.textColor = .black
     }
     
     let infoLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 14)
+        $0.textColor = .black
     }
     
     let weatherImageView = UIImageView()
@@ -61,6 +63,8 @@ class HistoryRow: UITableViewCell {
             infoLabel,
             weatherImageView
         ].forEach { self.addSubview($0) }
+        
+        self.backgroundColor = .white
     }
     
     private func setConstraints() {

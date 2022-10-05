@@ -34,11 +34,12 @@ class SearchBarView: UIView, SFSpeechRecognizerDelegate {
         $0.textColor = .lightGray
         $0.textAlignment = .left
         $0.font = .systemFont(ofSize: 15)
-        $0.text = "Search Region!!"
+        $0.text = "WeatherMap_SearchBar_PlaceholderText".localized
     }
     
     let textView = UITextView().then {
         $0.textColor = .black
+        $0.backgroundColor = .white
         $0.textAlignment = .left
         $0.font = .systemFont(ofSize: 15)
         $0.isScrollEnabled = false

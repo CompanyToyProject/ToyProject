@@ -56,6 +56,7 @@ extension HistoryTableViewController: UITableViewDelegate {
     
     func setTableView() {
         self.tableView.allowsSelection = false
+        self.tableView.backgroundColor = .white
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.register(HistoryRow.self, forCellReuseIdentifier: "HistoryRow")
