@@ -10,4 +10,5 @@ import UIKit
 
 extension TranslatorModel {
     static let arrow_down_image = UIImage(named: "arrow_down")
+    static let close_image = UIImage(named: "header__btn_back")
 }

@@ -14,16 +14,15 @@ import Speech
 import SnapKit
 import Then
 import StoreKit
-import CoreTelephony
 
 class TranslatorView: UIView {
     
     lazy var kingView = UIView().then{
-        $0.backgroundColor = TranslatorModel.backGroundColor
+        $0.backgroundColor = .white
     }
     
     lazy var mainView = UIView().then{
-        $0.backgroundColor = .black
+        $0.backgroundColor = .clear
     }
     
     lazy var mainStackView = UIStackView().then{
@@ -35,14 +34,11 @@ class TranslatorView: UIView {
     
     // header
     lazy var headerView = UIView().then{
-        $0.backgroundColor = .clear
+        $0.backgroundColor = .black
     }
     
     lazy var closeBtn = UIButton().then{
-        $0.setTitle("닫기", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
-        $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        $0.backgroundColor = .blue
+        $0.setImage(TranslatorModel.close_image, for: .normal)
     }
     
     lazy var currentTechWayLabel = UILabel().then{
@@ -71,7 +67,7 @@ class TranslatorView: UIView {
     }
     
     lazy var sourceLanguageView = UIView().then{
-        $0.backgroundColor = .green
+        $0.backgroundColor = TranslatorModel.sourceBgColor
     }
 
     lazy var sourceLanguageText = UILabel().then{
@@ -92,10 +88,11 @@ class TranslatorView: UIView {
     }
     
     lazy var sourceContrainerView = UIView().then{
-        $0.backgroundColor = .gray
+        $0.backgroundColor = .clear
     }
     
     lazy var sourceTextView = UITextView().then{
+        $0.textColor = .black
         $0.backgroundColor = .clear
     }
 
@@ -109,7 +106,7 @@ class TranslatorView: UIView {
     }
     
     lazy var targetLanguageView = UIView().then{
-        $0.backgroundColor = .green
+        $0.backgroundColor = TranslatorModel.sourceBgColor
     }
     
     lazy var targetLanguageText = UILabel().then{
@@ -130,7 +127,7 @@ class TranslatorView: UIView {
     }
     
     lazy var translateContrainerView = UIView().then{
-        $0.backgroundColor = .gray
+        $0.backgroundColor = .white
     }
     
     lazy var translatedTextLabel = UILabel().then{
@@ -145,8 +142,8 @@ class TranslatorView: UIView {
     lazy var speakVoiceBtn = UIButton().then{
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         $0.setTitle("음성 OFF", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .purple
+        $0.setTitleColor(TranslatorModel.voiceTextColor, for: .normal)
+        $0.backgroundColor = TranslatorModel.voiceBgColor
     }
     
     // translateBtn
@@ -158,12 +155,12 @@ class TranslatorView: UIView {
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         $0.setTitle("번역", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .systemPink
+        $0.backgroundColor = TranslatorModel.executeTranslateBtnColor
     }
     
     // bottom
     lazy var bottomView = UIView().then{
-        $0.backgroundColor = .brown
+        $0.backgroundColor = .clear
     }
     
     lazy var bottomStackView = UIStackView().then{
@@ -177,13 +174,13 @@ class TranslatorView: UIView {
     lazy var papagoBtn = UIButton().then{
         $0.setTitle("파파고", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .gray
+        $0.backgroundColor = .white
     }
     
     lazy var googleBtn = UIButton().then{
         $0.setTitle("구글", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .gray
+        $0.backgroundColor = .white
     }
     
     var disposeBag = DisposeBag()
@@ -293,7 +290,8 @@ class TranslatorView: UIView {
         }
         
         bottomStackView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
+            $0.left.right.equalToSuperview().inset(10)
+            $0.top.bottom.equalToSuperview()
         }
         
         // body
@@ -410,13 +408,21 @@ class TranslatorView: UIView {
     }
     
     private func settingLayer(){
+        sourceLanguageView.layer.cornerRadius = 4
+        targetLanguageView.layer.cornerRadius = 4
+        speakVoiceBtn.layer.cornerRadius = 4
+        
         sourceContrainerView.layer.cornerRadius = 4
-        sourceContrainerView.layer.borderColor = UIColor.purple.cgColor
+        sourceContrainerView.layer.borderColor = TranslatorModel.textviewBorderColor.cgColor
         sourceContrainerView.layer.borderWidth = 2
         
         translateContrainerView.layer.cornerRadius = 4
-        translateContrainerView.layer.borderColor = UIColor.purple.cgColor
+        translateContrainerView.layer.borderColor = TranslatorModel.textviewBorderColor.cgColor
         translateContrainerView.layer.borderWidth = 2
+        
+        bottomStackView.clipsToBounds = true
+        papagoBtn.layer.cornerRadius = 4
+        googleBtn.layer.cornerRadius = 4
     }
     
     private func input(){
@@ -445,6 +451,12 @@ class TranslatorView: UIView {
                 self.sourceTextView.endEditing(true)
  
                 if self.viewModel.model.voiceStatus.value == .on {
+                    
+                    if self.viewModel.model.currentTechWay.value == .google {
+                        AudioStreamManager.shared.stop()
+                        self.viewModel.service.stopStreaming()
+                    }
+                    
                     self.viewModel.model.voiceStatus.accept(.off)
                     self.viewModel.model.voiceText.accept("음성 OFF")
                 }
@@ -459,10 +471,16 @@ class TranslatorView: UIView {
         self.viewModel.output.isPapago
             .drive{ [unowned self] (status) in
                 if status {
-                    self.papagoBtn.backgroundColor = .systemPink
+                    self.papagoBtn.backgroundColor = TranslatorModel.currentTechColor
+                    self.papagoBtn.setTitleColor(.white, for: .normal)
+                    self.papagoBtn.layer.borderWidth = 0
+                    self.papagoBtn.layer.borderColor = nil
                 }
                 else {
-                    self.papagoBtn.backgroundColor = .gray
+                    self.papagoBtn.backgroundColor = .white
+                    self.papagoBtn.setTitleColor(TranslatorModel.currentTechColor, for: .normal)
+                    self.papagoBtn.layer.borderColor = TranslatorModel.currentTechColor.cgColor
+                    self.papagoBtn.layer.borderWidth = 1
                 }
             }
             .disposed(by: disposeBag)
@@ -470,10 +488,16 @@ class TranslatorView: UIView {
         self.viewModel.output.isGoogle
             .drive{ [unowned self] (status) in
                 if status {
-                    self.googleBtn.backgroundColor = .systemPink
+                    self.googleBtn.backgroundColor = TranslatorModel.currentTechColor
+                    self.googleBtn.setTitleColor(.white, for: .normal)
+                    self.googleBtn.layer.borderWidth = 0
+                    self.googleBtn.layer.borderColor = nil
                 }
                 else {
-                    self.googleBtn.backgroundColor = .gray
+                    self.googleBtn.backgroundColor = .white
+                    self.googleBtn.setTitleColor(TranslatorModel.currentTechColor, for: .normal)
+                    self.googleBtn.layer.borderColor = TranslatorModel.currentTechColor.cgColor
+                    self.googleBtn.layer.borderWidth = 1
                 }
             }
             .disposed(by: disposeBag)
