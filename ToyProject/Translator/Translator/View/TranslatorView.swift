@@ -45,7 +45,7 @@ class TranslatorView: UIView {
         $0.textAlignment = .center
         $0.font = UIFont.boldSystemFont(ofSize: 14)
         $0.textColor = .white
-        $0.text = "현재 방식 : "
+        $0.text = "현재 음성인식 방식 : "
     }
     
     // body
@@ -151,9 +151,23 @@ class TranslatorView: UIView {
         $0.backgroundColor = .clear
     }
     
-    lazy var executeTranslatedBtn = UIButton().then{
+    lazy var executeTranslatedStackView = UIStackView().then{
+        $0.spacing = 10
+        $0.alignment = .fill
+        $0.distribution = .fillEqually
+        $0.axis = .horizontal
+    }
+    
+    lazy var executeTranslatedPapagoBtn = UIButton().then{
         $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        $0.setTitle("번역", for: .normal)
+        $0.setTitle("파파고 번역", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = TranslatorModel.executeTranslateBtnColor
+    }
+    
+    lazy var executeTranslatedGoogleBtn = UIButton().then{
+        $0.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        $0.setTitle("구글 번역", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = TranslatorModel.executeTranslateBtnColor
     }
@@ -234,7 +248,11 @@ class TranslatorView: UIView {
 
         sourceContrainerView.addSubview(sourceTextView)
     
-        executeTranslatedView.addSubview(executeTranslatedBtn)
+        executeTranslatedView.addSubview(executeTranslatedStackView)
+        
+        [executeTranslatedPapagoBtn, executeTranslatedGoogleBtn].forEach{
+            executeTranslatedStackView.addArrangedSubview($0)
+        }
         
         [target_topView, translate_mediaView].forEach{
             translateView.addSubview($0)
@@ -351,7 +369,7 @@ class TranslatorView: UIView {
             $0.height.equalToSuperview().multipliedBy(0.1)
         }
         
-        executeTranslatedBtn.snp.makeConstraints{
+        executeTranslatedStackView.snp.makeConstraints{
             $0.center.equalToSuperview()
         }
         
@@ -426,7 +444,7 @@ class TranslatorView: UIView {
     }
     
     private func input(){
-        let inputs = TranslatorViewModel.Input(textInput: sourceTextView.rx.text.orEmpty.distinctUntilChanged().map{ $0.trimmingCharacters(in: .whitespacesAndNewlines)}, executeTranslate: executeTranslatedBtn.rx.tap.asObservable(), sourceLanguageTap: sourceLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, targetLanguageTap: targetLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, papagoTap: papagoBtn.rx.tap.asObservable(), googleTap: googleBtn.rx.tap.asObservable(), speakVoiceTap: speakVoiceBtn.rx.tap.asObservable())
+        let inputs = TranslatorViewModel.Input(textInput: sourceTextView.rx.text.orEmpty.distinctUntilChanged().map{ $0.trimmingCharacters(in: .whitespacesAndNewlines)}, papagoTranslated: executeTranslatedPapagoBtn.rx.tap.asObservable(),googleTranslated: executeTranslatedGoogleBtn.rx.tap.asObservable() ,sourceLanguageTap: sourceLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, targetLanguageTap: targetLanguageView.rx.tapGesture().when(.recognized).map{ _ in}, papagoTap: papagoBtn.rx.tap.asObservable(), googleTap: googleBtn.rx.tap.asObservable(), speakVoiceTap: speakVoiceBtn.rx.tap.asObservable())
 
         self.viewModel = TranslatorViewModel(input: inputs)
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ABCF6EBC90A8E0E37B9E3D7A /* Pods_ToyProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A439308B305145759E12955 /* Pods_ToyProject.framework */; };
 		EF3CD69B28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3CD69A28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift */; };
+		EF3F5F0828EEBC3E00969BBF /* GoogleTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3F5F0728EEBC3E00969BBF /* GoogleTranslation.swift */; };
 		EF6C8DCC28D3F8C0000FB249 /* GoogleAPIClientForRESTCore in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCB28D3F8C0000FB249 /* GoogleAPIClientForRESTCore */; };
 		EF6C8DCE28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCD28D3F8C0000FB249 /* GoogleAPIClientForREST_Oauth2 */; };
 		EF6C8DD028D3F8C0000FB249 /* GoogleAPIClientForREST_Speech in Frameworks */ = {isa = PBXBuildFile; productRef = EF6C8DCF28D3F8C0000FB249 /* GoogleAPIClientForREST_Speech */; };
@@ -127,6 +128,7 @@
 		3A439308B305145759E12955 /* Pods_ToyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D851FD8AED024BB375828A /* Pods-ToyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToyProject.debug.xcconfig"; path = "Target Support Files/Pods-ToyProject/Pods-ToyProject.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3CD69A28E682590038B4A9 /* LocalCoordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocalCoordinate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF3F5F0728EEBC3E00969BBF /* GoogleTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslation.swift; sourceTree = "<group>"; };
 		EF6CB0DA28DA9E690028B832 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		EF6CB0DE28DAACEA0028B832 /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		EF6CB0EC28DBF2710028B832 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 			children = (
 				EFEB1ABF28E1963700D9CAC3 /* GoogleCloudModel.swift */,
 				EFEB1ABD28E1906A00D9CAC3 /* SpeechRecognizeService.swift */,
+				EF3F5F0728EEBC3E00969BBF /* GoogleTranslation.swift */,
 			);
 			path = GoogleCloud;
 			sourceTree = "<group>";
@@ -1098,6 +1101,7 @@
 				F05AA95428D3100A00B77E4A /* CALayer+.swift in Sources */,
 				F0BC0ADD28DC4D57006C4F26 /* Coordinator.swift in Sources */,
 				F0BC0AE228DC524D006C4F26 /* ViewController+Bind.swift in Sources */,
+				EF3F5F0828EEBC3E00969BBF /* GoogleTranslation.swift in Sources */,
 				F06EDBAF28EBB6E300341247 /* WeatherInfoHistoryView+Bind.swift in Sources */,
 				F0C4904128D9858000D957EF /* NotifyDelegate.swift in Sources */,
 				F0BC0AC928DBDB0E006C4F26 /* WeatherHistoryViewController+Bind.swift in Sources */,

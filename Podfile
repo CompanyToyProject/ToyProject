@@ -8,6 +8,7 @@ target 'ToyProject' do
   # Pods for ToyProject
   pod 'GoogleMaps', '7.1.0'
   pod 'GooglePlaces', '7.1.0'
+  pod 'GoogleSignIn'
   
   pod 'Alamofire', '4.7.3'
   

@@ -16,7 +16,8 @@ class TranslatorViewModel {
     
     struct Input {
         var textInput: Observable<String>
-        var executeTranslate: Observable<Void>
+        var papagoTranslated: Observable<Void>
+        var googleTranslated: Observable<Void>
         var sourceLanguageTap: Observable<Void>
         var targetLanguageTap: Observable<Void>
         var papagoTap: Observable<Void>
@@ -43,6 +44,7 @@ class TranslatorViewModel {
     var timer: Timer!
     var audioData : NSMutableData!
     var service = SpeechRecognizeService()
+    var translationService = GoogleTranslation()
     
     init(input: Input){
 
@@ -60,10 +62,20 @@ class TranslatorViewModel {
                 if text.count != 0 {
                     self.timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { timer in
                         if detechStatus == .off {
-                            self.detechToTransalte()
+                            if techWay == .papago {
+                                self.papagoDetechTranslated()
+                            }
+                            else {
+                                self.googleDetechTranslated()
+                            }
                         }
                         else {
-                            self.translate()
+                            if techWay == .papago {
+                                self.translate()
+                            }
+                            else {
+                                self.googleDetechTranslated()
+                            }
                         }
                         timer.invalidate()
                     })
@@ -158,7 +170,7 @@ class TranslatorViewModel {
             }
             .disposed(by: dispoesBag)
         
-        input.executeTranslate
+        input.papagoTranslated
             .withLatestFrom(self.model.detectedStatus)
             .withLatestFrom(self.model.currentTechWay){($0, $1)}
             .bind{ [unowned self] (detechStatus, techWay) in
@@ -168,11 +180,23 @@ class TranslatorViewModel {
                 }
                 
                 if detechStatus == .off {
-                    self.detechToTransalte()
+                    self.papagoDetechTranslated()
                 }
                 else {
-                    self.detechToTransalte()
+                    self.translate()
                 }
+            }
+            .disposed(by: dispoesBag)
+        
+        input.googleTranslated
+            .withLatestFrom(self.model.detectedStatus)
+            .withLatestFrom(self.model.currentTechWay){($0,$1)}
+            .bind{ [unowned self] (detechStatus, techWay) in
+                if self.timer != nil {
+                    self.timer.invalidate()
+                    self.timer = nil
+                }
+                self.googleDetechTranslated()
             }
             .disposed(by: dispoesBag)
 

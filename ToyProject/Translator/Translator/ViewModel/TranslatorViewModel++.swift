@@ -31,7 +31,7 @@ extension TranslatorViewModel {
         
     }
 
-    func detechToTransalte(){
+    func papagoDetechTranslated(){
         let papago = Papago()
         papago.detechLanguage(text: self.model.originalText.value) {  [unowned self] (languageCode) in
             if self.model.sourceLanguageCode.value == "언어 감지" {
@@ -52,6 +52,22 @@ extension TranslatorViewModel {
         
         papago.translatedLanguage(text: self.model.originalText.value, sourceLanguage: self.model.sourceLanguageCode.value, targetLanguage: self.model.targetLanguageCode.value) { [unowned self] (translatedText) in
             self.model.translatedText.accept(translatedText)
+        }
+    }
+    
+    func googleDetechTranslated(){
+        self.translationService.checkToken { [unowned self] (bool) in
+            if bool {
+                self.translationService.goTranslated(self.model.originalText.value, sourceLanguage: self.model.sourceLanguageCode.value, targetLanguage: self.model.targetLanguageCode.value) { (translatedText) in
+                    
+                    if self.model.sourceLanguageCode.value == "언어 감지" {
+                        self.model.sourceLanguageCode.accept(Locale.preferredLanguages.first!)
+                        self.model.sourceLanguageText.accept(self.localizedString(code: Locale.preferredLanguages.first!))
+                    }
+                    
+                    self.model.translatedText.accept(translatedText)
+                }
+            }
         }
     }
     
